@@ -2909,14 +2909,193 @@
 # obj.searchRange([10, 9, 7, 7, 1, 1], None)
 
 
-def binary(nums, target):
-    try:
-        first = nums.index(target)
-        nums.reverse()
-        second = len(nums) - nums.index(target)-1
-        return [first, second]
-    except:
-        return [-1, -1]
+# Find the index of a sorted list of two integers leetcode
+
+# def binary(nums, target):
+#     try:
+#         first = nums.index(target)
+#         nums.reverse()
+#         second = len(nums) - nums.index(target)-1
+#         return [first, second]
+#     except:
+#         return [-1, -1]
 
 
-print(binary([5,7,7,8,8,10], 8))
+# print(binary([5,7,7,8,8,10], 8))
+
+
+
+# Permutation codeWars
+
+# def permutation(data):
+#     if len(data) == 0:
+#         return []
+
+#     if len(data) == 1:
+#         return [data]
+
+#     l = dict()
+#     for x in range(len(data)):
+#         m = data[x]
+#         remlist = data[:x] + data[x+1:]
+#         for p in permutation(remlist):
+#             # l.append(m+p)
+#             l[m+p] = 1
+#     return list(l.keys())
+
+# print(permutation('aabb'))
+
+
+
+# Polish Alphabet CodeWars
+
+
+# def correct_translation(string):
+#     d = {
+#         'ą' :  'a',
+#         'ć' :  'c',
+#         'ę' :  'e',
+#         'ł' :  'l',
+#         'ń' :  'n',
+#         'ó' :  'o',
+#         'ś' :  's',
+#         'ź' :  'z',
+#         'ż' :  'z',
+#     }
+#     return "".join(d[x] if x in d  else x for x in string ) 
+
+
+# print(correct_translation('Jędrzej Błądziński'))
+
+
+# without 'E' codeWars
+
+# def withOutE(string):
+#     if not string:
+#         return string
+    
+#     # count = 0
+#     # for x in string:
+#     #     if x.lower() == 'e':
+#     #         count+=1
+#     # return count if count else 'There is no "e".'
+#     return (string.lower().count('e') if 'e' in string.lower() else "there is no e")
+
+# print(withOutE("nglish"))
+
+
+# Snail Code CodeWars
+
+# def snail(snail_code):
+#     l = list()
+#     for x in range(len(snail_code)):
+#         l.extend(snail_code[x])
+#     return sorted(l)
+
+# print(snail([[1,2,3],
+#          [4,5,6],
+#          [7,8,9]]))
+
+
+# Single Digit codeWars
+
+# def single_digits(numbers):
+#     if len(str(numbers)) == 1:
+#         return numbers
+#     value = bin(numbers)[2:].count('1')
+#     return single_digits(value) if len(str(value)) != 1 else value
+
+
+# print(single_digits(5))
+
+
+# Count the positive numbers and do the sum of negative numbers. 
+
+# def countPosAndNeg(numbers):
+#     if not numbers:
+#         return numbers
+#     else:
+#         mid = len(numbers) - 1 // 2
+#         _pos = _neg = 0
+#         for pos in numbers[:mid]:
+#             if pos >= 0:
+#                 _pos += 1
+#             else:
+#                 _neg += pos
+
+#         for neg in numbers[mid:]:
+#             if neg <= 0:
+#                 _neg += neg
+#             else:
+#                 _pos += 1
+
+#     return [_pos, _neg]
+
+
+# print(countPosAndNeg([0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14]))
+
+
+# Average Scores CodeWars
+
+# def averageScores(scores):
+#     if not scores or len(scores) == 1: return scores
+#     else: 
+#         return round(sum(scores)/len(scores))
+
+# l = [[5, 78, 52, 900, 1],
+#     [5, 25, 50, 75],
+#     [2],
+#     [1, 1, 1, 1, 9999],
+#     [0],
+#     ]
+
+# for x in l:
+#     print(averageScores(x))
+
+
+# Coding meetUp CodeWars
+
+# def codingMeetUp(nameList):
+#     dict_items = dict()
+#     for x in range(len(nameList)):
+#         dict_items[x] = nameList[x]['age']
+#     return 0
+
+
+# list1 = [{ 'firstName': 'Gabriel', 'lastName': 'X.', 'country': 'Monaco', 'continent': 'Europe', 'age': 49, 'language': 'PHP' }]
+
+
+
+# Evenly Spaced integers CodingBat
+
+# def EvenSpace(numbers):
+#     if not numbers: return numbers
+#     else:
+#         return sum(numbers) % 2 == 0
+
+
+# print(EvenSpace([4, 6, 2]))
+
+
+# MakeBrick CodingBat
+
+# def MakeBrick(small, big, goal):
+#     return small + (big*5) >= goal
+
+
+# print(MakeBrick(3, 2, 8))
+
+
+# Blackjack
+
+# def blackJack(num1, num2):
+#     if num1 > 21: # or in range(15, 21):
+#         return num1
+#     elif num2 > 21: # or in range(15, 21):
+#         return num2
+#     else:
+#         return False
+
+# print(blackJack(10, 20))
+
+
