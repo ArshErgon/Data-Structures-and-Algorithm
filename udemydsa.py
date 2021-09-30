@@ -3099,3 +3099,15 @@
 # print(blackJack(10, 20))
 
 
+
+def binary(nums, target):
+    try:
+        first = nums.index(target)
+        nums.reverse()
+        second = len(nums) - nums.index(target)-1
+        return [first, second]
+    except:
+        return [-1, -1]
+
+
+print(binary([5,7,7,8,8,10], 8))
