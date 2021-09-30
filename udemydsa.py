@@ -3099,15 +3099,216 @@
 # print(blackJack(10, 20))
 
 
+# Array123, if a sequence is present in a list return True
 
-def binary(nums, target):
-    try:
-        first = nums.index(target)
-        nums.reverse()
-        second = len(nums) - nums.index(target)-1
-        return [first, second]
-    except:
-        return [-1, -1]
+# def array123(array):
+#     x = [1,2,3]
+#     for i in range(len(array)):
+#         # print(array[i:i+len(x)])
+#         if array[i:i+len(x)] == x:
+#             return True
+#     return False
+
+# print(array123(([1, 1, 2, 3, 1])))
 
 
-print(binary([5,7,7,8,8,10], 8))
+# Product of lists leetCode
+
+# def productAndSum(list1):
+#     list_num = list(map(int, str(list1)))
+#     int_product = 1
+#     print(list_num)
+#     for x in list_num:
+#         int_product *= x
+
+#     return int_product - sum(list_num)
+
+
+# print(productAndSum(114))
+
+
+# Reverse a string CoderByte
+
+# def reverse(string):
+#     # s = str()
+#     # for x in range(1, len(string)+1):
+#     #     s+=string[-x]
+#     # return s
+#     return string[::-1]
+
+# print(reverse('coderByte'))
+
+
+# String-Splosion CodingBat
+
+# def stringSplosion(string):
+#     leng_str = len(string)
+#     s = str()
+#     x = 0
+#     while x<=leng_str:
+#         s += string[:x]
+#         x+=1
+
+# print(stringSplosion('Code'))
+
+
+# Repeated String HackerRank
+
+# def repeatedString(string):
+    # dict_alpha = dict()
+    # c = 1
+    # for letter in string:
+    #     if letter == 'a':
+    #         dict_alpha[letter] = c
+    #         c+=1
+    # return dict_alpha['a']
+
+    # if not string:
+    #     return string
+    # return string.count('a')
+
+# print(repeatedString('abacacaaccddca'))
+
+
+
+# Longest Word CodingBat
+
+# import re
+
+# def longestWord(sentence):
+#     regex = ('[@_!#$%^&*()<>?/\|}{~:]')
+#     if not sentence:
+#         return sentence
+#     else:
+#         dict_item = list()
+#         for words in sentence.split():
+#             if not re.search(regex, words):
+#                 dict_item = words
+#     return (dict_item) if dict_item else []
+
+# print(longestWord('fun&!! time'))
+
+
+
+
+# Intersection CodingBat
+
+# def intersection(array):
+#     array_leng = len(array)
+#     y = 0;l=[]
+#     while y < len(array)[0]:
+#         if array[y] == array[y]
+#         y+=1
+#     return 0
+
+
+
+# Sort Array by parity LeetCode
+
+# def sortArrayByParity(arrayList):
+#     if not arrayList:
+#         return arrayList
+#     leng = len(arrayList) // 2
+#     i, j = 0, 0
+#     while j < len(arrayList):
+#         if arrayList[j] % 2 == 0:
+#             arrayList[i], arrayList[j] = arrayList[j], arrayList[i]
+#             i+=1
+#         j+=1
+
+#     return arrayList
+
+
+# print(sortArrayByParity([3,1,2,4]))
+
+
+
+# PhoneBook HackerRank
+
+# n = int(input())
+# dict_name = dict()
+# while n!=0:
+#     b = input()
+#     b = b.split()
+#     dict_name[b[0]] = int(b[-1])
+#     n-=1
+# print(dict_name)
+
+# number = input()
+# while number:
+#     if dict_name[number]:
+#         print(f"{number}={dict_name[number]}")
+#     else:
+#         print('Not Found')
+#     number = input()
+
+
+# LinkedList LeetCode
+
+class Node:
+    def __init__(self, data, next=None):
+        self.data = data
+        self.next = next
+
+
+class LinkedListLeetCode:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+        self.length = 0
+
+    def push(self, data):
+        newNode = Node(data, self.head)
+        if self.head is None:
+            self.head = newNode
+            self.tail = self.head
+        else:
+            self.head = newNode
+            self.tail = self.head.next
+        # current = self.head
+        # while current:
+        #     if current is None:
+        #         self.tail = prev
+        #         break
+        #     else:
+        #         next = current
+        #         prev = next
+        #     current = current.next
+
+
+        self.length += 1
+
+
+    def display(self):
+        l = ""
+        current = self.head
+        while current:
+            l+= str(current.data)+'--->'
+            current = current.next
+        return l, self.head.data, self.tail.data, self.length
+
+
+    def OddEven(self):
+        return True if self.length % 2 == 0 else False
+
+    def reverse(self):
+        current = self.head
+        prev = None
+
+        while current:
+            next = current.next
+            current.next = prev
+            prev = current
+            current = next
+
+        self.head = prev
+
+    
+obj = LinkedListLeetCode()
+for x in range(1, 11):
+    obj.push(x)
+
+print(obj.display())
+print(obj.OddEven())
+print(obj.reverse())
+print(obj.display())
