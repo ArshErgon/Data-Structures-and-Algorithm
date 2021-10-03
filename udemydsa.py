@@ -3171,6 +3171,36 @@
 
 
 
+# Maximum SubArray LeetCode
+
+# def maxSubArray(array):
+#     if array == [-1]:
+#         return -1
+#     lengArray = (len(array)-1) // 2
+#     sum_ = array[0]
+#     res = array[0]
+#     for x in range(0, len(array)):
+#         res = sum(array[x:lengArray])
+#         sum_ = max(sum_, res)
+#         if sum(array) > sum_:
+#             sum_ = sum(array)
+#         lengArray+=1
+#     return sum_
+
+
+    # lengArray = (len(array)-1) // 2
+    # sum_ = array[0]
+    # res = array[0]
+    # for x in range(1, len(array)):
+    #     res = max(array[x], array[x] + res)
+    #     sum_ = max(sum_, res)
+    # return sum_
+
+
+# print(maxSubArray([-2, 1]))
+
+
+
 # Longest Word CodingBat
 
 # import re
@@ -3243,72 +3273,368 @@
 #     number = input()
 
 
-# LinkedList LeetCode
 
-class Node:
-    def __init__(self, data, next=None):
-        self.data = data
-        self.next = next
+# Trees
 
+# class Node:
+#     def __init__(self, data):
+#         self.data = data
+#         self.Right = None
+#         self.Left = None
 
-class LinkedListLeetCode:
-    def __init__(self):
-        self.head = None
-        self.tail = None
-        self.length = 0
+# class Trees:
+#     def __init__(self): 
+#         self.Root = None
+#         self.length = 0
 
-    def push(self, data):
-        newNode = Node(data, self.head)
-        if self.head is None:
-            self.head = newNode
-            self.tail = self.head
-        else:
-            self.head = newNode
-            self.tail = self.head.next
-        # current = self.head
-        # while current:
-        #     if current is None:
-        #         self.tail = prev
-        #         break
-        #     else:
-        #         next = current
-        #         prev = next
-        #     current = current.next
+#     def push(self, data):
+#         newNode = Node(data)
+#         if self.Root is None:
+#             self.Root = newNode
+#         else:
+#             if data < self.Root.data:
+#                 if self.Root.Left is None:
+#                     self.Root.Left = newNode
+#                 else:
+#                     self.push(self.Root.Left, data) 
 
-
-        self.length += 1
-
-
-    def display(self):
-        l = ""
-        current = self.head
-        while current:
-            l+= str(current.data)+'--->'
-            current = current.next
-        return l, self.head.data, self.tail.data, self.length
-
-
-    def OddEven(self):
-        return True if self.length % 2 == 0 else False
-
-    def reverse(self):
-        current = self.head
-        prev = None
-
-        while current:
-            next = current.next
-            current.next = prev
-            prev = current
-            current = next
-
-        self.head = prev
+#             else:
+#                 if self.Root.Right is None:
+#                     self.Root.Right = newNode
+#                 else:
+#                     self.push(self.Root.Right, data)
+#         self.length+=1
 
     
-obj = LinkedListLeetCode()
-for x in range(1, 11):
-    obj.push(x)
+#     def displayTree(self, root):
+#         if root!=None:
+#             self.displayTree(root.Left)
+#             print(root.data)
+#             self.displayTree(root.Right)
 
-print(obj.display())
-print(obj.OddEven())
-print(obj.reverse())
-print(obj.display())
+
+
+# obj = Trees()
+# obj.push(10)
+# obj.push(20)
+# obj.push(30)
+# # obj.push(40)
+# # obj.push(50)
+
+# print(obj.displayTree(obj.Root))
+
+
+
+# Longest Substring Without Reapting Charaters
+
+# def longestSubstring(string):
+#     dict_items = {}
+#     maxL = 0
+#     startL = 0
+#     for letter in range(0, len(string)):
+#         if string[letter] in dict_items:
+#             startL = max(startL, dict_items[string[letter]]+1)
+#         maxL = max(maxL, letter-startL+1)
+#         dict_items[string[letter]] = letter
+#     return maxL
+# print(longestSubstring("aa"))
+
+
+# Fibonacci Series
+
+# def fibonacciSeries(n):
+#     if n == 0:
+#         return 0
+#     if n == 1:
+#         return 1
+
+#     return fibonacciSeries(n-1)+fibonacciSeries(n-2)
+
+# print(fibonacciSeries(4))
+
+
+
+# Square Root of a number without pow() or **
+
+
+# def root(num):
+#     if num == 0 or num == 1:
+#         return num
+
+#     start = 1
+#     end = num
+#     while start < end:
+#         mid = (start+end)//2
+#         if mid*mid == num:
+#             return mid
+#         elif mid*mid < num:
+#             start = mid + 1
+#             ans = mid
+#         else:
+#             end = mid - 1
+
+#     return ans
+
+# print(root(2))
+
+
+
+# Multiply numbers strings numbers without using int 
+
+# def multiplyString(num1, num2=0):
+#     dict_num = {'1':1, '2':2, '3':3, '4':4,'5':5,'6':6,'7':7,'8':8,'9':9,'10':10,'0':0}
+#     l1 = []; l2 = []
+#     for x in num1:
+#         l1.append(dict_num[x])
+#     for i in num2:
+#         l2.append(dict_num[i])
+#     return l1, l2
+
+# print(multiplyString('123', '456'))
+
+
+
+# # Single Number
+
+# def Number(nums):
+#     d = dict()
+#     l = list()
+#     for x in nums:
+#         if x in d:
+#             d.pop(d[x])
+#         else:
+#             d[x] = x
+#             l.append(x)
+
+#     return list(d)[0]
+
+# print(Number([2,2,1]))
+
+
+
+
+# Linked List By Baka
+
+# class Node:
+#     def __init__(self, data):
+#         self.data = data
+#         self.next = None
+
+# class SingleLinkedList:
+#     def __init__(self):
+#         self.tail = None
+#         self.length = 0
+
+#     def append(self, data):
+#         newNode = Node(data)
+#         if self.tail is None:
+#             self.tail = newNode
+#         else:
+#             current = self.tail
+#             while current.next:
+#                 current = current.next
+#             current.next = newNode
+#         self.length += 1
+
+#     def display(self):
+#         current = self.tail
+#         s = str()
+#         while current:
+#             s+= str(current.data)+'--->'
+#             current = current.next
+#         return s
+
+#     def maxEleANDminEle(self):
+#         current = self.tail
+#         MAX = current.data
+#         MIN = current.data
+#         while current:
+#             if MAX < current.data:
+#                 MAX = current.data
+#             current = current.next
+#         current = self.tail
+#         while current:
+#             if MIN > current.data:
+#                 MIN = current.data
+#             current = current.next
+#         return f"MAX: {MAX}, MIN: {MIN}"
+
+#     def increment(self, value, data):
+#         current = self.tail
+#         while current:
+#             if current.data == data:
+#                current = (current.data + value)
+#                print("Found", current)
+#                return
+#             current = current.next
+
+#     def index(self, number):
+#         pos = 0
+#         current = self.tail
+#         while current:
+#             if current.data == number:
+#                 return pos
+#             current = current.next
+#             pos+=1
+
+
+#     def search(self, element):
+#         current = self.tail
+#         while current:
+#             if current.data == element:
+#                 return f"{current.data} at index {self.index(current.data)}"
+#             current = current.next
+#         return "Not Found"
+
+#     def lengthList(self):
+#         return f"Length: {self.length}"
+
+#     def middle(self, element):
+#         newNode = Node(element)
+#         numElem = 1
+#         mid = self.length // 2
+#         current = self.tail
+#         while current:
+#             if numElem == mid:
+#                 newNode.next = current.next # At Any Position
+#                 current.next = newNode  # At Any Position
+#             numElem += 1
+#             current = current.next
+
+#     def remove(self, element):
+#         pos = 0
+#         current = self.tail
+#         while current:
+#             if pos == self.index(current.data):
+#                 unwantedNode = current
+#                 current.next = unwantedNode.next
+#             pos+=1
+#             current = current.next
+#         self.length -= 1
+
+
+# obj = SingleLinkedList()
+# for num in range(1, 21):
+#     obj.append(num)
+
+
+# print(obj.display())
+# print(obj.maxEleANDminEle())
+# print(obj.increment(3, 1))
+# print(obj.display())
+# print(obj.search(20))
+# print(obj.display())
+# print(obj.lengthList())
+# (obj.middle(17))
+# print(obj.display())
+# print(obj.remove(20))
+# print(obj.display())
+
+
+# 4Sum LeetCode
+
+# def Sum(arr, target):
+#     _sum = 0
+#     d = {}
+#     c = 4
+#     for x in range(len(arr)):
+#         _sum = sum(arr[x:c])
+#         if _sum == target:
+#             # print(arr[x:c])
+#             z= str(arr[x:c])
+#             d[z] = 1
+#         c+=1
+#     return d
+
+# print(Sum([1,0,-1,0,-2,2], 0))
+
+
+
+# Search Insert Position LeetCode
+
+# def searchInsertPosition(arr, target):
+#     high = len(arr) - 1
+#     low = 0
+#     if target == 0 or not target:
+#         return target
+#     while low <= high:
+#         mid = (high + low) // 2
+#         if arr[mid] == target:
+#             return mid
+#         elif arr[mid] < target:
+#             low = mid + 1
+#             print(low, arr[low])
+#         else:
+#             high = mid - 1
+#             print(high, arr[high])
+#     return low
+
+# print(searchInsertPosition([1, 3, 5, 6], 4))
+
+
+# Search In rotate array leetCode
+
+# def searchSortedArray(arr, target):
+#     arr1 = sorted(arr)
+#     high = len(arr1) - 1
+#     low = 0
+#     while low <= high:
+#         mid = (high+low) // 2
+#         if arr1[mid] == target:
+#             return arr.index(arr1[mid])
+#         elif arr1[mid] < target:
+#             low = mid + 1
+#         else:
+#             high = mid - 1
+#     return -1
+
+# print(searchSortedArray([4,5,6,7,0,1,2], 3))
+
+
+# Find the minium value in a rotated array LeetCode
+
+
+# def findMinium(numsArr): 
+#     MIN = numsArr[0]
+#     if not numsArr:
+#         return numsArr
+#     for x in numsArr:
+#         if MIN > x:
+#             MIN = x
+#     return MIN
+
+
+# print(findMinium([3,4,5,1,2]))
+
+
+
+# Permutation hard one
+
+# def permutation(head, tail=''):
+#     if len(head) == 0:
+#         print(tail)
+#     else:
+#         for i in range(len(head)):
+#             permutation(head[:i]+head[i+1:], tail+head[i])
+
+
+# print(permutation(12))
+
+
+# Permutation
+
+# def permutation(string):
+#     if len(string) == 0 or len(string) == 1:
+#         return string
+
+#     d = dict()
+#     for x in range(len(string)):
+#         m = string[x]
+#         res = string[:x] + string[x + 1:]
+#         for p in permutation(res):
+#             d[m+p] = 1
+#             print(m+p)
+#     return list(d.keys()), d
+
+# print(permutation([123]))
+
