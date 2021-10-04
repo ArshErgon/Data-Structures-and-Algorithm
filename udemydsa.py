@@ -3618,7 +3618,7 @@
 #             permutation(head[:i]+head[i+1:], tail+head[i])
 
 
-# print(permutation(12))
+# print(permutation('abc'))
 
 
 # Permutation
@@ -3637,4 +3637,60 @@
 #     return list(d.keys()), d
 
 # print(permutation([123]))
+
+
+
+# Add Binary Numbers LeetCode
+
+# def binaryAddition(b_num1, b_num2):
+#     s = int(b_num1, 2) + int(b_num2, 2)
+#     return bin(s)[2:]
+
+# print(binaryAddition("1010", "1011"))
+
+
+
+# Jump Game LeetCode
+
+# def jumpGame(arr):
+#     m = 0
+#     for key, value in enumerate(arr):
+#         if key > m:
+#             return False
+#         m = max(m, key+value)
+#     return True
+
+
+# print(jumpGame([2,0]))
+
+
+# WeIrD StRiNg CaSe CodeWars
+
+# def to_weird_case(string):
+#     leng = len(string)
+#     for ele in range(len(string)):
+#         if string[ele] == " ":
+#             ele= ele -1
+#             print('ele', ele)
+#         if ele % 2 == 0:
+#             string = string.replace(string[ele], string[ele].title())
+#     return string
+
+# print(to_weird_case('This is a test'))
+
+
+
+# Valid Parenthese LeetCode
+
+# def validParenthese(argv):
+#     stack = []
+#     d = {'[':']', '{':'}','(':')'}
+#     for ele in argv:
+#         if ele in d:
+#             stack.append(ele)
+#         elif len(stack) == 0 or d[stack.pop()] != ele:
+#             return False
+#     return len(stack) == 0
+# print(validParenthese("[(]"))
+
 
