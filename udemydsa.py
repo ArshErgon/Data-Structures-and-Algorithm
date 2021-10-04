@@ -3694,3 +3694,68 @@
 # print(validParenthese("[(]"))
 
 
+# Remove Exclamation Marks
+
+# def remove_exclamation_marks(string):
+#     s= str()
+#     for ele in string:
+#         if ele == '!':
+#             continue
+#         s+= ele
+#     return s
+
+# print(remove_exclamation_marks('arsh!'))
+
+
+# Sort and Star CodeWars
+
+# def sort_star(string):
+#     stringArray = string
+#     d = dict()
+#     stringArrayLen = len(stringArray)
+#     for num in range(stringArrayLen):
+#         d[ord(stringArray[num][0])] = stringArray[num]
+#         print(sorted(list(d.keys()))[0])
+#     return "***".join(d[sorted(list(d.keys()))[0]])
+# print(sort_star(["turns", "out", "random", "test", "cases", "are", "easier", "than", "writing", "out", "basic", "ones"]))
+
+
+
+# Maximum SubArray Sum CodeWars
+
+# def max_sequence(sequence):
+#     max_ = 0
+#     mid = len(sequence) // 2
+#     for x in range(len(sequence)):
+#         max_ = max(max_, sum(sequence[x:mid]))
+#         print(sequence[x:mid])
+#         mid+=1
+#     return max_
+
+#     return 0
+
+# print(max_sequence([1,2,3,4,5,6,7,8]))
+
+
+# Find the Missing Number Codewars
+
+# def missing_num(num_seq):
+#     myNum = sum(list(range(num_seq[-1]+1)))
+#     leng = len(num_seq)
+#     num_seq_sum = (leng+1)*(leng+2) // 2
+#     return num_seq_sum , myNum
+
+# print(missing_num([1,2,4, 5, 6]))
+
+
+# Happy Number LeetCode
+
+def happyNumber(number):
+    s = int()
+    num = str(number)
+    for key, value in enumerate(num):
+        s+=pow(int(num[key]), 2)
+        print(s)
+
+print(happyNumber(19))
+
