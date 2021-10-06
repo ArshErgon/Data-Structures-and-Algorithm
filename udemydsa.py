@@ -3748,14 +3748,215 @@
 # print(missing_num([1,2,4, 5, 6]))
 
 
-# Happy Number LeetCode
+# Happy Number LeetCode Not Solve at now
 
-def happyNumber(number):
-    s = int()
-    num = str(number)
-    for key, value in enumerate(num):
-        s+=pow(int(num[key]), 2)
-        print(s)
+# def happyNumber(number):
+#     s = int()
+#     num = str(number)
+#     for key, value in enumerate(num):
+#         s+=pow(int(num[key]), 2)
+#         print(s)
 
-print(happyNumber(19))
+# print(happyNumber(19))
+
+
+
+# Is unique: determine if a string has unique characters
+
+# def uniqueString(string):
+#     dict_checker = dict()
+#     for ele in string.lower():
+#         if ele in dict_checker:
+#             return False
+#         else:
+#             dict_checker[ele] = 1
+#     return True
+# print(uniqueString("Arsh"))
+
+
+
+# URLify: write an Algorithm which replace " " with %20
+
+# def urlify(string):
+#     return string.replace(" ", "%20")
+
+# print(urlify("Mr John Smith"))
+
+
+# One away
+# pale --> pal -- True
+# 
+
+# def oneAway(str1, str2):
+#     Flag = True
+#     if str1 == str2:
+#         return True
+#     if len(str1) == len(str2):
+#         return False
+#     ans = sum(map(ord, str1)) - sum(map(ord, str2))
+#     if chr(ans) in str1:
+#         return Flag
+#     elif ans - sum(map(ord, str1)) == sum(map(ord, str2)):
+#         return Flag
+#     return False
+
+# print(oneAway("pales", 'pal'))
+
+
+# Stack Implementation by Node class
+
+
+# class Node:
+#     def __init__(self, data):
+#         self.data = data
+#         self.next = None
+
+
+# class Stack:
+#     def __init__(self):
+#         self.top = None
+#         self.size = 0
+
+#     def push(self, value):
+#         newNode = Node(value)
+#         if self.top:
+#             newNode.next = self.top
+#             self.top = newNode
+#         else:
+#             self.top = newNode
+#         self.size += 1
+
+#     def pop(self):
+#         if self.top:
+#             data = self.top.data
+#             self.size-=1
+#             if self.top.next:
+#                 self.top = self.top.next
+#             else:
+#                 self.top = None
+#             return data
+#         else:
+#             return None
+
+
+#     def peek(self):
+#         if self.top:
+#             return self.top.data
+#         return None
+
+
+
+#     def display(self):
+#         s = str()
+#         current = self.top
+#         while current:
+#             s+= str(current.data)+'-->'
+#             current =  current.next
+#         return s
+
+
+# obj = Stack()
+# for x in range(10):
+#     obj.push(x)
+# print(obj.display())
+# print(obj.pop())
+# print(obj.display())
+# print(obj.peek())
+
+
+
+
+# Squares of a sorted Array LeetCode
+
+# import collections
+# def sortedSquares(nums):
+#     # l = set()
+#     # mid = (len(nums) - 1) // 2
+#     # print(nums[mid:])
+#     # for ele in nums:
+#     #     l.add(ele**2)
+#     # return sorted(l)
+#     answer = collections.deque()
+#     l, r = 0, len(nums)-1
+#     while l <= r:
+#         left, right = abs(nums[l]), abs(nums[r])
+#         if left > right:
+#             answer.appendleft(pow(left,2))
+#             print(left, l, 'if')
+#             l+=1
+#         else:
+#             answer.appendleft(right*right)
+#             print(right, r, 'else')
+#             r-=1
+        
+#     return list(answer)
+
+
+# print(sortedSquares([-4,-1, 0, 3, 10]))
+
+
+# Count the digits CodeWars
+
+
+# def countDigits(num, digit):
+#     string = str()
+#     for ele in range(num+1):
+#         # if '1' in str(pow(ele, 2)):
+#         string+=str(pow(ele, 2))
+#     return string.count(str(digit))
+
+
+# print(countDigits(11011, 2))
+
+
+# Find the Stray Number in an Array CodeWars
+
+# def stray_number(array):
+#     dict_item = dict()
+#     s = 0
+#     for ele in array:
+#         if ele in dict_item:
+#             dict_item.pop(ele)
+#         else:
+#             dict_item[ele] = ele
+
+#     return list(dict_item.keys())[0]
+#     # return array[0]
+
+# print(stray_number([17, 17, 3, 17, 17, 17, 17]))
+
+
+
+# Will you make it? CodeWars
+
+# def car_to_refill(refill_des ,fuel_left, mpg):
+#     return True if fuel_left*mpg >= refill_des else False
+
+
+# print(car_to_refill(100, 50, 1))
+
+
+# Even or Odd- Which is greater Even or Odd Codewars
+
+# def even_or_odd(arr):
+#     odd_list = list()
+#     even_list = list()
+#     for ele in arr:
+#         if int(ele) % 2 == 0:
+#             even_list.append(int(ele))
+#         else:
+#             odd_list.append(int(ele))
+
+#     even_list = sum(even_list)
+#     odd_list = sum(odd_list)
+
+#     if even_list > odd_list:
+#         return "Even is greater than Odd"
+#     elif even_list < odd_list:
+#         return "Odd is greater than Even"
+#     else:
+#         return "Even and Odd are the same"
+
+# print(even_or_odd('12'))
+
 
