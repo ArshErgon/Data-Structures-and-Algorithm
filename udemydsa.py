@@ -3960,3 +3960,77 @@
 # print(even_or_odd('12'))
 
 
+# Trees
+# class Node:
+#     def __init__(self, data):
+#         self.left = None
+#         self.right = None
+#         self.data = data
+#         self.l = list()
+
+    
+#     def preorder(self, node):
+#         if node:
+#             self.preorder(node.left)
+#             print(node.data)
+#             self.l.append(node.data)
+#             self.preorder(node.right)
+#         return self.l
+
+# class Tree:
+#     def __init__(self):
+
+    
+# root = Node(10)
+# root.left = Node(34)
+# root.right = Node(67)
+# root.left.left = Node(80)
+# root.left.right = Node(99)
+# # print(root.right.data)
+# print(root.preorder(root))
+
+
+
+# Delete and Earn LeetCode
+
+# def deleteAndearn(nums):
+
+#     if not nums : return 0
+#     house = [0] * (max(nums)+1)
+#     for num in nums:
+#         house[num] += num
+#     dp = [0]*(len(house)+1)
+#     for i in range(1,len(house)):
+#         dp[i] = max(house[i]+dp[i-2], dp[i-1])
+#         print(house[i], dp[i-2], dp[i-1])
+#     # return max(dp)
+
+
+# print(deleteAndearn([3,4,2]))
+
+# Remove the Duplicate from sorted array leetcode
+
+# def sortedArray(array):
+#     dict_item = dict()
+#     for x in array:
+#         if x not in dict_item:
+#             dict_item[x] = 1
+#         dict_item[x] = 1
+
+#     return list(dict_item.keys())
+
+
+# print(sortedArray([1,1,2]))
+
+
+# Valid Palindrome LeetCode
+
+def validPalindrome(string):
+    s = str()
+    for ele in string.lower():
+        if ord(ele) in range(97, 123):
+            s+=ele
+    return s == s[::-1] if len(s) != 1 else False
+
+
+print(validPalindrome("0P"))
