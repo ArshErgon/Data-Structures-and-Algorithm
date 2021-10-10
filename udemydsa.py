@@ -4025,12 +4025,246 @@
 
 # Valid Palindrome LeetCode
 
-def validPalindrome(string):
-    s = str()
-    for ele in string.lower():
-        if ord(ele) in range(97, 123):
-            s+=ele
-    return s == s[::-1] if len(s) != 1 else False
+# def validPalindrome(string):
+#     s = str()
+#     if not string.isalpha():
+#         return False
+#     for ele in string.lower():
+#         if ord(ele) in range(97, 123):
+#             s+=ele
+#     return s == s[::-1], 'aa'
 
 
-print(validPalindrome("0P"))
+# print(validPalindrome("arsh11"))
+
+
+# Count and Say leetcode
+
+# def countAndSay(string):
+#     dict_item = dict()
+#     s = str()
+#     for ele in string:
+#         if ele in dict_item:
+#             dict_item[ele] += 1
+#         else:
+#             dict_item[ele] = 1
+    
+#     for x in dict_item:
+#         s+= str(dict_item[x])+x
+
+#     return s
+
+# print(countAndSay("3322251"))
+
+
+# Missing Number leetcode
+
+# def missingNumber(number):
+#     set1 = set(range(sorted(number)[0], len(number)+1))
+#     return set1 - set(number)
+
+# print(missingNumber([0,3,1]))
+
+
+
+# Two Pointer approach for reversing integers and strings
+
+# import time
+
+# def reverseInt(integer):
+#     start = time.time()
+#     head = 0
+#     tail = len(integer) - 1
+#     while head < tail:
+#         integer[tail], integer[head] = integer[head], integer[tail]
+#         print(integer[head], integer[tail])
+#         head+=1
+#         tail -= 1
+#     return integer, start-time.time()
+
+# print(reverseInt(["h","e","l","l","o"]))
+# # print(reverseInt([1,2,3,4,5]))
+
+
+
+# First Non-repeating characters in a string LeetCode 
+
+# def nonRepeatingChar(string):
+#     for key, value in enumerate(string):
+#         # print(string[:key])
+#         if value not in string[:key]:
+#             return key
+#     return -1
+
+# print(nonRepeatingChar(""))
+
+
+
+# Valid Anagram LeetCode
+
+# def anagram(s, t):
+#     # return True if sorted(t) == sorted(s) else False
+#     # return sum(map(ord, s)) == sum(map(ord, t))
+#     s = set(s)
+#     for ele in t:
+#         if ele in s:
+#             s.remove(ele)
+#     return len(s) == 0
+
+# print(anagram("cat", "rat"))
+
+
+# Only duplicates CodeWars
+
+# def only_duplicates(string):
+#     sets = unique, duplicate = set(), set()
+#     for chars in string:
+#         sets[chars in unique].add(chars)
+#     return "".join(c for c in string if c in duplicate)
+
+# print(only_duplicates("abccdefee"))
+
+# Find all duplicates in an Array  LeetCode
+
+# def findDuplicates(array):
+#     res = list()
+#     for i in range(len(array)):
+#         index = abs(array[i]) - 1
+#         if array[index] < 0:
+#             res.append(index+1)
+#         array[index] = -array[index]
+#     return res
+# print(findDuplicates(
+# [4,3,2,7,8,2,3,1]))
+
+
+# Find All disappeared numbers in an Array 
+
+# def disapperNumbers(array):
+#     res = list()
+#     for i in range(0, len(array)):
+#         index = abs(array[i])
+#         array[index-1] = -abs(array[index-1]) 
+
+#     for i in range(0, len(array)):
+#         if array[i] > 0:
+#             res.append(i+1)
+
+#     return res
+
+# print(disapperNumbers([4,3,2,7,8,2,3,1]))
+
+  
+# Two Sum II LeetCode
+
+# def TwoSumII(numbers, target):
+#     seen = dict()
+#     for key, value in enumerate(numbers):
+#         if target-value in seen:
+#             return seen[target-value], key+1
+#         seen[value] = key+1
+
+
+# print(TwoSumII([2, 7, 11, 15], 9))
+
+
+
+# Rotating an Array  LeetCode
+
+
+
+# # Rotate a linked list 
+
+# class Node:
+#     def __init__(self, val, next = None):
+#         self.val = val
+#         self.next = next
+
+
+
+# class LinkedList:
+#     def __init__(self):
+#         self.head = None
+
+#     def push(self, data):
+#         newNode = Node(data, self.head)
+#         self.head = newNode
+
+#     def display(self):
+#         current = self.head
+#         s = str()
+#         while current:
+#             s+= str(current.val)+'-->'
+#             current = current.next
+#         return s
+
+#     def reverse(self):
+#         current = self.head
+#         prev = None
+#         while current:
+#             next = current.next
+#             current.next = prev
+#             prev = current
+#             current = next
+#         self.head = prev
+
+
+# obj = LinkedList()
+# for x in range(11):
+#     obj.push(x)
+# print(obj.display())
+# print(obj.reverse())
+# print(obj.display())
+
+
+# Fizz Buzz LeetCode
+
+# class FizzBuzz:
+#     def solution(self, value):
+#         l = list()
+#         for x in range(1, value+1):
+#             if x % 3 == 0 and x % 5 ==0:
+#                 x = ("FizzBuzz")
+#             elif x % 3 == 0:
+#                 x = ("Fizz")
+#             elif x % 5 == 0:
+#                 x = ("Buzz")
+#             l.append(f"{x}")
+        
+#         return l
+
+
+# obj = FizzBuzz()
+# print(obj.solution(15))
+
+
+
+# Is a number is multiple of 3 ? leetCode
+
+# import math
+
+# class MultipesOfThree:
+#     def solution(self, num):
+#         if num > 0:
+#             return (math.log10(num) / math.log10(3)) % 1 == 0
+#         return False
+        
+
+
+# sol = MultipesOfThree()
+# print(sol.solution(-3))
+
+
+
+
+# Prime numbers count them LeetCode
+
+class PrimeNumber:
+    def solution(self, number):
+        for x in range(2, number):
+            if number % x == 0:
+                print(number, x)
+
+
+sol = PrimeNumber()
+print(sol.solution(10))
