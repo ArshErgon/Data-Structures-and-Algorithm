@@ -4259,12 +4259,152 @@
 
 # Prime numbers count them LeetCode
 
-class PrimeNumber:
-    def solution(self, number):
-        for x in range(2, number):
-            if number % x == 0:
-                print(number, x)
+# class PrimeNumber:
+#     def solution(self, number):
+#         for x in range(2, number):
+#             if number % x == 0:
+#                 print(number, x)
 
 
-sol = PrimeNumber()
-print(sol.solution(10))
+# sol = PrimeNumber()
+# print(sol.solution(10))
+
+
+
+# Move Zeros leetcode
+
+# class MoveZero:
+#     def solution(self, array):
+#         # count = 0
+#         # for ele in array:
+#         #     if ele == 0:
+#         #         array.remove(ele)
+#         #         count+=1
+
+#         # for i in range(count):
+#         #     array.append(0)
+
+#         # return array
+#         r = 0
+#         l = len(array)
+#         while r < l:
+#             if array[r] == 0:
+#                 array.append(array.pop(r))
+#                 l-=1
+#             else:
+#                 r+=1
+#         return array
+
+# sol = MoveZero()
+# print(sol.solution([0,1,0, 3, 12]))
+
+
+
+
+# Boats to save People leetCode
+
+# class SavePeopleByBoat:
+#     def solution(self, people, limit ):
+#         people.sort()
+
+#         left = 0
+#         right = len(people)-1
+
+#         boats_number = 0
+
+#         while(left<=right):
+#             if(left==right):
+#                 boats_number+=1
+#                 break
+#             if(people[left]+people[right]<=limit):
+#                 left+=1
+#             right-=1
+#             boats_number+=1
+#         return boats_number
+
+# sol = SavePeopleByBoat()
+# print(sol.solution([3,2,2,1], 3))
+
+
+
+# Valid Mountain Array LeetCode
+
+# class ValidMountainArray:
+#     def solution(self, array):
+#         i = 1
+#         while i < len(array) and array[i] > array[i-1]:  # [0, 2, 3,....]    i > array[i-1] = 2 > 1-1 = 0, 2 > 0 
+#             i+=1
+        
+#         if i == 1 and i == len(array):
+#             return False
+
+#         while i < len(array) and array[i-1] > array[i]:
+#             i += 1
+
+#         return i == len(array), i, len(array)
+
+# sol = ValidMountainArray()
+
+# print(sol.solution([0,3,2,1]))
+
+
+
+# Container with the most water LeetCode
+
+# class ContainerWithMostWater:
+#     def solution(self, array):
+#         l = 0
+#         r = len(array) - 1
+#         maxArea = 0
+#         while l < r:
+#             maxArea = max(maxArea, min(array[l], array[r])*(r-l))
+
+#             if array[l] < array[r]:
+#                 l+=1
+#             else:
+#                 r-=1 
+#         return maxArea
+
+
+# sol = ContainerWithMostWater()
+# print(sol.solution([1,8,6,2,5,4,8,3,7]))
+
+
+
+# Linked List fully II  Udemy
+
+
+class Node:
+    def __init__(self, value=None):
+        self.value = value
+        self.next =  None
+
+
+class SinglyLinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def pushEle(self, data):
+        newNode = Node(data)
+        if self.head is None:
+            self.head = newNode
+
+        self.head.next = newNode
+        self.tail = self.head.next
+
+    def display(self):
+        current = self.head
+        s = str()
+        while current:
+            s+=str(current.value)+'--->'
+            current = current.next
+
+        return s, self.tail.value
+
+
+link = SinglyLinkedList()
+for x in range(10):
+    link.pushEle(x)
+
+print(link.display())
