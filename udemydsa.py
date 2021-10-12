@@ -4370,41 +4370,132 @@
 # print(sol.solution([1,8,6,2,5,4,8,3,7]))
 
 
-
-# Linked List fully II  Udemy
-
-
-class Node:
-    def __init__(self, value=None):
-        self.value = value
-        self.next =  None
+# print First Unique Character in a string  LeetCode
 
 
-class SinglyLinkedList:
-    def __init__(self):
-        self.head = None
-        self.tail = None
+# class FirstUniqueChar:
+#     def solution(self, string):
+#         d = dict()
+#         for ele in string:
+#             if ele in d:
+#                 d[ele] += 1
+#             else:
+#                 d[ele] = 1
 
-    def pushEle(self, data):
-        newNode = Node(data)
-        if self.head is None:
-            self.head = newNode
-
-        self.head.next = newNode
-        self.tail = self.head.next
-
-    def display(self):
-        current = self.head
-        s = str()
-        while current:
-            s+=str(current.value)+'--->'
-            current = current.next
-
-        return s, self.tail.value
+#         for index in range(len(string)):
+#             char = string[index]
+#             if d[char] == 1:
+#                 return index, char
+# sol = FirstUniqueChar()
+# print(sol.solution('loveleetcode'))
 
 
-link = SinglyLinkedList()
-for x in range(10):
-    link.pushEle(x)
 
-print(link.display())
+
+# Shuffle an Array LeetCode
+
+# import random
+
+# class ShuffleArray:
+#     def __init__(self, number):
+#         self.number = number
+
+#     def shuffle(self):
+#         ans = self.number[:]
+#         for ele in range(len(ans)-1, 0, -1):
+#             j = random.randrange(0, len(ans)-1)
+#             self.number[ele], self.number[j] = self.number[j], self.number[ele]
+#         return ans
+
+#     def reset(self):
+#         return self.number
+
+# sol = ShuffleArray([1,2,3])
+
+# print(sol.shuffle())
+# print(sol.reset())
+
+
+# Min Stack LeetCode
+
+# class MinStack:
+#     def __init__(self):
+#         self.stack = []
+
+    
+#     def push(self, value):
+#         self.stack.append(value)
+#         # self.stack.reverse()
+
+#     def top(self):
+#         return self.stack[-1]
+
+#     def pop(self):
+#         return self.stack.pop(-1)
+
+#     def show(self):
+#         return self.stack
+
+#     def getMin(self):
+#         return min(self.stack)
+    
+# sol = MinStack()
+
+# sol.push(-2)
+
+# sol.push(0)
+
+# sol.push(-3)
+
+
+# print(sol.show())
+
+# print(sol.getMin(), 'min')
+
+# print(sol.pop(), 'pop')
+
+# print(sol.top(), 'top')
+
+
+# print(sol.show())
+
+
+
+
+# Multiply String Integers without using "int()"
+
+# class MultiplyString:
+#     def solution(self, number1, number2):
+#         num1 =  num2 = 0
+#         for i in range(len(number1)):
+#             num1 = num1 * 10 + ord(number1[i]) - ord('0')
+
+#         for i in range(len(number2)):
+#             num2 = num2 * 10 + ord(number2[i]) - ord('0')
+#         return str(num1 * num2)
+
+    
+# sol = MultiplyString()
+
+# print(sol.solution('123', '456'))
+
+
+# Do addition in string Integers without using "int()"
+
+
+# class StringAddition:
+#     def solution(self, num1, num2):
+#         res1, res2 = 0, 0
+
+#         for i in range(len(num1)):
+#             res1 = res1 * 10 + ord(num1[i]) - ord('0')
+
+#         for i in range(len(num2)):
+#             res2 = res2 * 10 + ord(num2[i]) - ord('0')
+
+#         return str(res1+res2)
+
+
+# sol = StringAddition()
+
+# print(sol.solution('12', '10'))
