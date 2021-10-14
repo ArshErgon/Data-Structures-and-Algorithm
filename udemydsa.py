@@ -4499,3 +4499,142 @@
 # sol = StringAddition()
 
 # print(sol.solution('12', '10'))
+
+
+
+# Remove duplicates from sorted array leetcode
+
+# class RmDuplicate:
+#     def solution(self, array):
+#         head = 0
+#         tail = 1
+
+#         while head < len(array)-1:
+#             if array[head] == array[tail]:
+#                 array.pop(head)
+#             if array[tail-1] == array[tail]:
+#                 array.pop(tail)
+#             head+=1
+#             tail+=1
+#         return array
+# sol = RmDuplicate()
+
+# print(sol.solution([0,0,1,1,1,2,2,3,3,4, 5, 5, 9, 9, 10, 10, 11, 11, 11]))
+
+
+# Factorial Program Recursive and Alternate 
+
+# class AlterFactorial:
+#     def solution(self, number):
+#         sum_ = 1
+#         while number != 0:
+#             sum_ *= number
+#             number-=1
+
+#         return sum_
+
+
+# sol = AlterFactorial()
+
+# print(sol.solution(5))
+
+
+# class RecursiveFactorial:
+#     def solution(self, number):
+#         if number == 1:
+#             return number
+
+#         return number * self.solution(number-1)
+
+
+# sol = RecursiveFactorial()
+
+# print(sol.solution(5))
+
+
+
+# Fibonacci Series with recusion
+
+# class FiboRecursion:
+#     def solution(self, number):
+#         if number < 2:
+#             return number
+#         return self.solution(number-1)+ self.solution(number-2)
+
+# sol = FiboRecursion()
+
+# print(sol.solution(4))
+
+
+
+
+# Tress 
+
+
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.right = None
+        self.left = None
+
+
+class BinarySearchTree:
+    def __init__(self):
+        self.root = None
+
+
+    def insert(self, value):
+        newNode = Node(value)
+        if not self.root:
+            self.root = newNode 
+        else:
+            currentNode = self.root
+            while True:
+                if value > currentNode.value:
+                    if not currentNode.right:
+                        currentNode.right = newNode
+                        return self
+                    else:
+                        currentNode = currentNode.right
+                else:
+                    if not currentNode.left:
+                        currentNode.left = newNode
+                        return self
+                    else:
+                        currentNode = currentNode.left
+
+
+    def lookUp(self, value):
+        currentNode = self.root
+        while currentNode:
+            if value > currentNode.value:
+                currentNode = currentNode.right
+            elif value < currentNode.value:
+                currentNode = currentNode.left
+            elif currentNode.value == value:
+                return currentNode.value, True            
+
+
+
+    def display(self):
+        current = self.root
+        c = 0
+        while current:
+            current.right
+            print(current.right.right.value)
+            # current.left
+            if c == 10:
+                break
+            c+=1
+
+
+obj = BinarySearchTree()
+
+for x in range(20):
+    obj.insert(x)
+print(obj.lookUp(12))
+
+
+print(obj.display())
+
+    
