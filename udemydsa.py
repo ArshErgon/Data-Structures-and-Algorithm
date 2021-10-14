@@ -4571,70 +4571,161 @@
 # Tress 
 
 
-class Node:
-    def __init__(self, value):
-        self.value = value
-        self.right = None
-        self.left = None
+# class Node:
+#     def __init__(self, value):
+#         self.value = value
+#         self.right = None
+#         self.left = None
 
 
-class BinarySearchTree:
-    def __init__(self):
-        self.root = None
+# class BinarySearchTree:
+#     def __init__(self):
+#         self.root = None
 
 
-    def insert(self, value):
-        newNode = Node(value)
-        if not self.root:
-            self.root = newNode 
-        else:
-            currentNode = self.root
-            while True:
-                if value > currentNode.value:
-                    if not currentNode.right:
-                        currentNode.right = newNode
-                        return self
-                    else:
-                        currentNode = currentNode.right
-                else:
-                    if not currentNode.left:
-                        currentNode.left = newNode
-                        return self
-                    else:
-                        currentNode = currentNode.left
+#     def insert(self, value):
+#         newNode = Node(value)
+#         if not self.root:
+#             self.root = newNode 
+#         else:
+#             currentNode = self.root
+#             while True:
+#                 if value > currentNode.value:
+#                     if not currentNode.right:
+#                         currentNode.right = newNode
+#                         return self
+#                     else:
+#                         currentNode = currentNode.right
+#                 else:
+#                     if not currentNode.left:
+#                         currentNode.left = newNode
+#                         return self
+#                     else:
+#                         currentNode = currentNode.left
 
 
-    def lookUp(self, value):
-        currentNode = self.root
-        while currentNode:
-            if value > currentNode.value:
-                currentNode = currentNode.right
-            elif value < currentNode.value:
-                currentNode = currentNode.left
-            elif currentNode.value == value:
-                return currentNode.value, True            
+#     def lookUp(self, value):
+#         currentNode = self.root
+#         while currentNode:
+#             if value > currentNode.value:
+#                 currentNode = currentNode.right
+#             elif value < currentNode.value:
+#                 currentNode = currentNode.left
+#             elif currentNode.value == value:
+#                 return currentNode.value         
 
 
 
-    def display(self):
-        current = self.root
-        c = 0
-        while current:
-            current.right
-            print(current.right.right.value)
-            # current.left
-            if c == 10:
-                break
-            c+=1
+#     def display(self):
+#         current = self.root
+#         c = 0
+#         while current:
+#             current.right
+#             print(current.right.right.value)
+#             # current.left
+#             if c == 10:
+#                 break
+#             c+=1
 
 
-obj = BinarySearchTree()
-
-for x in range(20):
-    obj.insert(x)
-print(obj.lookUp(12))
-
-
-print(obj.display())
+#     def maximumNode(self):
+#         currentNode = self.root
+#         maxNode = currentNode.value
+#         while currentNode:
+#             maxNode = max(maxNode, currentNode.value)
+#             currentNode = currentNode.right
+#         return maxNode
 
     
+#     def minimumNode(self):
+#         currentNode = self.root
+#         minNode = currentNode.value
+#         while currentNode:
+#             minNode = min(minNode, currentNode.value)
+#             currentNode = currentNode.left
+        
+#         return minNode
+
+    
+#     def deletionNode(self, data):
+#         currentNode = self.root
+#         parentNode = None
+#         if not currentNode:
+#             return False
+
+#         # while currentNode:
+#         #     if currentNode.value == data:
+#         #         if currentNode.right:
+#         #             print('ya')
+#         #             return
+#         #     elif currentNode.value < data:
+#         #         parentNode = currentNode
+#         #         currentNode = currentNode.right
+#         #     elif currentNode.value > data:
+#         #         parentNode = currentNode
+#         #         currentNode = currentNode.left
+
+
+
+#         # while currentNode:
+#         #     if currentNode.value < data:
+#         #         parentNode = currentNode
+#         #         currentNode = currentNode.right
+#         #     elif currentNode.value > data:
+#         #         parentNode = currentNode
+#         #         currentNode = currentNode.left
+
+#         #     else:
+#         #         if (not currentNode.right and not currentNode.left):
+#         #             if currentNode.value > parentNode.value:
+#         #                 parentNode.right = None
+#         #             else:
+#         #                 parentNode.left = None
+                
+#         #             return self
+                
+#         #         elif not currentNode.right:
+#         #             if parentNode is None:
+#         #                 self.root = currentNode.left
+#         #             else:
+
+
+
+
+#     # def display(self, root):
+#     #     root = self.root
+#     #     if root is None:
+#     #         return None
+        
+#     #     self.display(root.left)
+#     #     print(root.value, end=' ')
+#     #     self.display(root.right)
+
+
+
+
+# obj = BinarySearchTree()
+
+# obj.insert(10)
+# obj.insert(12)
+# obj.insert(9)
+# obj.insert(6)
+# obj.insert(45)
+# obj.insert(2)
+# obj.insert(56)
+# obj.insert(90)
+# obj.insert(0)
+
+
+
+# print(obj.lookUp(12))
+
+# # print(obj.display())
+
+# print(obj.maximumNode())
+
+# print(obj.minimumNode())
+
+# print(obj.deletionNode(12))
+
+
