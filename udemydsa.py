@@ -4729,3 +4729,30 @@
 # print(obj.deletionNode(12))
 
 
+
+# Merge sort O(n^2)
+
+# class MergeSort:
+#     def __init__(self, data):
+#         self.data = data
+
+#     def sorting(self):
+#         for i in range(len(self.data)-1):
+#             for x in range(len(self.data)-1):
+#                 if abs(self.data[x]) > abs(self.data[x+1]):
+#                     self.data[x], self.data[x+1] = self.data[x+1], self.data[x]
+
+#         return self.data
+
+# obj = MergeSort(list(range(-50, -0)))
+# print(obj.sorting())
+
+
+
+# Selection Sorting O(n^2)
+
+class SelectionSort:
+    def __init__(self, array):
+        self.array = array
+
+    def
