@@ -5315,3 +5315,98 @@
 # obj = Subsequence('abc', 'ammbjjc')
 
 # print(obj.solution())
+
+
+
+# Linear Queue
+
+# class LinearQueue(object):
+#     def __init__(self):
+#         self.queue = list()
+
+
+#     def enqueue(self, data):
+#         if data not in self.queue:
+#             self.queue.insert(0, data)
+#             return True
+#         else:
+#             return False
+
+#     def dequeue(self):
+#         if len(self.queue) > 0:
+#             self.queue.pop()
+#             return True
+#         else:
+#             return False
+
+#     def is_empty(self):
+#         return len(self.queue) == 0
+
+#     def size(self):
+#         return len(self.queue)
+
+#     def show(self):
+#         return self.queue
+
+
+# obj = LinearQueue()
+
+# for x in range(1,10):
+#     obj.enqueue(x)
+
+# print(obj.dequeue())
+# print(obj.is_empty())
+# print(obj.size())
+# print(obj.show())
+
+
+
+
+# Circular Queue
+
+class CircularQueue:
+    def __init__(self, maxSize):
+        self.cirQueue = list()
+        self.maxSize = maxSize
+        self.head = 0
+        self.tail = 0
+
+    def enqueue(self, data):    
+        if self.size() == self.maxSize-1:
+            return "Queue is Full"
+        self.cirQueue.append(data)
+
+        self.tail = (self.tail+1) % self.maxSize
+        return True
+
+    
+    def dequeue(self):
+        if self.size == 0:
+            return "Empty Queue"
+        else:
+            data = self.cirQueue[self.head]
+            self.head = (self.head + 1) % self.maxSize
+
+            return data
+
+        
+    def show(self):
+        return self.cirQueue
+
+    def size(self):
+        if self.tail >= self.head:
+            qSize = self.tail - self.head
+        else:
+            qSize = self.maxSize - (self.head-self.tail)
+        return qSize
+
+
+obj = CircularQueue(4)
+
+for x in range(1, 11):
+
+    print(obj.enqueue(x))    
+
+print(obj.size())
+print(obj.dequeue())
+print(obj.show())
