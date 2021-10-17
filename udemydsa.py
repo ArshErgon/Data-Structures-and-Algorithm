@@ -5052,22 +5052,169 @@
 
 # Minimum Size Subarray Sum LeetCode
 
-class MinimumSizeSubarray:
-    def __init__(self, array, target):
-        self.array = array
-        self.target = target
+# class MinimumSizeSubarray:
+#     def __init__(self, array, target):
+#         self.array = array
+#         self.target = target
 
-    def solution(self):
-        i = 0
-        res = len(self.array)+1
-        for j in range(len(self.array)):
-            self.target -= self.array[j]
-            while self.target <= 0:
-                res = min(res, j-i+1)
-                self.target += self.array[i]
-                i+=1
-        return res % (len(self.array)+1)
+#     def solution(self):
+#         i = 0
+#         res = len(self.array)+1
+#         for j in range(len(self.array)):
+#             self.target -= self.array[j]
+#             while self.target <= 0:
+#                 res = min(res, j-i+1)
+#                 self.target += self.array[i]
+#                 i+=1
+#         return res % (len(self.array)+1)
 
-obj = MinimumSizeSubarray([2,3,1,2,4,3], 7)
+# obj = MinimumSizeSubarray([2,3,1,2,4,3], 7)
 
-print(obj.solution())
+# print(obj.solution())
+
+
+# Majority element LeetCode
+
+# class MajorityElement:
+#     def __init__(self, array):
+#         self.array = array
+    
+#     def solution(self):
+#         dict_item = dict()
+#         for value in self.array:
+#             if value in dict_item:
+#                 dict_item[value] += 1
+#             else:
+#                 dict_item[value] = 1
+        
+
+#         for key in dict_item:
+#             if dict_item[key] > len(self.array)//2:
+#                 return key
+
+# obj = MajorityElement([3,2,3])
+# print(obj.solution())
+
+
+# Find numbers with even number of digits
+
+# class NumbersWithEvenDigit:
+#     def __init__(self, numArray):
+#         self.numsArray = numArray
+
+    
+#     def solution(self):
+#         count = 0
+#         for value in self.numsArray:
+#             if len(str(value)) % 2 == 0:
+#                 count += 1
+
+#         return count
+
+
+# obj = NumbersWithEvenDigit([12, 345, 2, 6, 7896])
+# print(obj.solution())
+
+
+
+# Squares of Sorted array
+
+
+# class SortedArraySqrt:
+#     def __init__(self, numsArr):
+#         self.numsArr = numsArr
+
+#     def solution(self):
+#         print(self.numsArr)
+#         for i in range(len(self.numsArr)):
+#             self.numsArr[i] = pow(self.numsArr[i], 2)
+
+#         return sorted(self.numsArr)
+
+
+# obj = SortedArraySqrt([-4, -1, 0, 3, 10])
+
+# print(obj.solution())
+
+
+# Remove duplicates from sorted array leetcode
+
+# class RemoveDuplicates:
+#     def __init__(self, sortedArr):
+#         self.array = sortedArr
+
+#     def solution(self):
+#         self.array[:] = sorted(set(self.array))
+
+#         return len(self.array)
+
+
+# obj = RemoveDuplicates([1,1,2])
+
+# print(obj.solution())
+
+
+# Check if N and it's Double Exist
+
+# class DoubleExist:
+#     def __init__(self, numArr):
+#         self.numArr = numArr
+
+#     def solution(self):
+#         if self.numArr.count(0) > 1:
+#             return True
+#         seen = set(self.numArr) - {0}
+
+#         for i in self.numArr:
+#             if i * 2 in seen or i % 2 == 0 in seen and i // 2 in seen:
+#                 return True
+#         return False
+  
+# obj = DoubleExist([3,1,7,11])
+
+# print(obj.solution())
+
+
+# Replace elements with greatest element on the right side 
+
+# class GreatestElement:
+#     def __init__(self, array):
+#         self.array = array
+
+#     def solution(self):
+#         maxNum = -1
+
+#         for i in range(len(self.array)-1, -1, -1):
+#             self.array[i], maxNum = maxNum, max(maxNum, self.array[i])
+
+#         return self.array
+
+
+# obj = GreatestElement([17, 18, 5, 4, 6, 1])
+
+# print(obj.solution())
+
+
+
+
+# Height checker LeetCode
+
+
+# class HeightChecker:
+#     def __init__(self, htArr):
+#         self.htArr = htArr
+
+#     def solution(self):
+#         count = 0
+#         exceptedHt = sorted(self.htArr)
+
+#         for i in range(len(self.htArr)):
+#             if self.htArr[i] != exceptedHt[i]:
+#                 count += 1
+
+#         return count
+
+
+# obj = HeightChecker([1,1,4,2,1,3])
+
+# print(obj.solution())
