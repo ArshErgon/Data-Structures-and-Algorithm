@@ -4897,3 +4897,177 @@
 
 # obj = ReverseString("abcdefg", 2)
 # print(obj.reverse())
+
+
+
+
+# Find Pivot Index LeetCode
+
+# class PivotIndex:
+#     def __init__(self, array):
+#         self.array = array
+
+#     def solution(self):
+#         totalSum = 0
+#         for x in self.array:
+#             totalSum+=x
+#         print(totalSum)
+
+#         leftSum = 0
+#         for x in range(len(self.array)):
+#             if totalSum-leftSum-self.array[x] == leftSum:
+#                 return x
+#             leftSum+=self.array[x]
+
+#         return -1
+
+
+# obj = PivotIndex([1,7,3,6,5,6])
+# print(obj.solution())
+
+
+# largest number at least twice as others
+
+# class LargestNumber:
+#     def __init__(self, array):
+#         self.array = array
+
+#     def solution(self):
+#         maxNumIndex = self.array.index(max(self.array))
+#         for x in range(len(self.array)):
+#             if maxNumIndex != x and self.array[maxNumIndex] < 2*self.array[x]:
+#                 return -1
+#         return maxNumIndex
+
+
+
+
+# # obj = LargestNumber([1,2,3,4])
+# obj = LargestNumber([3, 6, 1, 0])
+
+# print(obj.solution())
+
+
+
+# Plus One LeetCode
+
+# class PlusOne:
+#     def __init__(self, array):
+#         self.array = array
+
+#     def solution(self):
+#         strInt = str()
+#         strInt = strInt.join(str(strNum) for strNum in self.array)
+#         return list(str(int(strInt)+1))
+
+# obj = PlusOne([1,2,3])
+
+# print(obj.solution())
+
+
+
+
+# 2D Array and 3D array
+
+# class twoDArray:
+
+#     def solution():
+#         l = list()
+#         for x in range(10):
+#             c = list()
+#             for i in range(10):
+#                 c.append(i)
+#             l.append(c)
+
+#         return l
+
+# obj = twoDArray
+# print(obj.solution())
+
+
+# Array Partition I-> LeetCode
+
+# class ArrayPartition:
+#     def __init__(self, array):
+#         self.array = array
+
+#     def solution(self):
+#         self.array = sorted(self.array)
+#         result = 0
+#         print(self.array)
+#         for i in range(0, len(self.array)-1, 2):
+#             # print(self.array[i], end='')
+#             result += self.array[i]
+#         return result
+
+# obj = ArrayPartition([6,2,6,5,1,2])
+# print(obj.solution())
+
+
+
+# Two pointer for array
+
+# class TwoPointer:
+#     def __init__(self, nums, value):
+#         self.nums = nums
+#         self.value = value
+
+#     def solution(self):
+#         k = 0
+#         for i in range(len(self.nums)):
+#             if self.nums[i] != self.value:
+#                 self.nums[k] = self.nums[i]
+#                 k+=1
+
+#         return k, self.nums
+
+        
+# sol = TwoPointer([1,2,4,6,7,9,0], 9)        
+# print(sol.solution())
+
+
+# Max Consective Ones LeetCode
+
+# class MaxConsectiveOne:
+#     def __init__(self, arrayNum):
+#         self.arrayNum = arrayNum
+
+#     def solution(self):
+#         current = 0
+#         maxRes = 0
+#         for i in range(len(self.arrayNum)):
+#             if self.arrayNum[i] != 0:
+#                 current+=1
+#                 maxRes = max(maxRes, current)
+#             else:
+#                 current = 0
+
+#         return maxRes
+
+
+# obj = MaxConsectiveOne([1,1,0,1,1,1])
+
+# print(obj.solution())
+
+
+# Minimum Size Subarray Sum LeetCode
+
+class MinimumSizeSubarray:
+    def __init__(self, array, target):
+        self.array = array
+        self.target = target
+
+    def solution(self):
+        i = 0
+        res = len(self.array)+1
+        for j in range(len(self.array)):
+            self.target -= self.array[j]
+            while self.target <= 0:
+                res = min(res, j-i+1)
+                self.target += self.array[i]
+                i+=1
+        return res % (len(self.array)+1)
+
+obj = MinimumSizeSubarray([2,3,1,2,4,3], 7)
+
+print(obj.solution())
