@@ -5218,3 +5218,100 @@
 # obj = HeightChecker([1,1,4,2,1,3])
 
 # print(obj.solution())
+
+
+
+# find if a number is strong or not CodeWars
+
+# class StrongNumbers:
+#     def __init__(self, number):
+#         self.num = number
+
+#     def fact(self, num):
+#         if num == 0:
+#             return 1
+#         return num * self.fact(num-1)
+
+#     def solution(self):
+#         res = 0
+#         for x in str(self.num):
+#             res += self.fact(int(x))
+#         print(res)
+#         return  "STRONG!!!!" if res == self.num else "Not Strong !!"
+
+
+# obj = StrongNumbers(40585)
+
+# print(obj.solution())
+
+
+# Check if number in a sentences are in increasing order LeetCode
+
+
+# class CheckingNumberInString:
+#     def __init__(self, stringWithNumber):
+#         self.stringInt = stringWithNumber
+
+#     def solution(self):
+#         res = -1
+
+#         for keyInt in self.stringInt.split():
+#             if keyInt.isnumeric():
+#                 if int(keyInt) > res:
+#                     res = int(keyInt)
+#                 else:
+#                     return False
+#         return True
+
+# obj = CheckingNumberInString("hello world 5 x 5")
+
+# print(obj.solution())
+
+
+# Power of Four LeetCode
+
+# from math import log10
+# class PowerOfFour:
+#     def __init__(self, number):
+#         self.num = number
+
+#     def solution(self):
+#         if self.num > 0:
+#             return (log10(self.num)/log10(4)) % 1 == 0
+#         return False
+
+# obj = PowerOfFour(3)
+# print(obj.solution())
+
+
+
+# Number of 1 Bits LeetCode
+
+# class NumberOfBits:
+#     def __init__(self, bits):
+#         self.bits = bits
+
+#     def solution(self):
+#         return str(self.bits).count('1')
+
+# obj = NumberOfBits('00000000000000000000000000001011')
+# print(obj.solution())
+
+
+# Is Subsequence LeetCode
+
+# class Subsequence:
+#     def __init__(self, s, t):
+#         self.s = s
+#         self.t = t
+    
+#     def solution(self):
+#         remainder_of_letter = iter(self.t)
+#         for i in self.s:
+#             if i not in remainder_of_letter:
+#                 return False
+#         return True
+
+# obj = Subsequence('abc', 'ammbjjc')
+
+# print(obj.solution())
