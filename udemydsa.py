@@ -5364,49 +5364,104 @@
 
 # Circular Queue
 
-class CircularQueue:
-    def __init__(self, maxSize):
-        self.cirQueue = list()
-        self.maxSize = maxSize
-        self.head = 0
-        self.tail = 0
+# class CircularQueue:
+#     def __init__(self, maxSize):
+#         self.cirQueue = list()
+#         self.maxSize = maxSize
+#         self.head = 0
+#         self.tail = 0
 
-    def enqueue(self, data):    
-        if self.size() == self.maxSize-1:
-            return "Queue is Full"
-        self.cirQueue.append(data)
+#     def enqueue(self, data):    
+#         if self.size() == self.maxSize-1:
+#             return "Queue is Full"
+#         self.cirQueue.append(data)
 
-        self.tail = (self.tail+1) % self.maxSize
-        return True
+#         self.tail = (self.tail+1) % self.maxSize
+#         return True
 
     
-    def dequeue(self):
-        if self.size == 0:
-            return "Empty Queue"
-        else:
-            data = self.cirQueue[self.head]
-            self.head = (self.head + 1) % self.maxSize
+#     def dequeue(self):
+#         if self.size == 0:
+#             return "Empty Queue"
+#         else:
+#             data = self.cirQueue[self.head]
+#             self.head = (self.head + 1) % self.maxSize
 
-            return data
+#             return data
 
         
-    def show(self):
-        return self.cirQueue
+#     def show(self):
+#         return self.cirQueue
 
-    def size(self):
-        if self.tail >= self.head:
-            qSize = self.tail - self.head
-        else:
-            qSize = self.maxSize - (self.head-self.tail)
-        return qSize
+#     def size(self):
+#         if self.tail >= self.head:
+#             qSize = self.tail - self.head
+#         else:
+#             qSize = self.maxSize - (self.head-self.tail)
+#         return qSize
 
 
-obj = CircularQueue(4)
+# obj = CircularQueue(4)
 
-for x in range(1, 11):
+# for x in range(1, 11):
 
-    print(obj.enqueue(x))    
+#     print(obj.enqueue(x))    
 
-print(obj.size())
-print(obj.dequeue())
-print(obj.show())
+# print(obj.size())
+# print(obj.dequeue())
+# print(obj.show())
+
+
+
+# Find the Smallest Greater than Target Value
+
+# class SmallestGreater:
+#     def __init__(self, strArr, target):
+#         self.strArr = strArr 
+#         self.target = target
+
+#     def solution(self):
+#         for letter in self.strArr:
+#             if letter > self.target:
+#                 return letter
+#         return self.target[0]
+
+
+# obj = SmallestGreater(["c","f","j"], 'c')
+
+# print(obj.solution())
+
+
+# Search In rotated array II-> LeetCode
+
+# class SearchInRotatedArray:
+#     def __init__(self, array, target):
+#         self.array  = array
+#         self.target = target
+
+#     def solution(self):
+#         # self.array[:] = sorted(set(self.array))
+#         if self.array.__len__() <= 5:
+#             return self.target in self.array
+#         l = 0
+#         r = len(self.array)
+
+#         while l < r:
+#             mid = (l+r) // 2
+#             print(self.array[mid])
+#             if self.array[mid] == self.target:
+#                 return True
+#             elif self.array[mid] < self.target:
+#                 l = mid + 1
+#             else:
+#                 r = mid - 1
+
+#         return False
+
+
+# obj = SearchInRotatedArray([4,5,6,7,0,1,2], 0)
+
+# print(obj.solution())
+
+
+
