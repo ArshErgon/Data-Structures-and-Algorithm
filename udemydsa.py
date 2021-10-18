@@ -5096,7 +5096,7 @@
 # print(obj.solution())
 
 
-# Find numbers with even number of digits
+# Find numbers with even number of digits LeetCode
 
 # class NumbersWithEvenDigit:
 #     def __init__(self, numArray):
@@ -5463,5 +5463,136 @@
 
 # print(obj.solution())
 
+
+
+# Trees BINARY SEARCH TREE
+
+# class Root:
+#     def __init__(self, data=None):
+#         self.data = data
+#         self.right = None
+#         self.left = None
+
+
+# class BinarySearchTree:
+#     def __init__(self):
+#         self.root = None
+
+ 
+#     def insert(self, value):
+#         newNode = Root(value)
+#         if not self.root:
+#             self.root = newNode 
+#         else:
+#             currentNode = self.root
+#             while True:
+#                 if value > currentNode.data:
+#                     if not currentNode.right:
+#                         currentNode.right = newNode
+#                         return self
+#                     else:
+#                         currentNode = currentNode.right
+#                 else:
+#                     if not currentNode.left:
+#                         currentNode.left = newNode
+#                         return self
+#                     else:
+#                         currentNode = currentNode.left
+
+#     def maxNode(self):
+#         currentNode = self.root
+#         maxNum = 0
+#         while currentNode:
+#             maxNum = max(maxNum, currentNode.data)
+#             currentNode = currentNode.right
+#         return maxNum
+
+
+#     def minNode(self):
+#         currentNode = self.root
+#         minNum = 0
+#         while currentNode:
+#             minNum = min(minNum, currentNode.data)
+#             currentNode = currentNode.left
+#         return minNum
+
+#     def indexOf(self, num):
+#         count = 0
+#         currentNode = self.root
+#         if num > currentNode.data:
+#             while currentNode:
+#                 if currentNode.data == num:
+#                     return count
+#                 currentNode = currentNode.right
+#                 count+=1
+#         elif num < currentNode.data:
+#             while currentNode:
+#                 if currentNode.data == num:
+#                     return count
+#                 currentNode = currentNode.left
+#                 count += 1
+#         else:
+#             return None
+
+#     def lookUp(self, num):
+#         currentNode = self.root
+#         if num > currentNode.data:
+#             while currentNode:
+#                 if currentNode.data == num:
+#                     return currentNode.data, self.indexOf(num)
+#                 currentNode = currentNode.right
+
+#         elif num < currentNode.data:
+#             while currentNode:
+#                 if currentNode.data == num:
+#                     return currentNode.data, self.indexOf(num)
+#                 currentNode = currentNode.left
+#         else:
+#             return "NOT FOUND!"
+
+
+#     def pre_order(self):
+#         print(self.root.data)
+
+#         if self.root.right:
+#             return self.root.right.pre_order()
+
+#         if self.root.left:
+#             return self.root.left.pre_order()
+
+
+#     def in_order(self):
+#         if self.root.right:
+#             return self.root.right.in_order()
+
+#         print(self.root.data)
+
+#         if self.root.left:
+#             return self.root.left.in_order()
+
+
+#     def post_order(self):
+#         if self.root.right:
+#             return self.root.right.post_order()
+        
+#         if self.root.left:
+#             return self.root.left.post_order()
+
+#         print(self.root.data)
+
+
+# obj = BinarySearchTree()
+
+# for x in range(1, 11):
+#     obj.insert(x)
+
+# for y in range(12, 21):
+#     obj.insert(y)
+
+
+# print(obj.maxNode())
+# print(obj.minNode())
+
+# print(obj.lookUp(14))
 
 
