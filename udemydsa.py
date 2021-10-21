@@ -5636,3 +5636,91 @@
 # print(obj.solution([5, 1, 22, 25, 6, -1, 8, 10], [1, 6, -1, 10]))
 
 
+# Sum of first and last digits codechef
+
+# T = int(input())
+
+# for _ in range(T):
+#     n = input()
+#     print(int(n[0]) + int(n[len(n)-1]))
+
+
+
+# Program to reverse an Integer Codechef
+
+# T = int(input())
+
+# for _ in range(T):
+#     n = input()
+#     n = list(n)
+#     right = 0
+#     left = len(n)-1
+#     while right < left:
+#         n[right], n[left] = n[left], n[right]
+#         right+=1
+#         left-=1
+#     print(int("".join(n)))
+
+
+
+
+# Missing Number leetCode
+
+# class MissingNumber:
+#     def solution(self, nums):
+#         n = len(nums)
+#         return n * ((n+1) // 2) - sum(nums)
+
+# obj = MissingNumber()
+
+# print(obj.solution([9,6,4,2,3,5,7,0,1]))
+
+
+# word to binary Codewars
+
+# class WordToBinary:
+#     def __init__(self, stringArr):
+#         self.stringArr = stringArr
+
+#     def solution(self):
+#         return [format(ord(binWord), 'b') for binWord in self.stringArr]
+
+
+# obj = WordToBinary('man')
+# print(obj.solution())
+
+
+
+# Special Series Sum GreeksForGreeks
+
+# class SpecialSeriesSum:
+#     def __init__(self, seriesNum):
+#         self.seriesNum = seriesNum
+
+#     def solution(self):
+#         s = 0
+#         for x in range(self.seriesNum+2):
+#             s += sum(list(range(1, x)))
+#         return s
+
+# obj = SpecialSeriesSum(5)
+
+# print(obj.solution())
+
+
+
+# Doubling the value GreeksForGreeks
+
+def doubleTheValue(array, num):
+    count = 0
+    maxReturn = num
+
+    for ele in array:
+        if ele == num:
+            maxReturn = ele*2
+            return doubleTheValue(array[count:], maxReturn)
+        count+=1
+    return maxReturn
+
+
+print(doubleTheValue([1, 2, 3, 4, 8], 2))
