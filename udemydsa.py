@@ -5596,3 +5596,43 @@
 # print(obj.lookUp(14))
 
 
+
+
+# Happy Number leetCode
+
+# class HappyNumber:
+#     def __init__(self, number):
+#         self.number = number
+    
+#     def solution(self):
+#         seen = set()
+
+#         while self.number not in seen:
+#             print(seen, self.number, 'first')
+#             seen.add(self.number)
+#             self.number = sum((int(x)**2 for x in str(self.number)))
+#             print(self.number, 'second')
+#         return self.number == 1
+
+# obj = HappyNumber(19)
+
+# print((obj.solution()))
+
+
+
+# is Valid Sequence
+
+# class isValidSequnce:
+#     def solution(self, array, sequence):
+#         seqIndex = 0
+#         for value in array:
+#             if seqIndex == len(sequence):
+#                 break
+#             if sequence[seqIndex] == value:
+#                 seqIndex+=1
+#         return seqIndex == len(sequence) 
+
+# obj = isValidSequnce()
+# print(obj.solution([5, 1, 22, 25, 6, -1, 8, 10], [1, 6, -1, 10]))
+
+
