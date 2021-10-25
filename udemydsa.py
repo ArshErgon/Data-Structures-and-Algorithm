@@ -5711,16 +5711,280 @@
 
 # Doubling the value GreeksForGreeks
 
-def doubleTheValue(array, num):
-    count = 0
-    maxReturn = num
+# def doubleTheValue(array, num):
+#     count = 0
+#     maxReturn = num
 
-    for ele in array:
-        if ele == num:
-            maxReturn = ele*2
-            return doubleTheValue(array[count:], maxReturn)
-        count+=1
-    return maxReturn
+#     for ele in array:
+#         if ele == num:
+#             maxReturn = ele*2
+#             return doubleTheValue(array[count:], maxReturn)
+#         count+=1
+#     return maxReturn
 
 
-print(doubleTheValue([1, 2, 3, 4, 8], 2))
+# print(doubleTheValue([1, 2, 3, 4, 8], 2))
+
+
+
+# Maximum Money GreeksForGreeks
+
+# def maximunMoney(n, k):
+#     return (n+1//2)*k if n % 2 != 0 else n//2*k
+
+
+# print(maximunMoney(5, 10))
+
+
+# Multiply left and right array sum
+
+# def arraySum(array):
+#     mid = len(array) // 2
+#     return sum(array[:mid]) * sum(array[mid:])
+
+# print(arraySum([1,2]))
+
+
+# Kth largest Number
+
+# def klargeNum(number, k):
+#     hashSet = set()
+#     for _ in range(k):
+#         hashSet.add(number.pop(number.index(max(number))))
+#     return hashSet
+
+
+# print(klargeNum([12, 15, 787, 1, 23], 3))
+
+
+# Frequency Game GreeksForGreeks
+
+# def frqGame(arr):
+#     hashMap = dict()
+#     for ele in arr:
+#         hashMap[ele] = 1
+#     maxKey = max(hashMap)
+#     for key in hashMap:
+#         if hashMap[key] < len(arr) // 2:
+#             maxKey = max(maxKey, key)
+
+#     return maxKey
+
+# print(frqGame([2,4,5,6,10, 10,1]))
+
+
+
+# Simple Balanced Parenthese
+
+# class BalancedParenthe:
+#     def solution(self, string):
+#         hashMap = {'(':')', '{':'}', '[':']'}
+#         l = list()
+#         for ele in string:
+#             if ele in hashMap:
+#                 l.append(ele)
+#             elif len(l) == 0 or hashMap[l.pop()] != ele:
+#                 return False
+#         return len(l) == 0
+
+# obj = BalancedParenthe()
+
+# print(obj.solution('())))'))
+
+
+# Subarray with given Sum GreeksForGreeks
+
+# def SubarraySum(arr, target):
+#     l = 0
+#     r = 1
+#     while l < len(arr):
+#         res = sum(arr[l:r])
+#         if res == target:
+#             return l+1, r, arr[l:r]
+#         elif res > target:
+#             l+=1
+#             r=0
+#             r=l+1
+#         else:
+#             r+=1
+#     return -1
+
+# print(SubarraySum([1,2,3,7,5], 19))
+
+
+
+# Min Stack LeetCode
+
+# class MinStack:
+#     def __init__(self):
+#         self.stack = []
+
+#     def push(self, val):
+#         self.stack.append(val)
+
+#     def pop(self):
+#         return self.stack.pop(0)
+
+#     def minNum(self):
+#         return min(self.stack)
+
+#     def show(self):
+#         return self.stack
+
+# obj = MinStack()
+
+# print(obj.push(-3))
+# print(obj.push(0))
+# print(obj.push(-2))
+
+# print(obj.show())
+
+# print(obj.pop())
+
+# print(obj.minNum())
+
+# print(obj.show())
+
+
+
+# Find the largest Kth Integer in the Array LeetCode
+
+# def LargestKthInteger(arr, knum):
+#     res = 0
+#     if len(arr) < knum:
+#         return 0
+#     arr = [int(x) for x in arr]
+#     while knum != 0:
+#         res = arr.pop(arr.index(max(arr)))
+#         print(knum, "--", res)
+#         knum -= 1
+#     return res
+
+
+
+# # print(LargestKthInteger(["3","6","7","10"], 4))
+# # print(LargestKthInteger(["2","21","12","1"], 3))
+
+# # print(LargestKthInteger(["0", "0"], 2))
+
+# print(LargestKthInteger(["1", '2', '2'], 3))
+
+
+
+# find Kth largest Element in an array LeetCode
+
+
+# def findKthLargestElement(num, k):
+#     return sorted(num)[-k]
+
+# print(findKthLargestElement([3,2,1,5,6,4], 2))
+
+
+
+# find maximum third number LeetCode
+
+# def thirdMaxNum(arr):
+#     if len(set(arr)) == 2:
+#         return max(arr)
+#     count = 0
+#     prev = 0
+#     for ele in arr:
+#         if ele == prev:
+#             count -= 1 
+#             print(count, 'if', ele, prev)
+
+#         prev = ele
+#         count +=1
+#     print(count)
+#     try:
+#         print(arr[count])
+#     except:
+#         print(arr[count-1])
+# print(thirdMaxNum([5, 2, 2]))
+
+
+
+# Second largest Number in a string LeetCode
+
+# def secLargestNum(string):
+#     l = list()
+#     for i in string:
+#         if i.isdigit() and i not in l:
+#             l.append(i)
+
+#     if len(l) > 2:
+#         return sorted(l)[-2]
+#     else:
+#         -1
+
+# print(secLargestNum('"dfa12321afd"'))
+        
+
+
+# Largest Odd number in a string LeetCode
+
+# def largestOddNum(strNum):
+#     res = 0
+#     if int(strNum) % 2 != 0:
+#         return strNum
+#     else:
+#         for i in strNum:
+#             if int(i) % 2 != 0:
+#                 res = max(res, int(i))
+#         return res if res else ""
+
+    # for i in range(len(strNum)-1, -1, -1):
+    #     if strNum[i] in '13579':
+    #         return strNum[0:i+1]
+    #     return ""
+
+
+# print(largestOddNum('1013389'))
+
+
+# check if all characters have equal number of occurenece Leetcode
+
+
+# def equalchr(string):
+#     hashMap = dict()
+#     for ele in string:
+#         if ele in hashMap:
+#             hashMap[ele] += 1
+#         else:
+#             hashMap[ele] = 1
+
+#     if max(hashMap.values()) == min(hashMap.values()):
+#         return True
+#     return False
+
+# print(equalchr('aaabb'))
+
+
+
+# Sum of Digits of String after Convert LeetCode
+
+# def getLucky(string, k):
+#     res = str()
+#     res += ''.join([str(ord(x)-96) for x in string.lower()])
+#     while k != 0:
+#         res = split(str(res));k-=1
+#     return res
+
+# def split(res):
+#     return sum(map(int, res))
+
+# print(getLucky('zbax', 2))
+
+
+
+# Digital Sum: Add digits leetcode
+# https://en.wikipedia.org/wiki/Digital_root#Congruence_formula
+
+# def digitSum(number):
+#     return (number - 1) % 9 + 1
+
+# print(digitSum(38))
+
+
+
+# 
