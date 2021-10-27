@@ -5987,4 +5987,149 @@
 
 
 
-# 
+# Count the Tailing zeroes LeetCode
+
+# from math import factorial
+
+# def factAndCount(number):
+#     Factnum = str(factorial(number))
+#     tail = len(Factnum) - 1
+#     count = 0
+#     while tail != 0:
+#         if Factnum[tail] == '0':
+#             count += 1
+#         else:
+#             return count
+#         tail -= 1
+#     return 0
+# print(factAndCount(0))
+
+
+# Majority of Elements II LeetCode
+
+# def MajorityEle(arr):
+#     hashMap = dict()
+
+#     for ele in arr:
+#         if ele in hashMap:
+#             hashMap[ele] += 1
+#         hashMap[ele] =  1
+
+#     for key in hashMap:
+#         if hashMap[key] >= len(arr) // 3:
+#             return key
+
+# print(MajorityEle([1,2]))
+
+
+
+# Sort Characters By Frequency LeetCode
+
+# def SortCharByFeq(string):
+#     hashMap = dict()
+#     for ele in string:
+#         if ele in hashMap:
+#             hashMap[ele] += 1
+#         else:
+#             hashMap[ele] = 1
+#     s = str()
+#     for key in hashMap:
+#         s += key*hashMap[key]
+
+#     if s == string:
+#         return string[::-1]
+#     return ''.join(sorted(s))
+
+# print(SortCharByFeq('Aabb'))
+
+
+
+# Find Anagram Cracking the coding the interview
+
+# def checkAnagram(str1, str2):
+#     c1 = [0] * 26   
+#     c2 = [0] * 26
+
+#     for i in range(len(str1)):
+#         pos = ord(str1[i]) - ord('a')
+#         c1[pos] = c1[pos] + 1
+
+#         print(c1, '--->', str1[i])
+    
+#     for i in range(len(str2)):
+#         pos = ord(str2[i]) - ord('a')
+#         c2[pos] = c2[pos] + 1
+        
+#         print(c2, '--->', str1[i])
+
+
+
+#     j = 0
+#     flag = True
+
+#     while j < len(str1) and flag:
+#         if c1[j] == c2[j]:
+#             j += 1
+#             print(c1[j], c2[j])
+
+#         else:
+#             flag = False
+
+#     return flag
+
+# print(checkAnagram('heart', 'earth'))
+
+
+
+# Valid Palindrome LeetCode
+
+# def validPalindrome(string):
+#     s = str()
+#     if string in '1234567890':
+#         return False
+#     else:
+#         s += "".join(ele for ele in string.lower() if ord(ele) not in range(48, 58) and ord(ele) in range(97, 123))
+#         l = 00
+#         r = len(s) - 1
+#         count = 0
+#         while l < r:
+#             if s[l] == s[r]:
+#                 l+=1
+#                 r-=1
+#                 count += 1
+#             else:
+#                 return False
+#     return l == r
+
+
+# # print(validPalindrome('A man, a plan, a canal: Panama'))
+# print(validPalindrome('Ara0'))
+
+
+# Reversing a string using stack
+
+# def reverseStrByStack(string):
+#     stack = []
+
+#     for i in range(len(string)-1, -1, -1):
+#         stack.append(string[i])
+
+#     return ''.join(stack)
+
+
+# print(reverseStrByStack('arsh'))
+
+
+# Decimal to Binary numbers
+
+# def decToBinNum(num):
+#     remainder = str()
+#     while num != 0:
+#         remainder += str(num%2)
+#         num //= 2
+#     return remainder[::-1]
+
+# print(decToBinNum(5))
+
+
+
