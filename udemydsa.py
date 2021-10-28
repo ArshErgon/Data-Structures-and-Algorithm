@@ -6148,209 +6148,213 @@
 
 
 
-# Unsorted Lists: Linked List
+# Unsorted Lists: Linked List A different Approach.
 
 
-from typing import NoReturn
+# from typing import NoReturn
 
 
-class Node:
-    def __init__(self, data, next=None):
-        self.data = data
-        self.next = next
+# class Node:
+#     def __init__(self, data, next=None):
+#         self.data = data
+#         self.next = next
 
-    def getData(self):
-        return self.data
+#     def getData(self):
+#         return self.data
     
-    def getNext(self):
-        return self.next
+#     def getNext(self):
+#         return self.next
     
-    def setData(self, newData):
-        self.data = newData
+#     def setData(self, newData):
+#         self.data = newData
 
-    def setNext(self, newNext):
-        self.next = newNext
+#     def setNext(self, newNext):
+#         self.next = newNext
 
 
 
-class LinkedList:
-    def __init__(self):
-        self.head = None
+# class LinkedList:
+#     def __init__(self):
+#         self.head = None
 
-    def isEmpty(self):
-        return self.head == None
+#     def isEmpty(self):
+#         return self.head == None
 
-    def push(self, newData):
-        newNode = Node(newData, self.head)
-        newNode.setNext(self.head)
-        self.head = newNode
+#     def push(self, newData):
+#         newNode = Node(newData, self.head)
+#         newNode.setNext(self.head)
+#         self.head = newNode
 
-    def show(self):
-        current = self.head
-        s = str()
-        while current:
-            s += str(current.getData()) + '--->'
-            current = current.getNext()
+#     def show(self):
+#         current = self.head
+#         s = str()
+#         while current:
+#             s += str(current.getData()) + '--->'
+#             current = current.getNext()
 
-        return s
+#         return s
 
-    def size(self):
-        current = self.head
-        count = 0
-        while current:
-            count += 1
-            current = current.getNext()
+#     def size(self):
+#         current = self.head
+#         count = 0
+#         while current:
+#             count += 1
+#             current = current.getNext()
 
-        return count
+#         return count
 
-    def maxAndmin(self):
-        current = self.head
-        maxNum = 0
-        minNum = 1
+#     def maxAndmin(self):
+#         current = self.head
+#         maxNum = 0
+#         minNum = 1
 
-        current = self.head
+#         current = self.head
 
-        while current:
-            maxNum = max(maxNum, current.getData())
-            minNum = min(minNum, current.getData())
-            current = current.getNext()
+#         while current:
+#             maxNum = max(maxNum, current.getData())
+#             minNum = min(minNum, current.getData())
+#             current = current.getNext()
 
-        return maxNum, minNum
+#         return maxNum, minNum
 
-    def index(self, num):
-        indexOfNum = 0
-        current = self.head
+#     def index(self, num):
+#         indexOfNum = 0
+#         current = self.head
 
-        while current:
-            if num == current.getData():
-                return indexOfNum
-            indexOfNum += 1
-            current = current.getNext()
-        return NoReturn
+#         while current:
+#             if num == current.getData():
+#                 return indexOfNum
+#             indexOfNum += 1
+#             current = current.getNext()
+#         return NoReturn
 
-    def search(self, num):
-        current = self.head
+#     def search(self, num):
+#         current = self.head
 
-        while current != None:
-            if current.getData() == num:
-                return f'{num} at position: {self.index(num)}'
-            current = current.getNext()
-        return "NotFound"
+#         while current != None:
+#             if current.getData() == num:
+#                 return f'{num} at position: {self.index(num)}'
+#             current = current.getNext()
+#         return "NotFound"
 
     
-    def remove(self, num):
-        current = self.head
-        prev = None
-        found = False
-        while not found:
-            if current.getData() == num:
-                found = True
-            else:
-                prev = current
-                current = current.getNext()
+#     def remove(self, num):
+#         current = self.head
+#         prev = None
+#         found = False
+#         while not found:
+#             if current.getData() == num:
+#                 found = True
+#             else:
+#                 prev = current
+#                 current = current.getNext()
         
-        if prev == None:
-            self.head = current.getNext()
-        else:
-            prev.setNext(current.getNext())
+#         if prev == None:
+#             self.head = current.getNext()
+#         else:
+#             prev.setNext(current.getNext())
 
-    # Getting the middle point of the linkedlist
+#     # Getting the middle point of the linkedlist
 
-    def midPointASlowOne(self):
-        current = self.head
-        count = 0
+#     def midPointASlowOne(self):
+#         current = self.head
+#         count = 0
 
-        while current != None:
-            count += 1
-            current = current.getNext()
+#         while current != None:
+#             count += 1
+#             current = current.getNext()
 
-        count //= 2;loop = 0
-        current = self.head
-        while current:
-            if loop == count:
-                return current.getData()
-            loop += 1
-            current = current.getNext()
+#         count //= 2;loop = 0
+#         current = self.head
+#         while current:
+#             if loop == count:
+#                 return current.getData()
+#             loop += 1
+#             current = current.getNext()
 
     
-    def midPointAFastOne(self):
-        fast = self.head
-        slow = self.head
-        while fast and fast.getNext():
-            slow = slow.getNext()
-            fast = fast.getNext().getNext()
+#     def midPointAFastOne(self):
+#         fast = self.head
+#         slow = self.head
+#         while fast and fast.getNext():
+#             slow = slow.getNext()
+#             fast = fast.getNext().getNext()
 
-        return slow.data
-
-
-    def append(self, value):
-        newNode = Node(value)
-        current = self.head
-        prev = None
-        while current != None:
-            current = current.getNext()
-            if current != None:
-                prev = current
-        prev.setNext(newNode)
+#         return slow.data
 
 
-    def reverse(self):
-        prev = None
-        current = self.head
-        while current:
-            next = current.next
-            current.next = prev
-            prev = current
-            current = next
+#     def append(self, value):
+#         newNode = Node(value)
+#         current = self.head
+#         prev = None
+#         while current != None:
+#             current = current.getNext()
+#             if current != None:
+#                 prev = current
+#         prev.setNext(newNode)
+
+
+#     def reverse(self):
+#         prev = None
+#         current = self.head
+#         while current:
+#             next = current.next
+#             current.next = prev
+#             prev = current
+#             current = next
         
-        self.head = prev
+#         self.head = prev
 
     
-    def insert(self, pos, data):
-        newNode = Node(data)
-        current = self.head
-        while current:
-            if pos+1 == 0:
-                print(current.data)
-                
-            else:
-                current = current.getNext()
-                prev = current
-            pos -= 1
+#     def insert(self, pos, data):
+#         newNode = Node(data)
+#         current = self.head
+#         while current:
+#             if pos == 0:
+#                 print(current.data)
+#                 print(prev.data)
+#                 tmp = prev.getNext()
+#                 prev.setNext(newNode)
+#                 prev.next.next = tmp
+#             else:
+#                 current = current.getNext()
+#                 prev = current
+#             pos -= 1
 
 
 
-obj = LinkedList()
+# obj = LinkedList()
 
-print(obj.isEmpty())
+# print(obj.isEmpty())
 
-for x in range(1, 10):
-    obj.push(x)
+# for x in range(1, 10):
+#     obj.push(x)
 
-print(obj.show())
+# print(obj.show())
 
-print(obj.size(), ': size')
+# print(obj.size(), ': size')
 
-print(obj.maxAndmin(), ': Max, Min')
+# print(obj.maxAndmin(), ': Max, Min')
 
-print(obj.search(7), ': Search')
+# print(obj.search(7), ': Search')
 
-print(obj.remove(1), ': remove')
+# print(obj.remove(1), ': remove')
 
-print(obj.show())
+# print(obj.show())
 
-print(obj.midPointASlowOne(), 'Mid slow')
+# print(obj.midPointASlowOne(), 'Mid slow')
 
-print(obj.midPointAFastOne(), 'Mid Fast')
+# print(obj.midPointAFastOne(), 'Mid Fast')
 
-(obj.append(20))
+# (obj.append(20))
 
-print(obj.show())
+# print(obj.show())
 
 
-obj.reverse()
-print(obj.insert(4, 5))
+# obj.reverse()
 
-print(obj.show())
+# print(obj.insert(1, 90))
+
+# print(obj.show())
 
 
