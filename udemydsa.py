@@ -6173,7 +6173,7 @@
 
 
 
-# class LinkedList:
+# class UnorderedLinkedList:
 #     def __init__(self):
 #         self.head = None
 
@@ -6323,7 +6323,7 @@
 
 
 
-# obj = LinkedList()
+# obj = UnorderedLinkedList()
 
 # print(obj.isEmpty())
 
@@ -6358,3 +6358,152 @@
 # print(obj.show())
 
 
+
+
+# Ordered List: linkedList
+
+
+# class Node:
+#     def __init__(self, data):
+#         self.data = data
+#         self.next = None
+
+#     def getData(self):
+#         return self.data
+
+#     def getNext(self):
+#         return self.next
+
+#     def setData(self, newData):
+#         self.data = newData
+
+#     def setNext(self, newNext):
+#         self.next = newNext
+
+
+    
+
+# class OrderedLinkedList:
+#     def __init__(self):
+#         self.head = None
+#         self.length = 0
+
+    
+#     def add(self, data):
+#         current = self.head
+#         flag = False
+#         prev = None
+#         while current != None and not flag:
+#             if current.getData() > data:
+#                 flag = True
+
+#             else:
+#                 prev = current
+#                 current = current.getNext()
+
+
+#         newNode = Node(data)
+
+#         if prev == None:
+#             newNode.setNext(self.head)
+#             self.head = newNode
+
+#         else:
+#             newNode.setNext(current)
+#             prev.setNext(newNode)
+#         self.length += 1
+
+
+#     def searching(self, ele):
+#         current = self.head
+
+#         while current != None:
+#             if current.getData() == ele:
+#                 return current.getData()
+
+#             current = current.getNext()
+
+#         return None
+
+
+
+#     def show(self):
+#         current = self.head
+#         s = str()
+#         while current != None:
+#             s += str(current.getData()) + '----->'
+#             current = current.getNext()
+
+#         return s
+    
+#     def index(self, num):
+#         count = 0
+#         current = self.head
+#         while current != None:
+#             if current.getData() == num:
+#                 return count + 1
+
+#             count += 1
+#             current = current.getNext()
+#         return None
+
+
+#     def maxAndmin(self):
+#         current = self.head
+#         maxNum = 0
+#         minNum = 100
+
+#         while current != None:
+#             maxNum = max(maxNum, current.getData())
+#             minNum = min(minNum, current.getData())
+#             current = current.getNext()
+
+#         return f'Max :{maxNum}, Min :{minNum}'
+
+    
+#     def append(self, data):
+#         newNode = Node(data)
+#         current = self.head
+#         prev = None
+#         while current != None:
+#             if current == None:
+#                 break
+#             else:
+#                 prev = current
+#                 current = current.getNext()
+
+
+#         prev.setNext(newNode)
+
+
+
+#     def size(self):
+#         return self.length
+
+#     def isEmpty(self):
+#         return self.size == 0
+
+
+
+# obj = OrderedLinkedList()
+
+# print(obj.add(10))
+# print(obj.add(20))
+# print(obj.add(30))
+# obj.add(1)
+
+# print(obj.isEmpty())
+
+# print(obj.size())
+
+# print(obj.show())
+
+# print(obj.searching(20))
+
+# print(obj.maxAndmin())
+
+# print(obj.index(30))
+
+# print(obj.append(90))
+
+# print(obj.show())
