@@ -6022,28 +6022,6 @@
 # print(MajorityEle([1,2]))
 
 
-
-# Sort Characters By Frequency LeetCode
-
-# def SortCharByFeq(string):
-#     hashMap = dict()
-#     for ele in string:
-#         if ele in hashMap:
-#             hashMap[ele] += 1
-#         else:
-#             hashMap[ele] = 1
-#     s = str()
-#     for key in hashMap:
-#         s += key*hashMap[key]
-
-#     if s == string:
-#         return string[::-1]
-#     return ''.join(sorted(s))
-
-# print(SortCharByFeq('Aabb'))
-
-
-
 # Find Anagram Cracking the coding the interview
 
 # def checkAnagram(str1, str2):
@@ -6507,3 +6485,236 @@
 # print(obj.append(90))
 
 # print(obj.show())
+
+
+
+
+# Suming list without using loops
+
+# def listSum(arr):
+#     if len(arr) == 1:
+#         return arr[0]
+
+#     else:
+#         return arr[0] + listSum(arr[1:])
+
+# print(listSum([1, 2, 3]))
+
+
+
+# merge sort
+
+# def mergeSort(arr):
+#     for ele in range(len(arr)-1, 0, -1):
+#         for i in range(ele):
+#             if arr[i] > arr[i+1]:
+#                 tmp = arr[i]
+#                 arr[i] = arr[i+1]
+#                 arr[i+1] = tmp
+#     print(arr)
+# arr = [5,4,3,21,0,2,7,9]
+# obj = mergeSort(arr)
+
+
+
+
+
+# Sort Characters By Frequency LeetCode
+
+# from collections import Counter 
+
+# def SortCharByFeq(string):
+#     res = ''
+#     ct = Counter(string)
+#     print(ct)
+#     ct = ct.most_common()
+#     print(ct)
+#     for ele in ct:
+#         res += str(ele[0] * ele[1])
+
+#     return res
+
+# print(SortCharByFeq("raaeaedere"))
+
+
+
+# Top K frequent element LeetCode
+
+# from collections import Counter
+
+# def topKfreq(string, k=0):
+#     count = Counter(string).most_common()
+#     res = list()
+#     for i in range(k):
+#         res.append(count[i][0])
+#         print(count[i], count[i][0])
+#     return res
+# print(topKfreq([1,2], 2))
+
+
+# Top K frequent words
+
+# from collections import Counter
+
+# def topKWords(string, k):
+#     count = Counter(string).most_common()
+#     print(count)
+#     l = list()
+#     for i in range(k):
+#         l.append(count[i][0])
+#     return l 
+# print(topKWords(["the","day","is","sunny","the","the","the","sunny","is","is"], 4))
+
+
+
+
+# Nth root equals digit sum CodeWars
+
+# def nthRootOfSum(num):
+#     res = list()
+
+#     for x in range(1, 1000):
+#         if sum([int(i) for i in str(x**num)]) == x:
+#             res.append(x**num)
+#     return res
+
+# print(nthRootOfSum(3))
+
+
+
+# Consective Letters
+
+
+# def consectiveLetters(string):
+#     return ''.join(sorted(string)) in 'abcdefghijklmnopqrstuvwxyz'
+
+# print(consectiveLetters('abc'))
+
+
+
+# Count ones in a segment CodeWars
+
+# def countOnes(left, right):
+#     res = int()
+#     ra = list(range(left, right+1))
+#     return sum([int(bin(x)[2:]) for x in ra])
+
+#     print(res)
+
+# print(countOnes(5, 7))
+
+
+# is there a vowel in there? CodeWars
+
+# def is_vowel(arr):
+#     hashMap = {
+#         117 : 'u',
+#         97 : 'a',
+#         105: 'i',
+#         101: 'e',
+#         111 : 'o',
+#     }
+#     l = 0
+#     while l != len(arr):
+#         if arr[l] in hashMap:
+#             arr[l] = hashMap[arr[l]]
+#         l += 1
+#     return arr
+
+# print(is_vowel([101, 121, 110, 113, 113, 103, 121, 121, 'e', 107, 103] ))
+
+
+
+# String compression Cracking the coding interview
+
+# from collections import Counter
+
+# def char_count(input_str):
+#     my_dict = Counter(input_str)
+#     print(my_dict)
+#     output_str = ""
+#     for i in input_str:
+#         if i not in output_str:
+#             output_str += i
+#             output_str += str(my_dict[i])
+#     return output_str
+
+# result = char_count("aabccccaaa")
+# print(result)
+
+# def stringCompress(string, res=str()):
+#     l = 0
+#     r = len(string) - 1
+#     count = 0
+#     res = res
+#     while l < r:
+#         if string[l] == string[l+1]:
+#             count += 1
+#         elif string[l] != string[l+1]:
+#             res += string[l] + str(count)
+#             print(res, count, string[l])
+#             return stringCompress(string[:count], res)
+#         l += 1
+#         count = 0
+#     return res
+
+# print(stringCompress('aaaabb'))
+
+
+
+# is Unique String
+
+# def isUniqueChar(string):
+    # hashSet = set()
+
+    # for ele in string:
+    #     if ele not in hashSet:
+    #         hashSet.add(ele)
+    #     else:
+    #         return False
+    # return True
+
+#     matrix = [0] * 26
+#     for i in range(len(string)):
+#         pos = ord(string[i]) - ord('a')
+#         if not matrix[pos]:
+#             matrix[pos] = 1
+#             print(matrix)
+#         else:
+#             return False
+#     return True
+
+# print(isUniqueChar('arsh'))
+
+
+# check Permutation
+
+def isPermutation(s1, s2):
+    # s1 = sorted(s1)
+    # s2 = sorted(s2)
+    # return s1 == s2, len(s1) == len(s2)
+
+    # matrix1 = [0] * 26
+    # matrix2 = [0] * 26
+    # count = 0
+    # if len(s1) == len(s2):
+    #     while count < len(s1) and len(s2):
+    #         pos1 = ord(s1[count]) - ord('a')
+    #         pos2 = ord(s2[count]) - ord('a')
+    #         print(pos1, pos2)
+    #         matrix1[pos1] = 1
+    #         matrix2[pos2] = 1
+
+    #         count += 1
+    #     print(sum(matrix2), sum(matrix1))
+    #     if matrix1 == matrix2:
+    #         return True
+        
+    # return False
+
+# print(isPermutation('arsh', 'hrsa'))
+
+
+
+
+
