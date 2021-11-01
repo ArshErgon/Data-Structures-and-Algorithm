@@ -6924,23 +6924,55 @@
 
 # string to integers LeetCode
 
+# def MyAtoi(number):
+#     res = str()
+#     number = number.replace(' ', '')
+#     if ord(number[0].lower()) in range(97, 123):
+#         return 0
+#     elif ord(number[0].lower()) not in range(97, 123):
+#         for num in number:
+#             if ord(num) not in range(97, 123):
+#                 res += num
 
-def MyAtoi(number):
-    res = str()
-    number = number.replace(' ', '')
-    if ord(number[0].lower()) in range(97, 123):
-        return 0
-    elif ord(number[0].lower()) not in range(97, 123):
-        for num in number:
-            if ord(num) not in range(97, 123):
-                res += num
-
-    return int(res)
-
+#     return int(res)
 
 
-print(MyAtoi('        -45ars'))
 
-print(MyAtoi('a123'))
+# print(MyAtoi('        -45ars'))
 
-print(MyAtoi('0021'))
+# print(MyAtoi('a123'))
+
+# print(MyAtoi('0021'))
+
+
+
+# Highest scoring word in a string codewars
+
+# def higestScoringWord(string):
+#     hashMap = dict()
+
+#     for word in string.split():
+#         hashMap[sum(map(ord, word))-96*len(word)] = word
+
+#     return hashMap[max(hashMap.keys())], hashMap
+
+# print(higestScoringWord('hello there how are you?'))
+
+# print(higestScoringWord('what time are we climbing up the volcano'))
+
+
+# Arabian String CodeWars
+
+# def arabianString(string):
+#     string = string.lower()
+#     remove_item = 0
+#     for ele in string:
+#         if ord(ele) not in range(97, 123):
+#             remove_item = ele
+#             print(remove_item)
+#             string.replace(remove_item, '')
+
+#     return string.title()
+
+
+# print(arabianString('Ninja-Test--0'))
