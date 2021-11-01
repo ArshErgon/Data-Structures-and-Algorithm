@@ -6976,3 +6976,86 @@
 
 
 # print(arabianString('Ninja-Test--0'))
+
+
+
+# Add to Array-Form of Integer LeetCode
+
+# def arrayForm(numList, num):
+#     strInt = str()
+#     strInt = strInt.join(str(x) for x in numList)
+#     return list(str(int(strInt)+num))
+
+# print(arrayForm([1,2,0,0], 34))
+
+# print(arrayForm([2, 7, 4], 181))
+
+# print(arrayForm([9,9,9,9,9,9,9,9,9,9], 1))
+
+
+# count and say LeetCode
+
+
+# class CountAndSay:
+
+#     def convert(self, data):
+#         if data == 1:
+#             return '1'
+#         prev = str(data)[0]
+#         i = 0
+#         ans = str()
+#         for ch in str(data):
+#             if ch == prev:
+#                 i += 1
+#             else:
+#                 ans += f'{i}{prev}'
+#                 prev = ch
+#                 i = 1
+#         ans += f'{i}{prev}'
+#         return ans
+
+#     def sol(self, num):
+#         if num == 1:
+#             return '1'
+#         res = 1
+#         for _ in range(num):
+#             res = self.convert(res)
+        
+#         return res
+
+
+# obj = CountAndSay()
+# print(obj.sol(4))
+
+
+
+# String compression LeetCode
+
+# from collections import Counter as ct
+# def CompressString(strArr):
+#     count = ct(strArr)
+#     res = list()
+#     for x in sorted(set(strArr)):
+#         if count[x] == 1:
+#             res.append(x)
+#         else:
+#             res.append(x);res.append(str(count[x]))
+
+#     return res
+
+# print(CompressString(["a","a","b","b","c","c","c"]))
+
+
+# Mini-Max Sum HackerRank
+
+def MinAndMax(numArr):
+    minNum, maxNum = 99, 0
+    for i in range(len(numArr)):
+        total = sum(numArr) - numArr[i]
+        maxNum = max(maxNum, total)
+        minNum = min(minNum, total)
+
+    return maxNum, minNum
+
+
+print(MinAndMax([1,3,5,7,9]))
