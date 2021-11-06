@@ -7048,14 +7048,251 @@
 
 # Mini-Max Sum HackerRank
 
-def MinAndMax(numArr):
-    minNum, maxNum = 99, 0
-    for i in range(len(numArr)):
-        total = sum(numArr) - numArr[i]
-        maxNum = max(maxNum, total)
-        minNum = min(minNum, total)
+# def MinAndMax(numArr):
+#     minNum, maxNum = 99, 0
+#     for i in range(len(numArr)):
+#         total = sum(numArr) - numArr[i]
+#         maxNum = max(maxNum, total)
+#         minNum = min(minNum, total)
 
-    return maxNum, minNum
+#     return maxNum, minNum
 
 
-print(MinAndMax([1,3,5,7,9]))
+# print(MinAndMax([1,3,5,7,9]))
+
+
+
+# Check if Number are ascending in a sentences LeetCode
+
+# def AscendingNumbers(string):
+#     res = 0
+
+#     for ele in string.split():
+#         if ele.isnumeric():
+#             if int(ele) > res:res = int(ele)
+#             else:return False
+
+#     return True
+
+
+# print(AscendingNumbers("1 box has 3 blue 4 red 6 green and 12 yellow marbles"))
+
+# print(AscendingNumbers("hello world 5 x 5"))
+
+
+
+# Replace all digits with characters LeetCode
+
+# def replaceNumWithChar(string):
+    # res = str()
+    # for i in range(len(string)):
+    #     if i % 2 != 0:
+    #         res += chr(ord(string[i-1]) + int(string[i]))
+    #     else:
+    #         res += string[i]
+    # return res
+
+#     l = list(string)
+
+#     for i in range(1, len(l), 2):
+#         l[i] = chr(ord(string[i-1]) + int(string[i]))
+#     return ''.join(l)
+# print(replaceNumWithChar('a1c1e1'))
+
+
+# Check if the string is a prefix of another leetCode
+
+# def isPrefix(s, word):
+#     res = str()
+#     word = word.split()
+#     for i in range(len(s)-1):
+#         res += word[i]
+#     if res == s:
+#         return True
+#     return False
+
+# print(isPrefix( "iloveleetcode", ["i","love","leetcode","apples"]))
+
+
+# Check if the sentence is Pangram LeetCode
+
+# def isPangram(string):
+#     string = set(string.lower())
+#     l = list(range(97, 123))
+#     for x in string:
+#         if ord(x) in l:
+#             l.remove(ord(x))
+#     return len(l) == 0, l
+
+# print(isPangram("hequickbrownoxjumpsoverthelazydog"))
+
+
+# Find the common characters LeetCode
+
+# def sortingTheSent(string):
+#     hashMap = dict()
+#     string = string.split()
+#     for i in range(len(string)):
+#         hashMap[string[i][-1]] = string[i][:-1]
+#     return ' '.join(hashMap[x] for x in sorted(hashMap))
+
+# print(sortingTheSent("is2 sentence4 This1 a3"))
+
+
+
+# Merge Strings Alternately #LeetCode
+
+# def mergeString(word1, word2):
+#     l1, l2 = len(word1), len(word2)
+#     res = str()
+#     for i in range(min(l1, l2)):
+#         res += f'{word1[i]}{word2[i]}'
+#     if l1 > l2:
+#         res += word1[i+1:]
+#     else:
+#         res += word2[i+1:]
+#     return res
+
+# print(mergeString('ab', 'pqrs'))
+
+
+# Find first and last position of an element in sorted array LeetCode
+
+# def searchTarget(arr, target):
+#     try:
+#         first = arr.index(target)
+#         arr.reverse()
+#         second = len(arr) - arr.index(target) - 1
+#         return [first, second]
+#     except:
+#         [-1, -1]
+
+# print(searchTarget([5,7,7,8,8,10], 8))
+
+
+
+# Seach in rotated Sorted array leetcode
+
+# def searchTarget(nums, target): 
+#     nums = sorted(nums)
+#     print(nums)
+#     l, r = 0, len(nums) - 1
+#     while l < r:
+#         mid = (r+l) // 2
+#         print(nums[mid], mid)
+#         if nums[mid] == target:
+#             return mid
+#         elif nums[mid] < target:
+#             l = mid + 1
+#         else:
+#             r = mid - 1
+
+#     return -1 
+
+# print(searchTarget([4,5,6,7,0,1,2], 0))
+
+
+# Display longest Name GreeksForGreeks
+
+# def longestName(strArr):
+#     maxName = 0
+#     name = str()
+#     for x in strArr:
+#         if len(x) > maxName:
+#             maxName = len(x)
+#             name = x
+
+#     return name
+
+# print(longestName([ "Geek", "Geeks", "Geeksfor",
+#   "GeeksforGeek", "GeeksforGeeks"]))
+
+
+# Longest Consective of 1's
+
+# def longestConsective(number):
+#     binNum = bin(number)[2:]
+#     maxNum = 00
+#     c = 0
+#     for x in binNum:
+#         if x == '1':
+#             c += 1
+#         else:
+#             maxNum = max(maxNum, c)
+#             c = 0
+#     return maxNum
+
+# print(longestConsective(222))
+
+
+# remove duplicates from a sorted array leetcode
+
+
+# def removeDup(array):
+#     prev = int()
+#     l = list()
+#     for ele in array:
+#         if ele != prev:
+#             prev = ele
+#             l.append(ele)
+#     return l
+
+# print(removeDup([1,1,2]))
+
+
+# Second largest digit in a string LeetCode
+
+# def SecondLargest(alphaNum):
+#     nums = set()
+
+#     for i in alphaNum:
+#         if i.isdigit():
+#             nums.add(int(i))
+#     nums= sorted(nums)
+
+#     if len(nums) == 1 or len(nums) == 0:
+#         return -1
+#     return nums[-2]
+    
+# print(SecondLargest("abc1111"))
+
+
+# Sum of all unique integers in an array LeetCode
+
+
+# def sumOfUniqInt(intArr):
+#     hashMap = dict()
+
+#     res = 0
+
+#     for x in intArr:
+#         if x in hashMap:
+#             hashMap[x] += 1
+#         else:
+#             hashMap[x] = 1
+    
+#     for key in hashMap:
+#         if hashMap[key] == 1:
+#             res += key
+
+#     return res
+
+
+# print(sumOfUniqInt([1,2,3,4,5]))
+
+
+# from collections import Counter as ct
+
+# def freqSort(numArr):
+#     Map = ct(numArr)
+#     li = list(Map.items())
+#     res = list()
+
+#     li.sort(key=lambda x:(x[1], -x[0]))
+
+
+#     for key, value in li:
+#         res += [key] * value
+#     return res
+
+# print(freqSort([1,1,2,2,2,3]))
