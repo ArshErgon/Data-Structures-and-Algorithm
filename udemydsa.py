@@ -7296,3 +7296,81 @@
 #     return res
 
 # print(freqSort([1,1,2,2,2,3]))
+
+
+
+# Find the median in a sorted array leetcode
+
+# def medianSortedArr(nums1, nums2):
+#     mid1, mid2, median = 0, 0, 0
+#     l = nums1 + nums2
+#     l.sort()
+#     if len(l) % 2 == 0:
+#         mid1 = len(l) // 2
+#         mid2 = mid1 - 1
+#         median = (l[mid1] + l[mid2]) /  2
+
+#     else:
+#         mid = len(l) // 2
+#         median = l[mid]
+
+#     return median
+
+# print(medianSortedArr([1,2,3], [4,5,6]))
+
+
+# find the adjacent elements of largest product CodeSignal
+
+
+# def adjacentEle(elements):
+#     l = 0
+#     c = 1
+#     maxNum = -100
+#     while l < len(elements) - 1:
+#         maxNum = max(maxNum, elements[l]*elements[c])
+#         print(elements[l]*elements[c])
+#         c+=1
+#         l+=1
+#     return maxNum
+# print(adjacentEle([-23, 4, -3, 8, -12]))
+
+
+# ShapeArea, interesting PolyGon CodeSignal
+
+# def shapeArr(n):
+#     return 2 * n * (n - 1) + 1
+
+# print(shapeArr(3))
+
+
+
+# Valid Perfect Squares LeetCode
+
+
+# def validSquares(num):
+#     # sq = int(num**(1/2))
+#     # return sq*sq == num
+#     return pow(int(num**.5), 2) == num
+
+# print(validSquares(2000105819))
+
+
+
+# Duplicate Zeros LeetCode
+
+def ZeroDupli(number):
+    i = 0
+    x = len(number)
+    while i < len(number):
+        if number[i] == 0:
+            number.insert(i, 0)
+            i += 2
+        else:
+            i += 1
+        if len(number) > x:
+            number.pop()
+    return number
+
+
+print(ZeroDupli([1,0,2,3,0,4,5,0]))
+print(ZeroDupli([1,2,3]))
