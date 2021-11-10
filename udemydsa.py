@@ -1,4 +1,3 @@
-
 # import time
 
 # def findNum(listOfNumbers, numToFind):
@@ -7358,19 +7357,95 @@
 
 # Duplicate Zeros LeetCode
 
-def ZeroDupli(number):
-    i = 0
-    x = len(number)
-    while i < len(number):
-        if number[i] == 0:
-            number.insert(i, 0)
-            i += 2
-        else:
-            i += 1
-        if len(number) > x:
-            number.pop()
-    return number
+# def ZeroDupli(number):
+#     i = 0
+#     x = len(number)
+#     while i < len(number):
+#         if number[i] == 0:
+#             number.insert(i, 0)
+#             i += 2
+#         else:
+#             i += 1
+#         if len(number) > x:
+#             number.pop()
+#     return number
 
 
-print(ZeroDupli([1,0,2,3,0,4,5,0]))
-print(ZeroDupli([1,2,3]))
+# print(ZeroDupli([1,0,2,3,0,4,5,0]))
+# print(ZeroDupli([1,2,3]))
+
+
+
+# Search Rotated array II LeetCode
+
+
+# def searchRotated(arr, target):
+#     arr[:] = sorted(set(arr))
+#     if arr.__len__() <= 5:
+#         return target in arr
+#     else:
+#         l = 0
+#         r = len(arr) - 1
+#         while l <= r:
+#             mid = (l+r) // 2 
+#             if arr[mid] == target:
+#                 return True
+#             elif arr[mid] > target:
+#                 r = mid - 1
+#             else:
+#                 l = mid + 1
+#     return False
+
+
+# print(searchRotated([4,5,6,7,0,1,2], 8))
+
+
+# Longest Consective Sequence in unsorted Array LeetCode
+
+
+# def ConsectiveSeq(numArr):
+#     count = 1
+#     maxNum = 0
+#     numArr[:] = sorted(set(numArr))
+#     # print(numArr)
+#     if len(numArr) == 1:
+#         return 1
+#     for i in range(len(numArr)-1):
+#         temp = numArr[i] + 1
+#         if numArr[i+1] == temp:
+#             count += 1
+#             maxNum = max(maxNum, count)
+#         else:
+#             maxNum = max(maxNum, count)
+#             count = 1
+        
+#     return maxNum
+
+# print(ConsectiveSeq([100,4,200,1,3,2]))
+# print(ConsectiveSeq([0,3,7,2,5,8,4,6,0,1]))
+# print(ConsectiveSeq([9,1,4,7,3,-1,0,5,8,-1,6]))
+# print(ConsectiveSeq([-6,-1,-1,9,-8,-6,-6,4,4,-3,-8,-1]))
+# [1,2,3,4,100,200]
+
+
+# Product of array without the array[i] value leetcode
+
+def productOfArray(arrNum):
+    n = len(arrNum) - 1
+    pre = 1
+    pos = 1
+    res = arrNum
+    for i in range(n):
+        res[i] = pre
+        pre *= arrNum[i]
+    
+
+    while n >= 0:
+        res[n] *= pos
+        pos *= arrNum[n]
+        n -= 1
+
+    return res
+
+print(productOfArray([1,2,3,4]))
+print(productOfArray([-1,1,0,-3,3]))
