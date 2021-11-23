@@ -7430,22 +7430,106 @@
 
 # Product of array without the array[i] value leetcode
 
-def productOfArray(arrNum):
-    n = len(arrNum) - 1
-    pre = 1
-    pos = 1
-    res = arrNum
-    for i in range(n):
-        res[i] = pre
-        pre *= arrNum[i]
+# def productOfArray(arrNum):
+#     n = len(arrNum) - 1
+#     pre = 1
+#     pos = 1
+#     res = arrNum
+#     for i in range(n):
+#         res[i] = pre
+#         pre *= arrNum[i]
     
 
-    while n >= 0:
-        res[n] *= pos
-        pos *= arrNum[n]
-        n -= 1
+#     while n >= 0:
+#         res[n] *= pos
+#         pos *= arrNum[n]
+#         n -= 1
 
-    return res
+#     return res
 
-print(productOfArray([1,2,3,4]))
-print(productOfArray([-1,1,0,-3,3]))
+# print(productOfArray([1,2,3,4]))
+# print(productOfArray([-1,1,0,-3,3]))
+
+
+# Is a Prime Number CodeWars
+
+# def isPrimeNum(num):
+#     flag = False
+#     if num > 1:
+#         for i in range(2, num):
+#             if num % i == 0:
+#                 flag = True
+#                 break
+#     else:
+#         return False
+        
+#     if flag:
+#         print('No')
+#     else:
+#         print('yes')
+
+# print(isPrimeNum(0))
+
+
+# Find lucky Integer in an Array LeetCode
+
+# def luckyNum(number):
+#     hashMap = dict()
+#     for ele in number:
+#         if ele in hashMap:
+#             hashMap[ele] += 1
+#         else:
+#             hashMap[ele] = 1
+#     # maxNum = set()
+#     # for key in hashMap:
+#     #     if hashMap[key] == key:
+#     #         maxNum.add(key)
+    
+#     # return max(maxNum) if maxNum else -1
+
+#     maxNum = -1
+#     for key in sorted(hashMap):
+#         if hashMap[key] == key:
+#             maxNum = key
+    
+#     return maxNum
+
+# print(luckyNum([2,2,3,4]))
+
+# print(luckyNum([1,2,2,3,3,3]))
+
+# print(luckyNum([2,3,4]))
+
+
+
+# How many numbers are smaller than the current number
+
+# def findingSmallerThanCurrent(numArr):
+#     lst = list(sorted(numArr))
+#     return [lst.index(i) for i in numArr]
+
+# print(findingSmallerThanCurrent([8,1,2,2,3]))
+
+
+
+# Return the smallest string with swaps LeetCode not completed
+
+# def smallestString(string, split):
+#     OneArr = len(split[0]) -1 
+#     x, y = 0, 0
+#     print(OneArr)
+#     for i in range(len(string)):
+
+#         # string[split[OneArr][x]], string[split[OneArr[y]]] = string[1], string[0]
+#         print(string[split[OneArr][x]]) #, string[split[OneArr[y]]])
+
+# print(smallestString('arsh', [[0,2], [0,3]]))
+
+
+# Remove one element to make the array strickly increasing leetCode
+
+def checkIncreasing(numArr):
+    
+    return 0
+
+print(checkIncreasing())
