@@ -7528,8 +7528,91 @@
 
 # Remove one element to make the array strickly increasing leetCode
 
-def checkIncreasing(numArr):
-    
-    return 0
 
-print(checkIncreasing())
+# def first_bad_pairs(num):
+#     for i in range(len(num)-1):
+#         if num[i] >= num[i+1]:
+#             return i
+#     return -1
+
+# def checkIncreasing(numArr):
+#     j = first_bad_pairs(numArr)
+#     if j == -1:
+#         return True
+#     if first_bad_pairs(numArr[j-1:j]+numArr[j+1:]) == -1:
+#         return True
+#     if first_bad_pairs(numArr[j:j+1]+numArr[j+2:]) == -1:
+#         return True
+#     return False
+    
+
+# print(checkIncreasing([1, 3, 2, 1]))
+# print(checkIncreasing([1, 3, 2]))
+# print(checkIncreasing([123, -17, -5, 1, 2, 3, 12, 43, 45]))
+
+
+# Longest Substring in a string leetCode
+
+
+# def longestSubString(string):
+#     hashMap = dict()
+#     left = 0
+#     right = 0
+#     ans = 0
+
+#     while left < len(string) and right < len(string):
+#         el = string[right]
+#         if el in hashMap:
+#             left = max(left, hashMap[el]+1)
+#         hashMap[el] = right
+
+#         ans = max(ans, right-left+1)
+#         right += 1
+
+#     return ans
+
+# print(longestSubString('abcabcbb'))
+
+
+# first and last occurenece of a number leetcode
+
+def getFirst(numArr, target):
+    left = 0
+    right = len(numArr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if numArr[mid] == target:
+            if mid == 0 or numArr[mid-1] != target:
+                return mid
+            right = mid - 1
+        elif numArr[mid] > target:
+            right = mid - 1 
+        else:
+            left = mid + 1
+
+    return -1 
+
+def getSecond(numArr, target):
+    left = 0
+    right = len(numArr) -1 
+    while left <= right:
+        mid = (left + right) // 2
+        if numArr[mid] == target:
+            if mid == len(numArr)-1 or numArr[mid+1] != target:
+                return mid
+            left = mid + 1
+        elif numArr[mid] > target:
+            right = mid - 1 
+        else:
+            left = mid + 1
+    return -1
+
+def firstAndlast(numArr, target):
+    first =  getFirst(numArr, target)
+    second = getSecond(numArr, target)
+    # print(first)#, second)
+    return [first, second]
+    
+print(firstAndlast([5,7,7,8,8,10], 8))
+print(firstAndlast([], 8))
+print(firstAndlast([5,7,7,8,8,10], 6))
