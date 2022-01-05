@@ -7576,43 +7576,181 @@
 
 # first and last occurenece of a number leetcode
 
-def getFirst(numArr, target):
-    left = 0
-    right = len(numArr) - 1
-    while left <= right:
-        mid = (left + right) // 2
-        if numArr[mid] == target:
-            if mid == 0 or numArr[mid-1] != target:
-                return mid
-            right = mid - 1
-        elif numArr[mid] > target:
-            right = mid - 1 
-        else:
-            left = mid + 1
+# def getFirst(numArr, target):
+#     left = 0
+#     right = len(numArr) - 1
+#     while left <= right:
+#         mid = (left + right) // 2
+#         if numArr[mid] == target:
+#             if mid == 0 or numArr[mid-1] != target:
+#                 return mid
+#             right = mid - 1
+#         elif numArr[mid] > target:
+#             right = mid - 1 
+#         else:
+#             left = mid + 1
 
-    return -1 
+#     return -1 
 
-def getSecond(numArr, target):
-    left = 0
-    right = len(numArr) -1 
-    while left <= right:
-        mid = (left + right) // 2
-        if numArr[mid] == target:
-            if mid == len(numArr)-1 or numArr[mid+1] != target:
-                return mid
-            left = mid + 1
-        elif numArr[mid] > target:
-            right = mid - 1 
-        else:
-            left = mid + 1
-    return -1
+# def getSecond(numArr, target):
+#     left = 0
+#     right = len(numArr) -1 
+#     while left <= right:
+#         mid = (left + right) // 2
+#         if numArr[mid] == target:
+#             if mid == len(numArr)-1 or numArr[mid+1] != target:
+#                 return mid
+#             left = mid + 1
+#         elif numArr[mid] > target:
+#             right = mid - 1 
+#         else:
+#             left = mid + 1
+#     return -1
 
-def firstAndlast(numArr, target):
-    first =  getFirst(numArr, target)
-    second = getSecond(numArr, target)
-    # print(first)#, second)
-    return [first, second]
+# def firstAndlast(numArr, target):
+#     first =  getFirst(numArr, target)
+#     second = getSecond(numArr, target)
+#     # print(first)#, second)
+#     return [first, second]
     
-print(firstAndlast([5,7,7,8,8,10], 8))
-print(firstAndlast([], 8))
-print(firstAndlast([5,7,7,8,8,10], 6))
+# print(firstAndlast([5,7,7,8,8,10], 8))
+# print(firstAndlast([], 8))
+# print(firstAndlast([5,7,7,8,8,10], 6))
+
+
+
+
+# Rotate array leetcode
+
+
+# def rotate(array, k):
+
+#     for x in range(0, k):
+#         temp = array.pop()
+#         array.insert(0, temp)
+
+#     return array
+
+# print(rotate([1,2,3,4,5,6,7], 3)) 
+
+
+
+# Smallest Index with equal value leetcode
+
+# def smallestEqual(array):
+#     for x in range(len(array)):
+#         if x % 10 == array[x]:
+#             return x
+#     return -1
+
+
+
+# print(smallestEqual([0, 1, 2]))
+
+
+# find target indices after sorting the array leetcode
+
+# def targetIndexes(array, target):
+#     array.sort()
+#     l, r = 0, len(array)
+#     result = list()
+#     while l <= r:
+#         mid = (r+l) // 2
+#         if array[mid] == target:
+#             result.append(mid)
+#             # if array[mid-1] == target:
+#             #     result.append(mid-1)
+#             # if array[mid+1] == target:
+#             #     result.append(mid+1)
+#             # print(array.pop(mid), mid)
+#         elif array[mid] < target:
+#             l = mid + 1
+#         else:
+#             r = mid - 1
+#         return result if result else 0, array, mid
+# print(targetIndexes([1, 2, 3,4,5,6,7,8,9], 4))
+
+
+
+# Count common words with one occurenece Leetcode
+
+# def countWords(word1, word2):
+#     hashMap_word1 = dict()    
+#     hashMap_word2 = dict()
+
+#     for word_1 in word1:
+#         if word_1 not in hashMap_word1:
+#             hashMap_word1[word_1] = 1
+#         # else:
+#         #     hashMap_word1[word_1] = 1
+#     print(hashMap_word1)
+#     for word_2 in word2:
+#         if word_2 not in hashMap_word2:
+#             hashMap_word2[word_2] = 1
+#         # else:
+#         #     hashMap_word2[word_2]  = 1
+#     print(hashMap_word2)
+
+#     for word in hashMap_word2:
+#         if word in hashMap_word1:
+#             hashMap_word2[word] += 1
+
+#     s1 = len([x for x in hashMap_word1 if hashMap_word1[x] == 2])
+#     return s1
+
+
+# print(countWords(["leetcode","is","amazing","as","is"], ["amazing","leetcode","is"]))
+
+
+
+# To lower case LeetCode
+
+# def lowerCase(string):
+#     res = str()
+#     for x in string:
+#         if ord(x) >= 65 and ord(x) <= 90:
+#             res+= chr(ord(x)+32)
+#         else:
+#             res+= x
+#     return res
+
+# print(lowerCase("Arsh"))
+
+
+# Uncommon words from a sentences leetcode
+
+
+# def uncommonFinder(string):
+#     hashMap = dict()
+
+#     for word in string.split():
+#         if word in hashMap:
+#             hashMap[word] += 1
+#         else:
+#             hashMap[word] = 1
+
+#     result = list()
+#     for key in hashMap:
+#         if hashMap[key] == 1:
+#             result.append(key)
+
+#     return result
+
+
+# print(uncommonFinder('this apple is sweet this apple is sour'))
+
+
+
+# find words that can be formed by characters Leetcode
+
+def letterFormed(wordList, chars):
+    result = []; chars = ''.join(sorted(chars))
+    for word in wordList:
+        result.append(''.join(sorted(word)))
+
+    for key in result:
+        print(key in chars, key, chars)
+    return None
+
+
+print(letterFormed(["cat","bt","hat","tree"], 'atach'))
