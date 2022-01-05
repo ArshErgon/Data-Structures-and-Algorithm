@@ -7742,15 +7742,90 @@
 
 
 # find words that can be formed by characters Leetcode
+# from collections import Counter
 
-def letterFormed(wordList, chars):
-    result = []; chars = ''.join(sorted(chars))
-    for word in wordList:
-        result.append(''.join(sorted(word)))
+# def letterFormed(wordList, chars):
+#     result = int()
+#     main_c = Counter(chars)    
+#     for i in wordList:
+#         if Counter(i) & main_c == Counter(i):
+#             result += len(i)
+#     return result
 
-    for key in result:
-        print(key in chars, key, chars)
-    return None
+
+# print(letterFormed(["cat","bt","hat","tree"], 'atach'))
 
 
-print(letterFormed(["cat","bt","hat","tree"], 'atach'))
+# reverse only letter Leetcode
+
+# def reverseOnlyLetter(word):
+#     onlyWord  = str()
+
+#     for i in word:
+#         # if ord(i) in range(65, 123) or ord(i) in range(65, 90):
+#         if i.isalpha(): 
+#             onlyWord += i
+#     onlyWord = onlyWord[::-1]
+#     onlyWord = list(onlyWord)
+#     # for x in range(len(word)):
+#     #     if ord(word[x]) not in range(65, 123) and ord(word[x]) not in range(65, 90):
+#     #         onlyWord.insert(x, word[x])
+
+#     for key, value in enumerate(word):
+#         if ord(value) not in range(97, 123) and ord(value) not in range(65, 90):
+#             onlyWord.insert(key, value)
+
+#     return ''.join(x for x in onlyWord)    
+
+# print(reverseOnlyLetter('a-bC-dEf-ghIj'))
+
+
+# Student attendance record I leetcode
+
+# def checkRecord(student):
+#     absent = 0
+#     late = 0
+
+#     for i in student:
+#         if i != 'A':
+#             absent = 0
+#         if i == 'A':
+#             absent += 1
+
+#         if i == 'L':
+#             late += 1
+
+#         if absent >= 2 or late == 3:
+#             return False
+
+#     return True
+
+# print(checkRecord('PPALLL'))
+        
+
+
+# find first palindrome string in the array
+
+# def palindrome(string):
+#     # if string == string[::-1]:
+#     #     return string
+#     return string == string[::-1]
+
+# def firstPalindrome(strArr):
+#     for word in strArr:
+#          result = palindrome(word)
+#          if result:
+#              return word
+#     return ""
+
+# print(firstPalindrome(["abc","car","ada","racecar","cool"]))
+
+
+
+# Check whether two strings are almost equalivent 
+
+from collections import Counter
+
+def checkAll(word1, word2):
+    
+    return 0
