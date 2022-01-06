@@ -7821,11 +7821,102 @@
 # print(firstPalindrome(["abc","car","ada","racecar","cool"]))
 
 
+# Valid Palindrome LeetCode
 
-# Check whether two strings are almost equalivent 
+# def validPalindrome(string):
+#     res = str()
 
-from collections import Counter
+#     for i in string.lower():
+#         if i.isalpha() or i.isdigit():
+#             res += i
 
-def checkAll(word1, word2):
-    
-    return 0
+#     return res == res[::-1], res
+
+
+# print(validPalindrome('0P'))
+
+
+# third maximun number leetcode
+
+# def thirdMax(arrNum):
+#     arrNum[:] = set(arrNum)
+#     if len(arrNum) <= 2:
+#         return max(arrNum)
+
+#     count = 3
+#     res = int()
+#     while count != 0:
+#         res = arrNum.pop(arrNum.index(max(arrNum)))
+#         count -= 1
+
+#     return res
+
+# print(thirdMax([1,2,2,5,3,5]))
+
+
+# Shuffle the array LeetCode
+
+# def shuffleArray(numArr, n):
+#     new_arr = [0] * len(numArr)
+#     count = 0
+#     oddIndex = 0
+#     while count <= n-1:
+#         new_arr[oddIndex] = numArr[count]
+#         oddIndex+=2
+#         count += 1
+
+#     evenIndex = 1
+#     difference = len(numArr) - count
+#     i = 1
+#     while count <= len(numArr):
+#         new_arr[evenIndex] = numArr[count]
+#         oddIndex+=1
+#         evenIndex += 2
+#         count += 1
+#         if i == difference:
+#             break
+#         i+=1
+
+#     return new_arr
+
+# print(shuffleArray([2,5,1,3,4,7], 3))
+
+# print(shuffleArray([2,5,1,3,4,7], 3) == [2,3,5,4,1,7])
+
+
+
+# Longest continuours inscreasing subsequence leetcode
+
+# def longestSubsequence(numArr):
+#     max_count, res = 1, 1
+#     for i in range(1, len(numArr)):
+#         if numArr[i] > numArr[i - 1]:
+#             res += i
+#         else:
+#             max_count = max(max_count, res)
+#             res = 1
+#     return max(max_count, res)
+
+
+# print(longestSubsequence([1,3,5,4,7]))
+
+
+# Count common words with one occurence leetcode
+
+# def countWords(word1, word2):
+#     new_array = word1 + word2
+#     hashMap = dict()
+
+#     for i in new_array:
+#         if i in hashMap:
+#             hashMap[i] += 1
+#         else:
+#             hashMap[i] = 1
+
+#     res = 0
+#     for key in hashMap:
+#         if hashMap[key] == 2:
+#             res += 1
+#     return res
+
+# print(countWords(['arsh', 'ergon'], ['ergon', 'ali']))
