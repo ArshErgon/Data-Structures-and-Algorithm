@@ -8072,3 +8072,78 @@
 #     return max(freq, key=freq.get)
 
 # print(mostCommon('Bob hit a ball, the hit BALL flew far after it was hit.', 'hit'))
+
+
+
+# Remove one element to make the array strickly increasing LeetCode
+
+import math
+
+def isIncreasing(numArray):
+    prev = 00
+    flag = False
+    nums = [math.inf]
+
+    i, n = 0, len(numArray) - 1
+
+    while i < n:
+        if prev < numArray[i] < numArray[i+1]:
+            prev = numArray[i]
+        else:
+            if flag:
+                return False
+            flag = True
+            if numArray[i+1] <= prev:
+                prev = numArray[i]
+                i+=1
+        i += 1
+
+    return True
+
+
+# Not solve
+
+print(isIncreasing([1,2,10,5,7]))
+print(isIncreasing([2,3,1,2]))
+print(isIncreasing([105,924,32,968]))
+print(isIncreasing([1,1,1]))
+
+
+# Longest Palindromic substring LeetCode
+
+def longestSubstring(string):
+    res = str()
+    if string == string[::-1]:
+        return string
+
+    for i in range(len(string)):
+        for x in range(1, len(string)+1):
+            if string[i:x] == string[i:x][::-1] and len(string[i:x]) >= len(res):
+                res = string[i:x]
+
+    return res
+
+# Not solved
+
+# print(longestSubstring('babad'))
+# print(longestSubstring('cbbd'))
+
+
+# Delete Character to make string fancy LeetCode
+
+# def makeFancyString(string):
+#     t = ''
+#     ct = 1
+#     ans = ''
+#     for i in string:
+#         if i == t:
+#             ct += 1
+#         else:
+#             ct = 1
+
+#         if ct <= 2:done 
+#             ans += i
+#         t = i
+#     return ans
+
+# print(makeFancyString('leeetcode'))
