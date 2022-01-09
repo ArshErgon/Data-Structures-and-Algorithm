@@ -8103,10 +8103,10 @@ def isIncreasing(numArray):
 
 # Not solve
 
-print(isIncreasing([1,2,10,5,7]))
-print(isIncreasing([2,3,1,2]))
-print(isIncreasing([105,924,32,968]))
-print(isIncreasing([1,1,1]))
+# print(isIncreasing([1,2,10,5,7]))
+# print(isIncreasing([2,3,1,2]))
+# print(isIncreasing([105,924,32,968]))
+# print(isIncreasing([1,1,1]))
 
 
 # Longest Palindromic substring LeetCode
@@ -8123,7 +8123,7 @@ def longestSubstring(string):
 
     return res
 
-# Not solved
+# Not solved, solved but its not optimized
 
 # print(longestSubstring('babad'))
 # print(longestSubstring('cbbd'))
@@ -8132,18 +8132,135 @@ def longestSubstring(string):
 # Delete Character to make string fancy LeetCode
 
 # def makeFancyString(string):
-#     t = ''
+#     t = str()
 #     ct = 1
-#     ans = ''
+#     ans = str()
 #     for i in string:
 #         if i == t:
 #             ct += 1
 #         else:
 #             ct = 1
 
-#         if ct <= 2:done 
+#         if ct <= 2:
 #             ans += i
 #         t = i
 #     return ans
 
 # print(makeFancyString('leeetcode'))
+
+
+
+# Largest pair sum in array CodeWars
+# def largePair(numArr):
+#     numArr.sort()
+
+#     return numArr[-1] + numArr[-2]
+
+
+# print(largePair([10, 14, 2, 23, 19]))
+# print(largePair([1,2,3,4,6,-1,2]))
+# print(largePair([99, 2, 2, 23, 19]))
+# print(largePair([-10, -8, -16, -18, -19]))
+
+
+# simple remove duplicates codewars
+
+# def remove(numArr):
+#     re = []
+
+#     for i in numArr[::-1]:
+#         if i not in re:
+#             re.append(i)
+
+#     return re
+
+# print(remove([3, 4, 4, 3, 6, 3]))
+
+
+# check same case Codewars
+
+# def sameCheck(word1, word2):
+#     if word1.isupper() and word1.isalpha() and word2.isupper() and word2.isalpha():
+#         return 1
+#     if word1.isupper() and word1.isalpha() or word2.isupper() and word2.isalpha():
+#         return 0
+#     else:
+#         return -1
+
+# print(sameCheck('C', 'B'))
+# print(sameCheck('b', 'a'))
+# print(sameCheck('C', 'b'))
+
+
+# Identicals elements codewars
+
+# from collections import Counter
+
+# def identicalCheck(word1, word2):
+#     if not word1 or not word2:
+#         return False
+#     freq = Counter(word2)
+
+#     for i in word1:
+#         if i in freq:
+#             return True
+
+#     return False
+
+
+# print(identicalCheck([9, 8, 7], [1, 6, 7, 8, 9]))
+
+
+# First Duplicate codesignal
+
+# def firstDupli(numArr):
+#     seen = set()
+
+#     for i in numArr:
+#         if i in seen:
+#             return i
+#         else:
+#             seen.add(i)
+
+#     return -1
+
+
+# print(firstDupli([2, 1, 3, 5, 3, 2]))
+
+
+# firstNoneRepeating codesignal
+
+# def firstNone(string):
+#     hashMap = dict()
+#     for i in string:
+#         if ord(i) in hashMap:
+#             hashMap[ord(i)] += 1
+#         else:
+#             hashMap[ord(i)] = 1
+    
+#     for key in hashMap:
+#         if hashMap[key] == 1:
+#             return chr(key)
+
+#     return '_'
+
+
+# print(firstNone('abacabad'))
+# print(firstNone('abcdefghijklmnopqrstuvwxyziflskecznslkjfabe'))
+
+
+# RotateImage CodeSignal
+
+def rotateImage(matrix):
+    matrix.reverse()
+
+    for i in range(len(matrix)):
+        for j in range(i):
+            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+
+    return matrix
+
+
+print(rotateImage( [[1, 2, 3],
+     [4, 5, 6],
+     [7, 8, 9]]))
