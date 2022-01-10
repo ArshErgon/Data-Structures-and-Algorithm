@@ -8249,9 +8249,9 @@ def longestSubstring(string):
 # print(firstNone('abcdefghijklmnopqrstuvwxyziflskecznslkjfabe'))
 
 
+
 # RotateImage CodeSignal
 
-<<<<<<< HEAD
 # def rotateImage(matrix):
 #     matrix.reverse()
 
@@ -8391,7 +8391,7 @@ for i in range(1, 10):
 print(obj.printNode())
 print(obj.delete(3))
 
-=======
+
 def rotateImage(matrix):
     matrix.reverse()
 
@@ -8405,4 +8405,3 @@ def rotateImage(matrix):
 print(rotateImage( [[1, 2, 3],
      [4, 5, 6],
      [7, 8, 9]]))
->>>>>>> 18143eff0f80a2b38d9438336ddae34f5e4cb2bd
