@@ -8335,73 +8335,128 @@ def longestSubstring(string):
 
 # remove kth element from the linkedList codeSignal
 
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
+# class Node:
+#     def __init__(self, data):
+#         self.data = data
+#         self.next = None
 
 
-class LinkedList:
+# class LinkedList:
 
-    def __init__(self):
-        self.head = None
+#     def __init__(self):
+#         self.head = None
 
     
-    def add(self, data):
-        newNode  = Node(data)
-        if self.head:
-            current = self.head
-            while current.next:
-                current = current.next
-            current.next = newNode
-        else:
-            self.head = newNode
+#     def add(self, data):
+#         newNode  = Node(data)
+#         if self.head:
+#             current = self.head
+#             while current.next:
+#                 current = current.next
+#             current.next = newNode
+#         else:
+#             self.head = newNode
 
         
-    def printNode(self):
-        current = self.head
-        l = str()
-        while current != None:
-            l+=(str(current.data)+ '--->')
-            current = current.next
-        return l 
+#     def printNode(self):
+#         current = self.head
+#         l = str()
+#         while current != None:
+#             l+=(str(current.data)+ '--->')
+#             current = current.next
+#         return l 
 
     
-    def delete(self, data):
-        current = self.head
-        prev = None
-        while current != None:
-            if current.data == data:
-                prev.next = current.next
-                current = prev
-            else:
-                prev = current
-            current = current.next
-        s = str()
-        current = self.head
-        while current != None:
-            s += str(current.data) + '--->'
-            current = current.next
+#     def delete(self, data):
+#         current = self.head
+#         prev = None
+#         while current != None:
+#             if current.data == data:
+#                 prev.next = current.next
+#                 current = prev
+#             else:
+#                 prev = current
+#             current = current.next
+#         s = str()
+#         current = self.head
+#         while current != None:
+#             s += str(current.data) + '--->'
+#             current = current.next
 
-        return s
+#         return s
 
-obj = LinkedList()
-for i in range(1, 10):
-    obj.add(i)
-print(obj.printNode())
-print(obj.delete(3))
-
-
-def rotateImage(matrix):
-    matrix.reverse()
-
-    for i in range(len(matrix)):
-        for j in range(i):
-            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
-
-    return matrix
+# obj = LinkedList()
+# for i in range(1, 10):
+#     obj.add(i)
+# print(obj.printNode())
+# print(obj.delete(3))
 
 
-print(rotateImage( [[1, 2, 3],
-     [4, 5, 6],
-     [7, 8, 9]]))
+# def rotateImage(matrix):
+#     matrix.reverse()
+
+#     for i in range(len(matrix)):
+#         for j in range(i):
+#             matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+
+#     return matrix
+
+
+# print(rotateImage( [[1, 2, 3],
+#      [4, 5, 6],
+#      [7, 8, 9]]))
+
+
+
+# Integer Replacement LeetCode
+
+
+# def integerReplacement(num, count=0):
+#     if num == 1:
+#         return count
+#     if num % 2 == 0:
+#         return integerReplacement(num//2, count+1)
+#     if num % 2 != 0 and num + 1 % 4 == 1:
+#         return integerReplacement(num-1, count+1)
+#     if num % 2 != 0 and num - 1 % 4 == 0:
+#         return integerReplacement(num+1, count+1)
+
+#     # count = 0
+
+#     # while num > 1:
+#     #     if num % 2 == 0:
+#     #         num //= 2
+        
+#     #     elif num == 3 or num % 4 == 0:
+#     #         num -= 1
+#     #     else:
+#     #         num += 1
+
+#     #     count += 1
+    
+#     # return count
+
+# # print(integerReplacement(65535))
+# x = [8,3,65535,1234]
+
+# for i in x:
+#     print(integerReplacement(i))
+
+
+
+# count number with unique digits leetcode
+
+# def countUniqueDigit(num):
+#     choices = [9, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+#     res = 1
+#     ans = 1
+#     for i in range(num if num <= 10 else 10):
+#         ans *= choices[i]
+#         res += ans
+#     return res
+
+# print(countUniqueDigit(2))
+
+
+# 
