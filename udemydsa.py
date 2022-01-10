@@ -8072,3 +8072,321 @@
 #     return max(freq, key=freq.get)
 
 # print(mostCommon('Bob hit a ball, the hit BALL flew far after it was hit.', 'hit'))
+
+
+
+# Remove one element to make the array strickly increasing LeetCode
+
+import math
+
+def isIncreasing(numArray):
+    prev = 00
+    flag = False
+    nums = [math.inf]
+
+    i, n = 0, len(numArray) - 1
+
+    while i < n:
+        if prev < numArray[i] < numArray[i+1]:
+            prev = numArray[i]
+        else:
+            if flag:
+                return False
+            flag = True
+            if numArray[i+1] <= prev:
+                prev = numArray[i]
+                i+=1
+        i += 1
+
+    return True
+
+
+# Not solve
+
+# print(isIncreasing([1,2,10,5,7]))
+# print(isIncreasing([2,3,1,2]))
+# print(isIncreasing([105,924,32,968]))
+# print(isIncreasing([1,1,1]))
+
+
+# Longest Palindromic substring LeetCode
+
+def longestSubstring(string):
+    res = str()
+    if string == string[::-1]:
+        return string
+
+    for i in range(len(string)):
+        for x in range(1, len(string)+1):
+            if string[i:x] == string[i:x][::-1] and len(string[i:x]) >= len(res):
+                res = string[i:x]
+
+    return res
+
+# Not solved, solved but its not optimized
+
+# print(longestSubstring('babad'))
+# print(longestSubstring('cbbd'))
+
+
+# Delete Character to make string fancy LeetCode
+
+# def makeFancyString(string):
+#     t = str()
+#     ct = 1
+#     ans = str()
+#     for i in string:
+#         if i == t:
+#             ct += 1
+#         else:
+#             ct = 1
+
+#         if ct <= 2:
+#             ans += i
+#         t = i
+#     return ans
+
+# print(makeFancyString('leeetcode'))
+
+
+
+# Largest pair sum in array CodeWars
+# def largePair(numArr):
+#     numArr.sort()
+
+#     return numArr[-1] + numArr[-2]
+
+
+# print(largePair([10, 14, 2, 23, 19]))
+# print(largePair([1,2,3,4,6,-1,2]))
+# print(largePair([99, 2, 2, 23, 19]))
+# print(largePair([-10, -8, -16, -18, -19]))
+
+
+# simple remove duplicates codewars
+
+# def remove(numArr):
+#     re = []
+
+#     for i in numArr[::-1]:
+#         if i not in re:
+#             re.append(i)
+
+#     return re
+
+# print(remove([3, 4, 4, 3, 6, 3]))
+
+
+# check same case Codewars
+
+# def sameCheck(word1, word2):
+#     if word1.isupper() and word1.isalpha() and word2.isupper() and word2.isalpha():
+#         return 1
+#     if word1.isupper() and word1.isalpha() or word2.isupper() and word2.isalpha():
+#         return 0
+#     else:
+#         return -1
+
+# print(sameCheck('C', 'B'))
+# print(sameCheck('b', 'a'))
+# print(sameCheck('C', 'b'))
+
+
+# Identicals elements codewars
+
+# from collections import Counter
+
+# def identicalCheck(word1, word2):
+#     if not word1 or not word2:
+#         return False
+#     freq = Counter(word2)
+
+#     for i in word1:
+#         if i in freq:
+#             return True
+
+#     return False
+
+
+# print(identicalCheck([9, 8, 7], [1, 6, 7, 8, 9]))
+
+
+# First Duplicate codesignal
+
+# def firstDupli(numArr):
+#     seen = set()
+
+#     for i in numArr:
+#         if i in seen:
+#             return i
+#         else:
+#             seen.add(i)
+
+#     return -1
+
+
+# print(firstDupli([2, 1, 3, 5, 3, 2]))
+
+
+# firstNoneRepeating codesignal
+
+# def firstNone(string):
+#     hashMap = dict()
+#     for i in string:
+#         if ord(i) in hashMap:
+#             hashMap[ord(i)] += 1
+#         else:
+#             hashMap[ord(i)] = 1
+    
+#     for key in hashMap:
+#         if hashMap[key] == 1:
+#             return chr(key)
+
+#     return '_'
+
+
+# print(firstNone('abacabad'))
+# print(firstNone('abcdefghijklmnopqrstuvwxyziflskecznslkjfabe'))
+
+
+# RotateImage CodeSignal
+
+# def rotateImage(matrix):
+#     matrix.reverse()
+
+#     for i in range(len(matrix)):
+#         for j in range(i):
+#             matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+
+#     return matrix
+
+
+# print(rotateImage( [[1, 2, 3],
+#      [4, 5, 6],
+#      [7, 8, 9]]))
+
+
+# Factorial Count CodeWars
+# from math import floor, log10
+
+# def factorialCount(num):
+#     if num < 0:
+#         return 0
+    
+#     if num <= 1:
+#         return 1
+
+    
+#     digit = 0
+
+#     for i in range(2, num+1):
+#         digit += log10(i)
+
+#     return floor(digit) + 1
+
+# print(factorialCount(5))
+
+
+
+# isCryptSolution CodeSignal
+
+# def isCrypt(crypt, solution):
+#     a = crypt[0]
+#     b = crypt[1]
+#     c = crypt[2]
+#     chr_dict = dict()
+
+#     for i in solution:
+#         chr_dict[i[0]] = int(i[1])
+
+#     has_zero = False
+#     if chr_dict[a[0]] == 0 or chr_dict[b[0]] == 0 or chr_dict[c[0]] == 0:
+#         has_zero = True
+
+#     n1 = ''.join(str(chr_dict[x]) for x in a)
+#     n2 = ''.join(str(chr_dict[x]) for x in b)
+#     n3 = ''.join(str(chr_dict[x]) for x in c)
+
+#     if int(n1) + int(n2) == int(n3):
+#         if has_zero and int(n3) == 0 and len(n3) == len(str(int(n3))):
+#             return True
+
+#         elif has_zero:
+#             return False
+
+#         else:
+#             return True
+#     else:
+#         return False
+
+
+
+# print(isCrypt(["SEND", "MORE", "MONEY"], 
+#             [['O', '0'],
+#             ['M', '1'],
+#             ['Y', '2'],
+#             ['E', '5'],
+#             ['N', '6'],
+#             ['D', '7'],
+#             ['R', '8'],
+#             ['S', '9']]))
+
+
+# remove kth element from the linkedList codeSignal
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+class LinkedList:
+
+    def __init__(self):
+        self.head = None
+
+    
+    def add(self, data):
+        newNode  = Node(data)
+        if self.head:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = newNode
+        else:
+            self.head = newNode
+
+        
+    def printNode(self):
+        current = self.head
+        l = str()
+        while current != None:
+            l+=(str(current.data)+ '--->')
+            current = current.next
+        return l 
+
+    
+    def delete(self, data):
+        current = self.head
+        prev = None
+        while current != None:
+            if current.data == data:
+                prev.next = current.next
+                current = prev
+            else:
+                prev = current
+            current = current.next
+        s = str()
+        current = self.head
+        while current != None:
+            s += str(current.data) + '--->'
+            current = current.next
+
+        return s
+
+obj = LinkedList()
+for i in range(1, 10):
+    obj.add(i)
+print(obj.printNode())
+print(obj.delete(3))
+
