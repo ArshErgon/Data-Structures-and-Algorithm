@@ -8459,4 +8459,80 @@ def longestSubstring(string):
 # print(countUniqueDigit(2))
 
 
-# 
+# Fibonacci numbers leetcode
+
+# def fib(n):
+#     # if n == 0:
+#     #     return 0
+#     # if n == 1:
+#     #     return 1
+#     # return fib(n-1) + fib(n-2)
+
+#     arr = [0, 1]
+
+#     if n == 0:
+#         return 0
+#     if n == 1:
+#         return 1
+#     for i in range(n):
+#         arr.append(arr[-1] + arr[-2])
+
+#     return arr[-2]
+
+# print(fib(3))
+
+
+
+# Merge Sorted Array LeetCode
+ 
+# def merge(num1, num2, n, m):
+#     num1 = num1[:m] + num2[:n]
+
+#     return sorted(num1)
+
+# print(merge([1,2,3,0,0,0], [2,3,4], 3, 3))
+
+
+# Counting Bits leetCode
+
+# def countingBits(num):
+#     ans = list()
+
+#     for i in range(num+1):
+#         ans.append(bin(i)[2:].count('1'))
+
+#     return ans
+
+# print(countingBits(2))
+
+
+
+
+# Reverse Bits LeetCode
+
+# def reverseBits(num):
+#     res = 0
+#     pos = 31
+#     while pos >= 0:
+#         if num&(1<<(31-pos)):
+#             res = res | 1<<pos
+#         pos -=1
+#     return res
+
+
+
+# print(reverseBits(43261596))
+# print(reverseBits('00000010100101000001111010011100'))
+# print(reverseBits('11111111111111111111111111111101'))
+
+
+# Maximun product of three numbers LeetCode
+
+# def maxNum(arrNum):
+#     arrNum.sort()
+#     l = arrNum[0] * arrNum[1] * arrNum[-1]
+#     r = arrNum[-1] * arrNum[-2] * arrNum[-3]
+#     return max(l, r)
+
+# print(maxNum([1,2,3]))
+# print(maxNum([-100,-98,-1,2,3,4]))
