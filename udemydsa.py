@@ -8536,3 +8536,202 @@ def longestSubstring(string):
 
 # print(maxNum([1,2,3]))
 # print(maxNum([-100,-98,-1,2,3,4]))
+
+
+# Element Appearing more than 25% in the sorted array
+
+# from collections import Counter 
+
+# def sortedArray(arrayList):
+#     freq = Counter(arrayList)
+#     for key, value in freq.items():
+#         if value > len(arrayList) * 0.25:
+#             return key
+
+# print(sortedArray([1,2,2,6,6,6,6,7,10]))
+# print(sortedArray([1,1,1,1]))
+
+
+# Remove one element to make the array strickly increasing Leetcode
+
+# def strickIncreasing(nums):
+#         prev = 0
+#         flag = False
+#         nums.append(math.inf)
+#         i, n = 0, len(nums) - 1
+#         while i < n:
+#             if prev < nums[i] < nums[i+1]:
+#                 prev = nums[i]
+#             else:  # nums[i] or nums[i+1] should be removed
+#                 if flag:
+#                     return False
+#                 flag = True
+#                 if nums[i+1] <= prev:  # remove nums[i+1]
+#                     print(prev)
+#                     prev = nums[i]
+#                     i += 1
+#             i += 1
+        
+#         return True, nums
+
+# print(strickIncreasing([1,2,3,10,5,7]))
+# print(strickIncreasing([2,2,2,2,2]))
+# print(strickIncreasing([105,924,32,968]))
+# print(strickIncreasing([2,3,1,2]))
+
+
+
+
+# Relative sort array LeetCode
+# take arr1 and count the occurence of elements in it place it into a freq variable
+# create a new_array
+# loop through the arr2 with mapping the arr2[i] in freq and multiplying it with the value
+
+# from collections import Counter
+
+# def relativeSortArray(arr1, arr2):
+#     freq = Counter(arr1)
+#     new1, new2 = set(arr1), set(arr2)
+#     arr3 = sorted(new1.difference(new2))
+#     result = list()
+#     print(arr3, freq)
+#     for key in arr2:
+#         result += [key] * freq[key]
+    
+#     for key in arr3:
+#         result += [key] * freq[key]
+
+#     return result
+
+# # arr1 = [2,3,1,3,2,4,6,7,9,2,19]
+# # arr2 = [2,1,4,3,9,6]
+
+# # arr1 = [28,6,22,8,44,17]
+# # arr2 = [22,28,8,6]
+
+# arr1 = [2,21,43,38,0,42,33,7,24,13,12,27,12,24,5,23,29,48,30,31]
+# arr2 = [2,42,38,0,43,21]
+
+# print(relativeSortArray(arr1, arr2) == [2,42,38,0,43,21,5,7,12,12,13,23,24,24,27,29,30,31,33,48])
+
+
+
+# Check if every row and column contains all numbers leetcode
+
+# def check_valid(matrix):
+    # *******************
+    # Worked only for rows
+    # size = len(matrix) 
+    # matrix_n_size = len(matrix[0]) - 1
+    # freq = dict()
+    # l, r = 0, size
+    # # print(matrix[l][matrix_n_size])
+
+    # while l < r:
+    #     # print(matrix[l][matrix_n_size], 'res')
+    #     # print(matrix[0],matrix[0][matrix_n_size],'a')
+        
+
+    #     if matrix[l][matrix_n_size] in freq:
+    #         freq[matrix[l][matrix_n_size]] += 1
+    #         matrix_n_size -= 1
+    #         # print(matrix[l][matrix_n_size])
+    #     else:
+    #         freq[matrix[l][matrix_n_size]] = 1
+    #         matrix_n_size -= 1
+    #     if matrix_n_size == -1:
+    #         l+=1
+    #         matrix_n_size = len(matrix[0]) - 1
+
+    # return max(freq.values()) == min(freq.values()) == size
+    # *******************
+
+
+#     for row, col in zip(matrix, zip(*matrix)):
+#         if len(set(row)) != len(matrix) or len(set(col)) != len(matrix):
+#             return False
+#         return True
+
+# print(check_valid([[1,2,3],[3,1,2],[2,3,1]]))
+# print(check_valid([[1,1,1],[1,2,3],[1,2,3]]))
+# print(check_valid([[1,1,2], [1,2,3], [2,3,1]]))
+# # print(check_valid([[15,7,18,11,19,10,14,16,8,2,3,6,5,1,17,12,9,4,13],[17,15,9,8,11,13,7,6,5,1,3,16,12,19,10,2,4,14,18],[19,14,12,10,8,9,17,16,4,3,13,18,1,5,7,11,2,15,6]]))
+# # print(check_valid([[15,7,18,11,19,10,14,16,8,2,3,6,5,1,17,12,9,4,13],[17,15,9,8,11,13,7,6,5,1,3,16,12,19,10,2,4,14,18],[19,14,12,10,8,9,17,16,4,3,13,18,1,5,7,11,2,15,6],[4,2,10,15,19,16,8,9,5,3,1,11,13,14,6,18,12,17,7],[13,19,9,16,5,8,6,12,14,11,18,10,7,2,3,4,15,17,1],[4,7,18,11,17,16,5,12,10,1,15,13,14,6,19,2,3,9,8],[14,5,15,1,18,6,12,7,8,9,3,13,2,10,19,4,11,16,17],[10,3,1,8,14,19,11,18,15,13,9,12,16,17,7,4,5,2,6],[14,13,19,18,7,2,4,8,10,17,12,5,15,1,6,9,11,3,16],[19,8,10,18,16,12,11,17,4,9,7,2,5,13,15,3,6,1,14],[1,10,6,14,7,18,3,9,4,16,5,11,13,17,15,8,19,2,12],[13,10,5,16,1,19,17,3,9,11,7,8,12,6,4,2,14,15,18],[17,2,1,6,9,19,18,14,4,11,12,13,16,5,8,7,3,10,15],[1,4,10,5,13,6,18,11,3,2,15,14,16,12,17,19,8,9,7],[2,14,3,12,16,17,11,9,1,6,5,19,10,13,4,18,7,15,8],[15,9,8,18,14,13,4,12,5,17,6,1,11,16,19,3,7,2,10],[15,8,12,16,13,2,6,19,18,14,10,5,11,9,7,1,3,17,4],[15,6,17,7,5,3,1,9,19,12,10,11,16,14,18,8,2,13,4],[6,11,10,14,2,13,16,1,9,15,8,19,17,3,5,18,7,4,12]]))
+
+
+
+# generate string with characters that have odd count_Leetcode
+
+# def genChar(num):
+#     return ''.join('a' * (num-1)+'z' if num % 2==0 else 'a' * num)
+
+# print(genChar())
+
+
+# Reverse a integer without converting them into a string
+# 1132 == 2311
+# -431 == -134
+
+# def reverseInteger(num):
+#     result, num_remainder = 0, abs(num)
+#     while num_remainder:
+#         result = result * 10 + num_remainder % 10
+#         num_remainder //= 10 
+#     return -result if num < 0 else result 
+
+# print(reverseInteger(-123))
+
+
+# Place even numbers first then the odd numbers without any other extra space
+# Sort array by parity LeetCode
+
+
+# def evenAndOddList(numArr):
+#     next_even, next_odd = 0, len(numArr)-1
+
+#     while next_even < next_odd:
+#         if numArr[next_even] % 2 == 0:
+#             next_even += 1
+#         else:
+#             numArr[next_even], numArr[next_odd] = numArr[next_odd], numArr[next_even]
+#             next_odd -= 1
+        
+#     return numArr
+
+# print(evenAndOddList([2, 5, 9, 6, 3, 4]))
+
+
+# plus one LeetCode
+
+# def plusOne(numArray):
+#     numArray[-1] += 1
+#     for i in reversed(range(1, len(numArray))):
+#         if numArray[i] != 10:
+#             break
+#         numArray[i] = 0
+#         numArray[i-1] += 1
+    
+#     if numArray[0] == 10:
+#         numArray[0] = 1
+#         numArray.append(0)
+#     return numArray
+
+# print(plusOne([9,9,9]))
+
+
+# Delete Duplicates from sorted array
+
+# def deleteDuplicates(arrList):
+#     if not arrList:
+#         return 0
+    
+#     write_next = 1
+#     for i in range(1, len(arrList)):
+#         if arrList[i-1] != arrList[i]:
+#             arrList[write_next] = arrList[i]
+#             write_next += 1
+#     return arrList[:write_next]
+
+
+# print(deleteDuplicates([1,2,3,4,4,5,5,6,6,7,7,8,8,9,9]))
+
