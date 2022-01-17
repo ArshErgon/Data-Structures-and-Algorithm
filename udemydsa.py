@@ -8754,3 +8754,99 @@ def longestSubstring(string):
 
 
 # print(is_plaindromic('raahaar'))
+
+
+# majority element Leetcode
+
+# [1,1,1,2,2,1]
+
+# def majorityElement(numArr):
+#     res, count = 0, 0
+#     for n in numArr:
+#         if count == 0:
+#             res = n
+#         count += 1 if n == res else -1
+#     return res
+
+# print(majorityElement([1,2,3,1]))
+
+
+# Find the minimum in the rotated array algo-monster
+
+# def findMin(arrList):
+#     l, r, res= 0, len(arrList) - 1, -1
+#     count = -1
+#     while l <= r:
+#         mid = (l+r) // 2
+#         if arrList[mid] <= arrList[-1]:
+#             count = mid
+#             r -= 1
+#         else:
+#             l += 1
+#     return count
+
+# print(findMin([30, 40, 50, 10, 20]))
+
+
+# Finding the peak element in the montain array AlgoMonster
+
+# def findingPeakEle(arrList):
+#     l, r = 0, len(arrList) - 1
+#     while l <= r:
+#         mid = (l+r) // 2
+#         if mid == len(arrList)-1 or arrList[mid] >= arrList[mid+1]:
+#             res = mid
+#             r-=1
+#         else:
+#             l += 1
+#     return res
+
+# print(findingPeakEle([1,2,3,2,1]))
+
+
+
+# is anagram leetcode
+
+def isAnagram(word1, word2):
+    # ==================
+    # first Approach
+    # word1_index = [0] * 26
+    # word2_index = [0] * 26
+
+    # if len(word1) != len(word2):
+    #     return False
+
+    # for i in range(len(word1)):
+    #     word1_index[i] = ord(word1[i].lower()) - ord('a')
+    #     word2_index[i] = ord(word2[i].lower()) - ord('a')
+
+    # flag = True
+    # for i in range(len(word1_index)):
+    #     if word1_index[i] != word2_index[i]:
+    #         return False
+    # return True
+    # ===================
+
+    hashMap_word1 = dict()
+    hashMap_word2 = dict()
+
+    if len(word1) != len(word2):
+        return False
+
+    word1, word2 = word1.lower(), word2.lower()
+
+    for i in range(len(word1)):
+        hashMap_word1[word1[i]] = 1 + hashMap_word1.get(word1[i], 0)
+        hashMap_word2[word2[i]] = 1 + hashMap_word2.get(word2[i], 0)
+
+    for key in hashMap_word1:
+        if hashMap_word1[key] != hashMap_word2.get(key, 0):
+            return False
+    return True
+
+
+l = []
+word1 = 'ABC'
+word2 = 'ABc'
+
+print(isAnagram(word1, word2))
