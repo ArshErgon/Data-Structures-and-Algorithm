@@ -8735,3 +8735,22 @@ def longestSubstring(string):
 
 # print(deleteDuplicates([1,2,3,4,4,5,5,6,6,7,7,8,8,9,9]))
 
+# first missing postive Leetcode
+
+# def firstMissing(numArr):
+#     numArrSet = set(numArr)
+#     for i in range(1, len(numArrSet)+2):
+#         if i not in numArrSet:
+#             return i
+
+# print(firstMissing([1,3,4,5,6]))
+
+
+# is palindromic string
+
+# def is_plaindromic(string):
+#     # return all(string[i] == string[~i] for i in range(len(string) // 2))
+#     return all(string[i] == string[~i] for i in range(len(string)//2))
+
+
+# print(is_plaindromic('raahaar'))
