@@ -44,7 +44,11 @@ def isAnagram(word1, word2):
 l = []
 word1 = "anagram"
 word2 = "nagaram"
+<<<<<<< HEAD
 # print(isAnagram(word1, word2))
+=======
+print(isAnagram(word1, word2))
+>>>>>>> 53b555d31b16792f3ec96243a7405f0eaf4d371a
 
 
 # two Sum LeetCode
@@ -101,6 +105,7 @@ def maxSubarr(arrList):
     return maxCount
 
 # print(maxSubarr([-2,1,-3,4,-1,2,1,-5,4]))
+<<<<<<< HEAD
 
 
 # two sum leetcode 
@@ -131,3 +136,5 @@ def houseRobber(arrList):
     return rob2
 
 print(houseRobber([1,2,3,1]))
+=======
+>>>>>>> 53b555d31b16792f3ec96243a7405f0eaf4d371a

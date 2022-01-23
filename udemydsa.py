@@ -8807,6 +8807,7 @@ def longestSubstring(string):
 
 # is anagram leetcode
 
+<<<<<<< HEAD
 # def isAnagram(word1, word2):
 #     # ==================
 #     # first Approach
@@ -9053,3 +9054,48 @@ def mergeTwo(arr1, arr2):
 
 
 print(mergeTwo([1,2,3,0,0,0], [2,5,6]))
+=======
+def isAnagram(word1, word2):
+    # ==================
+    # first Approach
+    # word1_index = [0] * 26
+    # word2_index = [0] * 26
+
+    # if len(word1) != len(word2):
+    #     return False
+
+    # for i in range(len(word1)):
+    #     word1_index[i] = ord(word1[i].lower()) - ord('a')
+    #     word2_index[i] = ord(word2[i].lower()) - ord('a')
+
+    # flag = True
+    # for i in range(len(word1_index)):
+    #     if word1_index[i] != word2_index[i]:
+    #         return False
+    # return True
+    # ===================
+
+    hashMap_word1 = dict()
+    hashMap_word2 = dict()
+
+    if len(word1) != len(word2):
+        return False
+
+    word1, word2 = word1.lower(), word2.lower()
+
+    for i in range(len(word1)):
+        hashMap_word1[word1[i]] = 1 + hashMap_word1.get(word1[i], 0)
+        hashMap_word2[word2[i]] = 1 + hashMap_word2.get(word2[i], 0)
+
+    for key in hashMap_word1:
+        if hashMap_word1[key] != hashMap_word2.get(key, 0):
+            return False
+    return True
+
+
+l = []
+word1 = 'ABC'
+word2 = 'ABc'
+
+print(isAnagram(word1, word2))
+>>>>>>> 53b555d31b16792f3ec96243a7405f0eaf4d371a
