@@ -30,4 +30,8 @@ def stringCompress(string):
     last_add_char = compress_str+prev+str(cnt)
     return last_add_char if len(last_add_char) < len(string) else string
 
+<<<<<<< HEAD
 print(stringCompress('aaabbccda'))
+=======
+print(stringCompress('aaabbccda'))
+>>>>>>> ef2cbdc63bd9f2829881acc9ea3e10fc02810457

@@ -8100,6 +8100,29 @@
 
 #     return True
 
+# import math
+
+# def isIncreasing(numArray):
+#     prev = 00
+#     flag = False
+#     nums = [math.inf]
+
+#     i, n = 0, len(numArray) - 1
+
+#     while i < n:
+#         if prev < numArray[i] < numArray[i+1]:
+#             prev = numArray[i]
+#         else:
+#             if flag:
+#                 return False
+#             flag = True
+#             if numArray[i+1] <= prev:
+#                 prev = numArray[i]
+#                 i+=1
+#         i += 1
+
+#     return True
+
 
 # Not solve
 
@@ -9055,6 +9078,26 @@
 # print(mergeTwo([1,2,3,0,0,0], [2,5,6]))
 
 # def isAnagram(word1, word2):
+
+# def mergeTwo(arr1, arr2):
+#     temp_arr = list()
+#     for i in arr1:
+#         if i != 0:
+#             temp_arr.append(i)
+#     for i in arr2:
+#         temp_arr.append(i)
+    
+#     temp_arr.sort()
+
+#     for i in range(len(temp_arr)):
+#         arr1[i] = temp_arr[i]
+    
+#     return arr1
+
+
+# print(mergeTwo([1,2,3,0,0,0], [2,5,6]))
+
+# def isAnagram(word1, word2):
     # ==================
     # first Approach
     # word1_index = [0] * 26
@@ -9113,3 +9156,26 @@
 
 # print(capitalizeTitle('arsh ergon ali al'))
 # print(capitalizeTitle('aaa'))
+#     hashMap_word1 = dict()
+#     hashMap_word2 = dict()
+
+#     if len(word1) != len(word2):
+#         return False
+
+#     word1, word2 = word1.lower(), word2.lower()
+
+#     for i in range(len(word1)):
+#         hashMap_word1[word1[i]] = 1 + hashMap_word1.get(word1[i], 0)
+#         hashMap_word2[word2[i]] = 1 + hashMap_word2.get(word2[i], 0)
+
+#     for key in hashMap_word1:
+#         if hashMap_word1[key] != hashMap_word2.get(key, 0):
+#             return False
+#     return True
+
+
+# l = []
+# word1 = 'ABC'
+# word2 = 'ABc'
+
+# print(isAnagram(word1, word2))
