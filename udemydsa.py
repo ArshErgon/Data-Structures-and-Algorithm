@@ -9179,3 +9179,23 @@
 # word2 = 'ABc'
 
 # print(isAnagram(word1, word2))
+
+
+
+# Find all lonely numbers in an array LeetCode
+
+# def lonelyNum(arrList):
+#     res = list()
+#     hashMap = dict()
+#     for i in arrList:
+#         hashMap[i] = 1 + hashMap.get(i, 0)
+    
+#     for key in hashMap:
+#         if hashMap[key] == 1 and not key+1 in hashMap and not key-1  in hashMap:
+#             res.append(key)
+
+#     return res
+
+# print(lonelyNum([10,6,5,8]))
+
+
