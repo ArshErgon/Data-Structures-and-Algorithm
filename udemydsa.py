@@ -9199,3 +9199,39 @@
 # print(lonelyNum([10,6,5,8]))
 
 
+# Longest Substring Of All Vowels in Order Leetcode
+
+# def longestVowelSub(string):
+    # ans = 0
+    # cnt, unique = 1, 1
+    # for i in range(1, len(string)): 
+    #     if string[i-1] <= string[i]: 
+    #         cnt += 1
+    #         if string[i-1] < string[i]: 
+    #             unique += 1
+    #     else: 
+    #         cnt = unique = 1
+    #     if unique == 5: 
+    #         ans = max(ans, cnt)
+    # return ans 
+#     stack = list(string)
+#     prev = stack[0]
+#     unique, count = 1, 1
+#     maxP = 0
+#     for i in range(len(stack)):
+#         ele = stack.pop(0)
+#         stack.append(0)
+#         if ele >= prev:
+        
+#             count += 1
+#             if ele > prev:
+#                 unique += 1
+#         else:
+#             count,unique =1, 1
+#         if unique == 5:
+#             maxP = max(maxP, count)
+#         prev = ele
+#     return maxP
+
+# print(longestVowelSub('aeeeiiiioooauuuaeiou'))
+# print(longestVowelSub('aeiaaioaaaaeiiiiouuuooaauuaeiu'))

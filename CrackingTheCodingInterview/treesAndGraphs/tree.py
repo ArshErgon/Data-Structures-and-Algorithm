@@ -2,6 +2,9 @@
 
 # Creating a simple trees
 
+from os import dup
+
+
 class TreeNode:
     def __init__(self, data):
         self.data = data
@@ -87,16 +90,32 @@ class TreeNode:
             maxVal = max(maxVal, cur.data)
             cur = cur.right_child
         return maxVal
+
+    
+    def findDuplicates(self, root, seen, res):
+
+        if root:
+            if root.data in seen:
+                res.append(root.data)
+            else:
+                seen.add(root.data)
+            self.findDuplicates(root.left_child, seen, res)
+            self.findDuplicates(root.right_child, seen, res)
+            res.append(root.data)
+        return res
             
 
 root = TreeNode(90)
-l = [10, 40, 60, 80, 3, 20, 4, 1, 5]
+l = [10, 40, 60, 80, 3, 20, 4, 1, 5, 1, 2, 90, 50, 40, 8]
 for i in l:
     root.insert(i)
 
 print(root.searching(root, 1))
 print(root.minNode(root))
 print(root.maxNode(root))
+seen = set()
+res = list()
+print(root.findDuplicates(root, seen, res))
 
 
 # print(root.printTree())
