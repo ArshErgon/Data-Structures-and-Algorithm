@@ -2,7 +2,9 @@
 
 # Creating a simple trees
 
-from os import dup
+
+# DFS: depth first search algorithm: inorder, preorder, postorder
+# BFS: breadth first search algorithm:
 
 
 class TreeNode:
@@ -38,30 +40,38 @@ class TreeNode:
         
     def inOrder(self, node):
         # print("inOrder")
+        
         if node:
             self.inOrder(node.left_child)
             print(node.data)
             self.inOrder(node.right_child)
+        
 
 
 # 
 
     def postOrder(self, node):
         # print("PostOrder")
+        
         if node:
             self.postOrder(node.left_child)
             self.postOrder(node.right_child)
             print(node.data)
+        
+        
 
 
 # it print the root first then goes to left and right
 
     def preOrder(self, node):
         # print("PreOrder")
+        
         if node:
             print(node.data)
             self.preOrder(node.left_child)
             self.preOrder(node.right_child)
+        
+        
         
 
     def searching(self, rootKey, item):
@@ -110,16 +120,16 @@ l = [10, 40, 60, 80, 3, 20, 4, 1, 5, 1, 2, 90, 50, 40, 8]
 for i in l:
     root.insert(i)
 
-print(root.searching(root, 1))
-print(root.minNode(root))
-print(root.maxNode(root))
-seen = set()
-res = list()
-print(root.findDuplicates(root, seen, res))
+# print(root.searching(root, 1))
+# print(root.minNode(root))
+# print(root.maxNode(root))
+# seen = set()
+# res = list()
+# print(root.findDuplicates(root, seen, res))
 
 
 # print(root.printTree())
 
-# print(root.inOrder(root))
-# print(root.postOrder(root))
-# print(root.preOrder(root))
+print(root.inOrder(root))
+print(root.postOrder(root))
+print(root.preOrder(root))

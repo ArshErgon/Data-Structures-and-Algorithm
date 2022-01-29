@@ -9235,3 +9235,16 @@
 
 # print(longestVowelSub('aeeeiiiioooauuuaeiou'))
 # print(longestVowelSub('aeiaaioaaaaeiiiiouuuooaauuaeiu'))
+
+
+# Pascal triangle
+
+def pascalTriangle(n):
+    pascal = [[1] * (n+1) for i in range(n)]
+    for i in range(n):
+        for j in range(1, i):
+            pascal[i][j] = pascal[i-1][j-1] + pascal[i-1][j] 
+    for x in pascal:
+        print(x)
+
+print(pascalTriangle(6))

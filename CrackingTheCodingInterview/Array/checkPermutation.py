@@ -13,7 +13,7 @@
 # 2. Uses of HashMaps to count the occurenece in both str1 and str2
 
 
-# O(n^2) with space: O(N)
+# O(nlogn) with space: O(N)
 
 def checkPermutation(str1, str2):
     if len(str1) != len(str2):
