@@ -9239,12 +9239,187 @@
 
 # Pascal triangle
 
-def pascalTriangle(n):
-    pascal = [[1] * (n+1) for i in range(n)]
-    for i in range(n):
-        for j in range(1, i):
-            pascal[i][j] = pascal[i-1][j-1] + pascal[i-1][j] 
-    for x in pascal:
-        print(x)
+# def pascalTriangle(n):
+#     pascal = [[1] * (n+1) for i in range(n)]
+#     for i in range(n):
+#         for j in range(1, i):
+#             pascal[i][j] = pascal[i-1][j-1] + pascal[i-1][j] 
+#     for x in pascal:
+#         print(x)
 
-print(pascalTriangle(6))
+# print(pascalTriangle(6))
+
+
+# Implement stack using queues
+
+# class Stack:
+#     def __init__(self):
+#         self.queues = []
+
+#     def push(self, data):
+#         self.queues.append(data)
+
+#     def poping(self):
+#         return self.queues.pop()
+    
+#     def isEmpty(self):
+#         return len(self.question) == 0
+
+# obj = Stack()
+# for x in range(10):
+#     print(obj.push(x))
+
+# print(obj.poping())
+
+
+# Binary tree inorder traversal, preOrder, postOrder leetcode
+
+# class Tree:
+#     def __init__(self, data):
+#         self.data = data
+#         self.left_child = None
+#         self.right_child = None
+
+#     def insert(self, data):
+#         newNode = Tree(data)
+#         if self.data:
+#             if self.data > data:
+#                 if self.left_child is None:
+#                     self.left_child = newNode
+#                 else:
+#                     self.left_child.insert(data)
+#             else:
+#                 if self.right_child is None:
+#                     self.right_child = newNode
+#                 else:
+#                     self.right_child.insert(data)
+#         else:
+#             self.data = data
+
+#     def inOrder(self, root):
+#         if root:
+#             self.inOrder(root.left_child)
+#             print(root.data)
+#             self.inOrder(root.right_child)
+#         else:
+#             return "Root is empty"
+    
+#     def preOrder(self, root):
+#         if root:
+#             print(root.data)
+#             self.preOrder(root.left_child)
+#             self.preOrder(root.left_child)
+#         else:
+#             print("root is empty")
+
+
+#     def postOrder(self, root):
+#         if root:
+#             self.postOrder(root.left_child)
+#             self.postOrder(root.right_child)
+#             print(root.data)
+#         else:
+#             print("root is empty")
+
+# root = Tree(10)
+# for x in range(1, 21):
+#     (root.insert(x))
+
+# print(root.inOrder(root))
+# print(root.preOrder(root))
+# print(root.postOrder(root))
+
+
+
+# kth smallest element in a bst LeetCode
+
+# class BinaryTree:
+#     def __init__(self, data):
+#         self.data = data
+#         self.left_child = None
+#         self.right_child = None
+    
+#     def insert(self, data):
+#         newNode = BinaryTree(data)
+#         if self.data:
+#             if self.data > data:
+#                 if self.left_child is None:
+#                     self.left_child = newNode
+#                 else:
+#                     self.left_child.insert(data)
+#             else:
+#                 if self.right_child is None:
+#                     self.right_child = newNode
+#                 else:
+#                     self.right_child.insert(data)
+#         else:
+#             self.data = data
+
+    
+#     def inOrder(self, res, root):
+#         if root:
+#             self.inOrder(res, root.left_child)
+#             res.append(root.data)
+#             self.inOrder(res, root.right_child)
+#         return res
+
+#     def findingTheKth(self, root, k):
+#         res = list()
+#         self.inOrder(res, root)
+#         return res[k - 1]
+
+
+# root = BinaryTree(10)
+
+# for x in range(1, 30):
+#     root.insert(x)
+
+# print(root.findingTheKth(root, 3))
+
+
+
+# Second minimum node in a BST LeetCode
+
+# class BinaryTree:
+#     def __init__(self, data):
+#         self.root = data
+#         self.right_child = None
+#         self.left_child = None 
+    
+#     def insert(self, data):
+#         newNode  = BinaryTree(data)
+#         if self.root:
+#             if self.root > data:
+#                 if self.left_child is None:
+#                     self.left_child = newNode
+#                 else:
+#                     self.left_child.insert(data)
+#             else:
+#                 if self.right_child is None:
+#                     self.right_child = newNode
+#                 else:
+#                     self.right_child.insert(data)
+#         else:
+#             self.root = data
+
+    
+#     def preOrder(self, root, res):
+#         if root:
+#             res.add(root.root)
+#             self.preOrder(root.left_child, res)
+#             self.preOrder(root.right_child, res)
+
+#         return res
+    
+#     def findingMin(self, root):
+#         res = set()
+#         self.preOrder(root, res)
+#         List = sorted(res)
+#         return List[1] if len(res) >= 2 else -1 
+
+# root = BinaryTree(30)
+# for x in range(1, 29):
+#     root.insert(x)
+
+# print(root.findingMin(root))
+

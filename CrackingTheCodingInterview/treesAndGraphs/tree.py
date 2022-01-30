@@ -74,15 +74,16 @@ class TreeNode:
         
         
 
-    def searching(self, rootKey, item):
+    def searching(self, rootKey, item, count):
+        count += 1
         if rootKey is None:
             return False
         elif rootKey.data == item:
-            return rootKey.data
+            return rootKey.data, count
         elif rootKey.data > item:
-            return self.searching(rootKey.left_child, item)
+            return self.searching(rootKey.left_child, item, count)
         else:
-            return self.searching(rootKey.right_child, item)
+            return self.searching(rootKey.right_child, item, count)
 
     def minNode(self, rootKey):
         minVal = float('infinity')
@@ -114,13 +115,65 @@ class TreeNode:
             res.append(root.data)
         return res
             
+    def maxDepth(self, root):
+        if not root: return 0
+        return 1 + max(self.maxDepth(root.left_child), self.maxDepth(root.right_child))
+        # if root:
+        #     maxLDept = self.maxDepth(root.left_child)
+        #     maxRDepth = self.maxDepth(root.right_child)
+        #     if maxLDept > maxRDepth:
+        #         return maxLDept + 1
+        #     else:
+        #         return maxRDepth + 1
+        # else: return -1
+    
+    def minDepth(self, root):
+        if not root: return 0
+        if None in [root.left_child, root.right_child]:
+            return max(self.minDepth(root.left_child), self.minDepth(root.right_child)) + 1
+        else:
+            return min(self.minDepth(root.left_child), self.minDepth(root.right_child)) + 1
+
+
+    def treeBFS(self, root):
+        to_visit = []
+        if root:
+            to_visit.append(root)
+            print(root.data, end=' ')
+        while to_visit:
+            cur = to_visit.pop(0)
+            print(cur.data, 'bfs')
+            if cur.left_child:
+                to_visit.append(cur.left_child)
+            if cur.right_child:
+                to_visit.append(cur.right_child)
+
+    def searchWithBFS(self, root, val):
+        to_visit = []
+        if root:
+            to_visit.append(root)
+        while to_visit:
+            cur = to_visit.pop(0)
+            print(cur.data, end=' ')
+            if cur.data == val:
+                return f"{cur.data}=={val}"
+            if cur.left_child:
+                to_visit.append(cur.left_child)
+            if cur.right_child:
+                to_visit.append(cur.right_child)
+
 
 root = TreeNode(90)
 l = [10, 40, 60, 80, 3, 20, 4, 1, 5, 1, 2, 90, 50, 40, 8]
 for i in l:
     root.insert(i)
 
-# print(root.searching(root, 1))
+print(root.searching(root,40, 0))
+print(root.maxDepth(root))
+print(root.minDepth(root))
+print(root.treeBFS(root))
+print(root.searchWithBFS(root, 50))
+
 # print(root.minNode(root))
 # print(root.maxNode(root))
 # seen = set()
@@ -130,6 +183,36 @@ for i in l:
 
 # print(root.printTree())
 
-print(root.inOrder(root))
-print(root.postOrder(root))
-print(root.preOrder(root))
+# print(root.inOrder(root))
+# print(root.postOrder(root))
+# print(root.preOrder(root))
+
+
+
+
+# BFS traversal for graphs and trees
+
+graph = {
+  'A' : ['B','C'],
+  'B' : ['D', 'E'],
+  'C' : ['F'],
+  'D' : [],
+  'E' : ['F'],
+  'F' : []
+}
+
+visited = list()
+queue = list()
+def bfs(visited, graph, node):
+    visited.append(node)
+    queue.append(node)
+    while queue:
+        s = queue.pop(0)
+        print(s, end=' ')
+        for ne in graph:
+            if ne not in visited:
+                visited.append(ne)
+                queue.append(ne)
+
+print(bfs(visited, graph, 'A'))
+    
