@@ -9423,3 +9423,51 @@
 
 # print(root.findingMin(root))
 
+
+# Maximum Depth of a binary tree
+class BinaryTree:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+    def insertation(self, data):
+        newNode = BinaryTree(data)
+        if self.data:
+            if self.data < data:
+                if self.left is None:
+                    self.left = newNode
+                else:
+                    self.left.insertation(data)
+            else:
+                if self.right is None:
+                    self.right = newNode
+                else:
+                    self.right.insertation(data)
+
+        else:
+            self.data = data
+
+    
+    def depthMax(self, root):
+        if not root: return 0
+        # return max(self.depthMax(root.left), self.depthMax(root.right)) + 1
+        queue = [root]
+        level = 0
+        while queue:
+            for x in range(len(queue)):
+                node = queue.pop(0)
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            
+            level += 1
+        return level
+
+root = BinaryTree(10)
+
+for x in range(1, 40):
+    root.insertation(x)
+
+print(root.depthMax(root))

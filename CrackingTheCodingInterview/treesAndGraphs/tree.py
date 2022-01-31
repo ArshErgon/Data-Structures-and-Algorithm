@@ -43,7 +43,7 @@ class TreeNode:
         
         if node:
             self.inOrder(node.left_child)
-            print(node.data)
+            print(node.data, end=' ')
             self.inOrder(node.right_child)
         
 
@@ -56,7 +56,7 @@ class TreeNode:
         if node:
             self.postOrder(node.left_child)
             self.postOrder(node.right_child)
-            print(node.data)
+            print(node.data, end=' ')
         
         
 
@@ -67,7 +67,7 @@ class TreeNode:
         # print("PreOrder")
         
         if node:
-            print(node.data)
+            print(node.data, end=' ')
             self.preOrder(node.left_child)
             self.preOrder(node.right_child)
         
@@ -162,6 +162,28 @@ class TreeNode:
             if cur.right_child:
                 to_visit.append(cur.right_child)
 
+    def remove(self, root, value):
+        if value < root.data:
+            self.remove(root.left_child, value)
+        elif value > root.data:
+            self.remove(root.right_child, value)
+        else:
+            if root.left_child == None:
+                return root.left_child
+            elif root.right_child == None:
+                return root.right_child
+            root.data = self.inOrderRemove(root.right_child)
+            root.right_child = self.remove(root.right_child, root.data)
+        return root.data
+        
+
+    def inOrderRemove(self, root):
+        minData = root.data
+        while root.left_child:
+            minData = min(minData, root.left_child.data)
+            root = root.left_child
+        return minData
+
 
 root = TreeNode(90)
 l = [10, 40, 60, 80, 3, 20, 4, 1, 5, 1, 2, 90, 50, 40, 8]
@@ -173,6 +195,13 @@ print(root.maxDepth(root))
 print(root.minDepth(root))
 print(root.treeBFS(root))
 print(root.searchWithBFS(root, 50))
+print(root.inOrder(root))
+
+print(root.remove(root, 90))
+
+print(root.inOrder(root))
+
+# print(root.inOrderRemove(root), ': inOrderRemove')
 
 # print(root.minNode(root))
 # print(root.maxNode(root))
