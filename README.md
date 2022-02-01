@@ -16,11 +16,26 @@ This was ArshErgon. planning to do something impossible, but deep down he knows 
 3. Data Structures and algorithmic thinking with python
 4. Cracking the coding interview
 
+###Focus on how one solution is different from another, Learn Big O
+
 **WebSites I used for learning Data Structures**
 1. TutorialsPoint
 2. StackOverflow
 3. GreeksForGreeks
 4. Medium
+5. Programiz
+6. w3schools
+
+
+**Mainly which data structures I practice or learn the most?**
+1. Array
+2. LinkedList
+3. HashMap
+4. Recursion
+5. Sets, lists
+6. Trees(BT, BST, AVL, RBT)
+7. Graphs
+8. Sorting Algorithms (Insertation sorts, merge sort, quick sort)
 
 **Websites I used for practice**
 1. Leetcode *90%*
