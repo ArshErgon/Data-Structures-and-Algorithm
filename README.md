@@ -16,7 +16,7 @@ This was ArshErgon. planning to do something impossible, but deep down he knows 
 3. Data Structures and algorithmic thinking with python
 4. Cracking the coding interview
 
-###Focus on how one solution is different from another, Learn Big O
+### Focus on how one solution is different from another, Learn Big O
 
 **WebSites I used for learning Data Structures**
 1. TutorialsPoint

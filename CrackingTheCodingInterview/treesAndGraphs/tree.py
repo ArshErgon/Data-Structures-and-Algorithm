@@ -163,27 +163,22 @@ class TreeNode:
                 to_visit.append(cur.right_child)
 
     def remove(self, root, value):
-        if value < root.data:
-            self.remove(root.left_child, value)
-        elif value > root.data:
-            self.remove(root.right_child, value)
-        else:
-            if root.left_child == None:
-                return root.left_child
-            elif root.right_child == None:
-                return root.right_child
-            root.data = self.inOrderRemove(root.right_child)
+        if not root: return None
+        if root.data == value:
+            if not root.left_child and not root.right_child: return None
+            if not root.left_child and root.right_child: return root.right_child
+            if not root.right_child and root.left_child: return root.left_child
+            pnt = root.right_child
+            while pnt.left_child: pnt = pnt.left_child
+            root.data = pnt.data
             root.right_child = self.remove(root.right_child, root.data)
-        return root.data
-        
 
-    def inOrderRemove(self, root):
-        minData = root.data
-        while root.left_child:
-            minData = min(minData, root.left_child.data)
-            root = root.left_child
-        return minData
+        elif root.data > value:
+            self.remove(root.left_child, value)
+        else:
+            self.remove(root.rigth_child, value)
 
+        return root
 
 root = TreeNode(90)
 l = [10, 40, 60, 80, 3, 20, 4, 1, 5, 1, 2, 90, 50, 40, 8]
