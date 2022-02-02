@@ -9425,49 +9425,123 @@
 
 
 # Maximum Depth of a binary tree
-class BinaryTree:
-    def __init__(self, data):
-        self.data = data
-        self.left = None
-        self.right = None
+# class BinaryTree:
+#     def __init__(self, data):
+#         self.data = data
+#         self.left = None
+#         self.right = None
 
-    def insertation(self, data):
-        newNode = BinaryTree(data)
-        if self.data:
-            if self.data < data:
-                if self.left is None:
-                    self.left = newNode
-                else:
-                    self.left.insertation(data)
-            else:
-                if self.right is None:
-                    self.right = newNode
-                else:
-                    self.right.insertation(data)
+#     def insertation(self, data):
+#         newNode = BinaryTree(data)
+#         if self.data:
+#             if self.data < data:
+#                 if self.left is None:
+#                     self.left = newNode
+#                 else:
+#                     self.left.insertation(data)
+#             else:
+#                 if self.right is None:
+#                     self.right = newNode
+#                 else:
+#                     self.right.insertation(data)
 
-        else:
-            self.data = data
+#         else:
+#             self.data = data
 
     
-    def depthMax(self, root):
-        if not root: return 0
-        # return max(self.depthMax(root.left), self.depthMax(root.right)) + 1
-        queue = [root]
-        level = 0
-        while queue:
-            for x in range(len(queue)):
-                node = queue.pop(0)
-                if node.left:
-                    queue.append(node.left)
-                if node.right:
-                    queue.append(node.right)
+#     def depthMax(self, root):
+#         if not root: return 0
+#         # return max(self.depthMax(root.left), self.depthMax(root.right)) + 1
+#         queue = [root]
+#         level = 0
+#         while queue:
+#             for x in range(len(queue)):
+#                 node = queue.pop(0)
+#                 if node.left:
+#                     queue.append(node.left)
+#                 if node.right:
+#                     queue.append(node.right)
             
-            level += 1
-        return level
+#             level += 1
+#         return level
 
-root = BinaryTree(10)
+# root = BinaryTree(10)
 
-for x in range(1, 40):
-    root.insertation(x)
+# for x in range(1, 40):
+#     root.insertation(x)
 
-print(root.depthMax(root))
+# print(root.depthMax(root))
+
+
+# search a sorted array for its entry equal to its index
+
+# The most brute force would be looping all the elements and checking if that is equals to its index
+# But since array is sorted, we must use binary search for that
+# O(N) memory: O(1)
+
+# class Entry:
+#     def finding_index_equals_number(self, listData):
+#         for key, val in enumerate(listData):
+#             if key == val:
+#                 return key, val
+#         return -1 
+# obj = Entry()
+# print(obj.finding_index_equals_number([9, 8, 7, 3, 5, 7]))
+
+# Solution with binary search 
+# O(logN) memory: O(1)
+
+# class Entry:
+#     def finding_index_equals_number(self, listData):
+#         left, right = 0, len(listData)-1
+
+#         while left <= right:
+#             mid = (left+right) // 2
+#             diff = listData[mid] - mid 
+#             if diff == 0:
+#                 return mid
+#             elif diff > 0:
+#                 right = mid - 1
+#             else:
+#                 left = mid + 1
+#         return -1 
+
+# obj = Entry()
+
+# print(obj.finding_index_equals_number([-2, 0, 2, 3, 5, 6]))
+
+
+# search in a cyclic sorted array the minimum number
+# Brute force
+# O(N)
+
+# class Cyclic:
+#     def findingMin(self, data):
+#         minNum = data[0]
+
+#         for i in data:
+#             if i < minNum:
+#                 minNum = i
+
+#         return minNum
+
+# obj = Cyclic()
+
+# print(obj.findingMin([378, 478, 550, 103, 203, 302]))
+
+
+# Binary Search O(logN)
+# class Cyclic:
+#     def findingMin(self, data):
+#         left, right = 0, len(data) - 1
+#         while left < right:
+#             mid = (left+right) // 2
+#             if data[mid] > data[right]:
+#                 left = mid + 1
+#             else:
+#                 right = mid 
+#         return data[left]
+
+# obj = Cyclic()
+
+# print(obj.findingMin([378, 478, 550, 103, 203, 302]))
