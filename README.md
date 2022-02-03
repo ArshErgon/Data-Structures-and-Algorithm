@@ -5,6 +5,11 @@
 # Solving programming questions in Python
 
 >I fear data structure first, when I first get my hands on it, when I was searching how to become a better programmer, the result was learn data structure and algorithms, I tried to learn them, it flew over my head, I didn't get anything, even doing a factorial, or a palindrome program is hard for me.
+# LeetCode, CodeSignal, CodeChef, CodeWars, AlgoExpert, Cracking The Coding Interview
+
+# Solving programming questions in Python
+
+I fear data structure first, when I first get my hands on it, when I was searching how to become a better programmer, the result was learn data structure and algorithms, I tried to learn them, it flew over my head, I didn't get anything, even doing a factorial, or a palindrome program is hard for me.
 And Now, I've overcome my fear, doing good at data structures and algorithms but I want to do better, I can't be average... 
 I will be mentioning everything I've learn, from the places I learn, how I overcame my fear, I will post it here, for someone outthere who need this. And who will became better than anyone else.
 This was ArshErgon. planning to do something impossible, but deep down he knows he can do this.(29-Jan-2022)
@@ -13,6 +18,8 @@ This was ArshErgon. planning to do something impossible, but deep down he knows 
 
 
 **What books I used for reference?** *most of  the books can be found on Pdfdrive or* z-lib(darkweb)
+
+**What books I used for reference?** *most of  the books can be found on Pdfdrive or* ######z-lib(darkweb)
 1. Hands on data structure of Python by Basant Agarwal and benjamin baka
 2. Elements of programming in Python
 3. Data Structures and algorithmic thinking with python
@@ -46,6 +53,8 @@ This was ArshErgon. planning to do something impossible, but deep down he knows 
 3. Algomonster *there questions are good but I was not a paid user*
 4. GreeksForGreeks *some time* *they have some terrible testcases and sometimes their own code fails*
 5. CodeSignal *Their questions are good but sometimes even a simple questions are quite tricky*
+4. GreeksForGreeks *some time*
+5. codeSignal *some time*
 
 **YouTubers I followed**
 1. Neetcode: the way he breaks down problems are superb, started his channel as an unempoly and after 1 year he's a Googler
@@ -58,6 +67,7 @@ This was ArshErgon. planning to do something impossible, but deep down he knows 
 
 **Who am I?**
 > I'm Arsh, I graduated from a trie 4 or trie 5 college didn't pass GATE paper or something to get admission nor I'm a topper, or someone who scored 90% in 12th, no I belongs to backbenchers, I was a terrible student, I know about programming before my college after doing my boards I have taken some classes for python, I mostly learn things from Google and PDFs, I belong from a medical background, not a genius in MatheMatics, Covid hit, I left programming for 1.5 years and when my college is about to get over at that time I came into my senses that what next? from there I started learning Data Structures and Algorithm it was hard to figure out first but I stick on it, I didn't leave it
+> I'm Arsh, I graduated from a trie 4 or trie 5 college didn't pass GATE paper or something to get admission, I know about programming before my college after doing my boards I have taken some classes for python, I mostly learn things from Google and PDFs, I belong from a medical background, not a genius in MatheMatics, Covid hit, I left programming for 1.5 years and when my college is about to get over at that time I came into my senses that what next? from there I started learning Data Structures and Algorithm it was hard to figure out first but I stick on it, I didn't leave it
 
 **Questions which came in my mind when I was preparing**
 1. Can you seriously think you can do this?

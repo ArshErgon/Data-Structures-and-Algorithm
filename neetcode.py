@@ -46,6 +46,8 @@ word1 = "anagram"
 word2 = "nagaram"
 # print(isAnagram(word1, word2))
 print(isAnagram(word1, word2))
+# print(isAnagram(word1, word2))
+print(isAnagram(word1, word2))
 
 
 # two Sum LeetCode
@@ -104,6 +106,7 @@ def maxSubarr(arrList):
 # print(maxSubarr([-2,1,-3,4,-1,2,1,-5,4]))
 
 
+
 # two sum leetcode 
 
 def twoSum(arrList, target):
@@ -132,3 +135,4 @@ def houseRobber(arrList):
     return rob2
 
 print(houseRobber([1,2,3,1]))
+
