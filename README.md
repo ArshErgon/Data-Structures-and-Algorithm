@@ -3,6 +3,7 @@
 ## LeetCode, CodeSignal, CodeChef, CodeWars, AlgoExpert, Cracking The Coding Interview
 
 # Solving programming questions in Python
+## Feb 5 2022 my first 10K lines of CODE!
 
 >I fear data structure first, when I first get my hands on it, when I was searching how to become a better programmer, the result was learn data structure and algorithms, I tried to learn them, it flew over my head, I didn't get anything, even doing a factorial, or a palindrome program is hard for me.
 # LeetCode, CodeSignal, CodeChef, CodeWars, AlgoExpert, Cracking The Coding Interview

@@ -9645,48 +9645,371 @@
 
 # Searching in BST leetcode
 
-class TreeNode:
-    def __init__(self, data):
-        self.data = data
-        self.left = None
-        self.right = None
+# class TreeNode:
+#     def __init__(self, data):
+#         self.data = data
+#         self.left = None
+#         self.right = None
     
-    def insertation(self, data):
-        newNode = TreeNode(data)
-        if self.data:
-            if self.data > data:
-                if self.left is None:
-                    self.left = newNode
-                else:
-                    self.left.insertation(data)
-            else:
-                if self.right is None:
-                    self.right = newNode
-                else:
-                    self.right.insertation(data)
+#     def insertation(self, data):
+#         newNode = TreeNode(data)
+#         if self.data:
+#             if self.data > data:
+#                 if self.left is None:
+#                     self.left = newNode
+#                 else:
+#                     self.left.insertation(data)
+#             else:
+#                 if self.right is None:
+#                     self.right = newNode
+#                 else:
+#                     self.right.insertation(data)
 
-        else:
-            self.data = data
+#         else:
+#             self.data = data
 
-    def printAll(self, root, val, res):
-        if not root: return 
-        if root:
-            if root.data == val:
-                res.append(root.data)
-                if root.left and root.right:
-                    res.append(root.left.data)
-                    res.append(root.right.data)
-                if root.left and not root.right:
-                    res.append(root.left.data)
-                if root.right and not root.left:
-                    res.append(root.right.data)
-            self.printAll(root.left, val, res)
-            self.printAll(root.right, val, res)
-        return res
+#     def printAll(self, root, val, res):
+#         if not root: return 
+#         if root:
+#             if root.data == val:
+#                 res.append(root.data)
+#                 if root.left and root.right:
+#                     res.append(root.left.data)
+#                     res.append(root.right.data)
+#                 if root.left and not root.right:
+#                     res.append(root.left.data)
+#                 if root.right and not root.left:
+#                     res.append(root.right.data)
+#             self.printAll(root.left, val, res)
+#             self.printAll(root.right, val, res)
+#         return res
 
 
-root = TreeNode(4)
-for x in [2,7,1,3]:
-    root.insertation(x)
+# root = TreeNode(4)
+# for x in [2,7,1,3]:
+#     root.insertation(x)
 
-print(root.printAll(root, 2, []))
+# print(root.printAll(root, 2, []))
+
+
+# kth largest element Leetcode
+
+# import heapq
+
+# def kthlargest(arr, k):
+#     nums = [-x for x in arr]
+#     heapq.heapify(nums)
+#     print(nums)
+#     while k > 1:
+#         print(heapq.heappop(nums))
+#         k-=1
+#     return -heapq.heappop(nums)
+
+# print(kthlargest([8,3,5,1,7,9,0], 5))
+
+
+# frequency of the most frequent value leetcode
+
+# def maxFrequency(arr, k):
+#     arr.sort()
+#     l, r = 0, 0
+#     maxP = res = 0
+#     while r < len(arr):
+#         maxP += arr[r]
+#         while arr[r] * (r-l+1) > maxP+k:
+#             maxP -= arr[l]
+#             l += 1
+#         res = max(res, r-l+1)
+#         r += 1
+#     return res
+
+# print(maxFrequency([1,4,8,13], 5))
+
+
+# Permutation in string leetcode
+
+# def permutationString(pattern, string):
+#     if len(pattern) > len(string):return False
+#     word1, word2 = [0]*26, [0]*26
+#     matches = 0
+
+#     for i in range(len(pattern)):
+#         word1[ord(pattern[i])-ord('a')] += 1
+#         word2[ord(string[i])-ord('a')] += 1
+    
+#     print(word1, word2)
+
+#     for x in range(26):
+#         matches += (1 if word1[x] == word2[x] else 0)
+    
+        
+#     l = 0
+#     for r in range(len(pattern), len(string)):
+#         if matches == 26:return True
+#         index = ord(string[r]) - ord('a')
+#         word2[index] += 1
+#         if word1[index] == word2[index]:
+#             matches += 1
+#         elif word1[index]+1 == word2[index]:
+#             matches -= 1
+
+#         index = ord(string[l]) - ord('a')
+#         word2[index] -= 1
+#         if word1[index] == word2[index]:
+#             matches += 1
+#         elif word1[index]-1 == word2[index]:
+#             matches -= 1
+#         l+=1
+
+#     return matches 
+  
+
+# print(permutationString('ab', 'eidbaooo'))
+
+
+# Triangle LeetCode
+
+# def splitAndMin(arr, count, res):
+#     find_min = min(arr[count], arr[count+1])
+#     print(find_min, res)
+#     count = arr.index(find_min)
+#     res += find_min
+#     return count, res
+    
+
+
+# def triangle(arr):
+#     count = 0
+#     res = arr[0][0]
+    
+#     for x in range(1, len(arr)):
+#         count, res = splitAndMin(arr[x], count , res)
+#     return res, count
+
+# # print(triangle([[2],[3,4],[6,5,7],[4,1,8,3]]))
+# # print(triangle([[1], [4,5], [1, 2, 3], [4,5,6]]))
+# print(triangle([[-1],[2,3],[1,-1,-3]]))
+# # print(triangle([[10]]))
+
+
+# Partition list leetcode
+
+# class Node:
+#     def __init__(self, data=0):
+#         self.data = data
+#         self.next = None
+    
+# class LinkedList:
+#     def __init__(self):
+#         self.head = None
+    
+#     def insert(self, data):
+#         newNode = Node(data)
+#         if self.head:
+#             cur = self.head
+#             while cur.next:
+#                 cur = cur.next 
+#             cur.next = newNode
+#         else:
+#             self.head = newNode
+
+#     def printAll(self):
+#         res = str()
+#         cur = self.head 
+#         while cur:
+#             res += str(cur.data)+'--->'
+#             cur = cur.next 
+#         return res+'None'
+
+
+#     def printPartition(self, data):
+#         cur = data
+#         while cur:
+#             print(cur.data, end='-->')
+#             cur = cur.next
+
+#     def partition(self, x):
+#         temp = ans = Node()
+#         temp1 = prev = Node()
+#         cur = self.head
+#         while cur:
+#             if cur.data < x:
+#                 temp.next = cur
+#                 temp = temp.next
+#             else:
+#                 prev.next = cur
+#                 pre = prev.next
+#             cur = cur.next
+        
+#         prev.next = None
+#         temp.next = temp1.next
+#         print(self.printPartition(ans))
+#         return ans.next
+
+# obj = LinkedList()
+# l = [1,4,3,2,5,2]
+# for x in l:
+#     obj.insert(x)
+# print(obj.printAll())
+
+# print(obj.partition(3))
+
+
+# String Compression Leetcode 
+
+# def stringCompress(string):
+#     if len(string) == 1:return 1
+#     count = 1
+#     res = str()
+#     for i in range(1, len(string)):
+#         if string[i-1] != string[i]:
+#             if count >= 2:
+#                 res += string[i-1]+str(count)
+#                 count = 0
+#             else:
+#                 res += string[i-1]
+#                 count = 0
+#         count += 1
+
+#     res += string[i]+str(count) if count > 1 else string[i]
+
+#     return list(res)
+
+# print(stringCompress(["a","a","b","b","c","c","c"]))
+# print(stringCompress(["a","b","b","b","b","b","b","b","b","b","b","b","b"]))
+# # print(stringCompress('aaa'))
+# print(stringCompress( ["a"]))
+# # print(stringCompress(["a","b","c"]))
+
+
+# Decompress run-length encoded list
+
+# def decompressList(nums):
+#     res = list()
+#     index = 0
+#     for r in range(0, len(nums), 2):
+#         res += [nums[r+1]]*nums[r]
+#     return res
+    
+# print(decompressList([1,2,3,4]))
+# # print(decompressList([42,39]))
+
+
+# string to integer (atoi) leetcode
+
+# def stringToInt(string):
+#     new_string = string.split()
+#     if len(new_string) == 0:return 0
+#     # has_neg =  True if new_string[0][0] in {"-"} else False
+#     new_string_str = [digit for digit in new_string if digit.isdigit()]    
+#     new_string_str = new_string_str if new_string_str else new_string[0] 
+#     # return int(new_string[0])
+#     return min(max(int(new_string[0]), -2147483648), 2147483647)
+
+# l = ["   -42", '42', "4193 with words"]
+# for x in l:
+#     print(stringToInt(x))
+# # print(stringToInt("4193 with words"))
+# # print(stringToInt("    -42"))
+
+
+
+# Adding spaces to a string leetcode
+
+# def addSpace(string, spaces):
+#     if not string or not spaces:return string
+#     res = str();spaces = set(spaces)
+#     for i in range(len(string)):
+#         if i in spaces:
+#             res += " "
+#         res += string[i]
+#     return res
+
+
+# print(addSpace('spacing', [0,1,2,3,4,5,6]))
+
+# Maximum two sum of the linkedList leetcode
+
+# class Node:
+#     def __init__(self, data):
+#         self.data = data
+#         self.next = None
+
+# class LinkedList:
+#     def __init__(self):
+#         self.head = None
+
+#     def push(self, data):
+#         newNode = Node(data)
+#         if self.head:
+#             cur = self.head
+#             while cur.next:
+#                 cur = cur.next
+#             cur.next = newNode
+
+#         else:
+#             self.head = newNode
+
+#     def twinSum(self):
+#         res = list()
+#         maxSum = 0
+
+#         cur = self.head
+
+#         while cur:
+#             res.append(cur.data)
+#             cur = cur.next
+
+#         l, r = 0, len(res) - 1
+#         while l < r:
+#             sum_ = res[l] + res[r]
+#             maxSum = max(maxSum, sum_)
+#             l += 1;r-=1
+#         return maxSum
+
+# obj = LinkedList()
+# l = [5,4,2,1]
+# for x in l:
+#     obj.push(x)
+# print(obj.twinSum())
+
+
+# Removing Minimum and maximum from array leetCode
+
+def removeMinAndMax(arrList):
+    # if len(arrList) == 1: return 1
+    # min_idx, max_idx = min(arrList), max(arrList)
+    # print(min_idx, max_idx)
+    # mid = len(arrList) // 2
+    # first_half = arrList[:mid]
+    # second_half = arrList[mid:]
+    # first_count = 0
+    # for i in first_half:
+    #     first_count += 1
+    #     if i in (min_idx, max_idx):
+    #         break
+
+    # sec_count = 00
+    # for key, val in enumerate(second_half):
+    #     if val in (min_idx, max_idx):
+    #         sec_count = len(second_half[key:])
+    #         break
+
+    # return (first_count+sec_count)
+
+    if len(arrList) == 1:return 1
+
+    hashMap = dict()
+
+    for key, val in enumerate(arrList):
+        hashMap[val] = key
+
+    max_num, min_num = max(arrList), min(arrList)
+    first = hashMap[max_num]
+    sec = hashMap[min_num]
+    print(first,sec)
+    return first+sec
+
+print(removeMinAndMax([2,10,7,5,4,1,8,6]))
+# print(removeMinAndMax([0,-4,19,1,8,-2,-3,5]))
+# print(removeMinAndMax([101]))
