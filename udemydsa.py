@@ -9976,40 +9976,167 @@
 
 # Removing Minimum and maximum from array leetCode
 
-def removeMinAndMax(arrList):
-    # if len(arrList) == 1: return 1
-    # min_idx, max_idx = min(arrList), max(arrList)
-    # print(min_idx, max_idx)
-    # mid = len(arrList) // 2
-    # first_half = arrList[:mid]
-    # second_half = arrList[mid:]
-    # first_count = 0
-    # for i in first_half:
-    #     first_count += 1
-    #     if i in (min_idx, max_idx):
-    #         break
+# def removeMinAndMax(arrList):
+#     # if len(arrList) == 1: return 1
+#     # min_idx, max_idx = min(arrList), max(arrList)
+#     # print(min_idx, max_idx)
+#     # mid = len(arrList) // 2
+#     # first_half = arrList[:mid]
+#     # second_half = arrList[mid:]
+#     # first_count = 0
+#     # for i in first_half:
+#     #     first_count += 1
+#     #     if i in (min_idx, max_idx):
+#     #         break
 
-    # sec_count = 00
-    # for key, val in enumerate(second_half):
-    #     if val in (min_idx, max_idx):
-    #         sec_count = len(second_half[key:])
-    #         break
+#     # sec_count = 00
+#     # for key, val in enumerate(second_half):
+#     #     if val in (min_idx, max_idx):
+#     #         sec_count = len(second_half[key:])
+#     #         break
 
-    # return (first_count+sec_count)
+#     # return (first_count+sec_count)
 
-    if len(arrList) == 1:return 1
+#     if len(arrList) == 1:return 1
+#     i, j, n = arrList.index(min(arrList)), arrList.index(max(arrList)), len(arrList)
+#     return min(max(i + 1, j + 1), max(n - i, n - j), i + 1 + n - j, j + 1 + n - i)
 
-    hashMap = dict()
-
-    for key, val in enumerate(arrList):
-        hashMap[val] = key
-
-    max_num, min_num = max(arrList), min(arrList)
-    first = hashMap[max_num]
-    sec = hashMap[min_num]
-    print(first,sec)
-    return first+sec
-
-print(removeMinAndMax([2,10,7,5,4,1,8,6]))
+# print(removeMinAndMax([2,10,7,5,4,1,8,6]))
 # print(removeMinAndMax([0,-4,19,1,8,-2,-3,5]))
 # print(removeMinAndMax([101]))
+# print(removeMinAndMax([-1,-53,93,-42,37,94,97,82,46,42,-99,56,-76,-66,-67,-13,10,66,85,-28]))
+
+
+# Partition array according to given pivot Leetcode
+
+
+# def partWithPivot(arrList, pivot):
+    # l1, l2 = list(), list()
+    # eq = list()
+    # # arrList.sort()
+    # for key, val in enumerate(arrList):
+    #     if val < pivot:
+    #         l1.append(val)
+    #     elif val == pivot:
+    #         eq.append(val)
+    #     else:
+    #         l2.append(val)
+    # return l1+eq+l2
+   
+
+# print(partWithPivot([9,12,5,10,14,3,10], 10))
+
+
+# Rearrange Array elements by sign Leetcode
+
+# def rearrangeArr(arrList):
+#     l1, l2 = list(), list()
+#     res = [0] * len((arrList))
+#     for i in arrList:
+#         if i > 0:
+#             l1.append(i)
+#         else:
+#             l2.append(i)
+#     neg_next_prt = 1
+#     pos_next_prt = 0
+
+#     for i in range(len(l1)):
+#         res[pos_next_prt] = l1[i]
+#         res[neg_next_prt] = l2[i]
+#         pos_next_prt += 2
+#         neg_next_prt += 2
+    
+
+#     return res
+
+# print(rearrangeArr([3,1,-2,-5,2,-4]))
+# print(rearrangeArr([-1,1]))
+
+
+# Sort array by parity II LeetCode
+
+# def sortArr(arrList):
+    # res, even, odd = list(), list(), list()
+
+    # for key, val in enumerate(arrList):
+    #     if val % 2 == 0:
+    #         even.append(val)
+    #     else:
+    #         odd.append(val)
+
+    # print(even, odd)
+
+    # for i in range(len(arrList)):
+    #     if i % 2 == 0:
+    #         res.append(even.pop(0))
+    #     else:
+    #         res.append(odd.pop(0))
+
+    # return res
+
+# print(sortArr([4,2,5,7]))
+# print(sortArr([2,3]))
+
+
+# Intervals between identicals elements Leetcode
+# Not solve at now!
+# def identicalIntervals(arrList):
+#     hashMap = dict()
+#     for key, val in enumerate(arrList):
+#         if val in hashMap:
+#             hashMap[val] += [key]
+#         else:
+#             hashMap[val] = [key]
+#     res = list()
+#     print(hashMap)
+    
+#     for i in arrList:
+        
+
+# print(identicalIntervals([2,1,3,1,2,3,3]))
+
+# Wiggle subsequence leetcode
+
+# def wiggleSequence(arrList):
+#     if len(arrList) <= 1:return len(arrList)
+#     prev_diff = arrList[1] - arrList[0]
+#     count = 2 if prev_diff != 0 else 1
+#     for i in range(2, len(arrList)):
+#         cur_diff = arrList[i] - arrList[i-1]
+#         if (cur_diff > 0 and prev_diff <= 0) or (cur_diff < 0 and prev_diff >= 0):
+#             count += 1
+#             prev_diff = cur_diff
+#     return count
+
+# print(wiggleSequence([1,7,4,9,2,5]))
+# print(wiggleSequence([1,2,3,4,5,6,7,8,9]))
+
+
+# Remove all adjacent duplicates in string II leetcode
+
+# def removeDupli(string, k):
+#     if len(set(string)) == len(string):return string
+#     hashMap = dict()
+
+#     for i in string:
+#         hashMap[i] = 1 + hashMap.get(i, 0)
+#     print(hashMap)
+#     for key in string:
+#         if hashMap[key] >= k:
+#             hashMap[key] -= k
+#     print(hashMap)
+#     res = str()
+#     for key in hashMap:
+#         res += key*hashMap[key]
+#     return res
+#     res = str()
+#     for i in string:
+#         res += i
+#         if len(res) >= k:
+#             if res[-k:] == i*k:
+#                 res = res[:-k]
+#     return res
+
+# print(removeDupli('pbbcggttciiippooaais', 2))
+# print(removeDupli('deeedbbcccbdaa', 3))
+# print(removeDupli("yfttttfbbbbnnnnffbgffffgbbbbgssssgthyyyy",4))
