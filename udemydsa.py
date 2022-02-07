@@ -10140,3 +10140,100 @@
 # print(removeDupli('pbbcggttciiippooaais', 2))
 # print(removeDupli('deeedbbcccbdaa', 3))
 # print(removeDupli("yfttttfbbbbnnnnffbgffffgbbbbgssssgthyyyy",4))
+
+
+# Longest subarray with distinct entries Leetcode
+
+# def diff_entries(arrList):
+#     hashMap = dict()
+#     lng_duplFree_subArry = 0
+#     res = 0
+
+#     for key, val in enumerate(arrList):
+#         if val in hashMap:
+#             dup_idx = hashMap[val]
+#             if dup_idx >= lng_duplFree_subArry:
+#                 res = max(res, key-lng_duplFree_subArry)
+#                 lng_duplFree_subArry = dup_idx + 1 
+#         hashMap[val] = key
+
+#     return max(res, len(arrList)-lng_duplFree_subArry)
+
+
+# print(diff_entries(['f','s','f','e','t','u','e','n','u','e']))
+
+
+# Find the difference Leetcode
+
+# def findDiff(string1, string2):
+#     hashMap = dict()
+#     for i in range(len(string1)):
+#         hashMap[string1[i]] = 1 + hashMap.get(string1[i], 0)
+#     res = str()
+#     for i in string2:
+#         if i in hashMap:
+#             hashMap[i] -= 1
+#             if hashMap[i] == 0:del hashMap[i]
+#             res+= i
+    
+#     return res
+
+# print(findDiff('a', 'a'))
+
+
+
+# String to integer Atoi Leetcode
+
+# def stringToInteger(s):
+#         s = s.lstrip()
+        
+#         start = 0
+#         stop = len(s)
+        
+#         for i in range(len(s)):
+#             if i == 0 and s[0] in ['-','+']:
+#                 sign, start = s[0], 1
+#             elif i == 0 and s[i].isnumeric():
+#                 sign, start = '+', 0
+#             elif not s[i].isnumeric():
+#                 stop = i
+#                 break
+        
+#         if start == stop:
+#             return 0
+        
+#         return int(min(max(float(sign + s[start:stop]), -2147483648), 2147483647))
+
+# print(stringToInteger('-123'))
+# print(stringToInteger("4193 with words"))
+# print(stringToInteger('        -39'))
+# print(stringToInteger('-00001234'))
+# print(stringToInteger("42"))
+# print(stringToInteger(".1"))
+
+
+# Intersection of two sorted arrays elements of programming in python3
+
+# def printDupli(arr1, arr2):
+#     arr1, arr2 = set(arr1), set(arr2)
+#     res = list()
+#     for i in arr1:
+#         if i in arr2:
+#             res.append(i)
+
+#     return res
+    
+
+# print(printDupli([2,3,3,5,5,6,7,7,8,12], [5,5,6,8,8,9,10,10]))
+
+
+# check if all A's apperars before all B's leetcode
+
+# def checkA(string):
+#     if len(string) == 1:return True
+#     for i in range(1, len(string)):
+#         if string[i-1] == 'b' and string[i] == 'a':return False
+#     return True
+
+# print(checkA('aaabbb'))
+# print(checkA('a'))
