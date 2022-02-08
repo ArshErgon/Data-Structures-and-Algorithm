@@ -10237,3 +10237,18 @@
 
 # print(checkA('aaabbb'))
 # print(checkA('a'))
+
+
+# Add digits leetcode
+
+# def addDigits(num):
+#     while len(str(num)) > 1:
+#         sum_ = 0
+#         r = num % 10 # it will give the last integer
+#         l = num // 10 # the first integer
+#         sum_ = l + r
+#         num = sum_
+#     return num
+
+# print(addDigits(38))
+# print(addDigits(0))
