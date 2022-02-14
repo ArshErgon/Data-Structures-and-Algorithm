@@ -212,3 +212,31 @@ print(root.inOrder(root))
 # print(root.preOrder(root))
 
 
+
+
+# BFS traversal for graphs and trees
+
+graph = {
+  'A' : ['B','C'],
+  'B' : ['D', 'E'],
+  'C' : ['F'],
+  'D' : [],
+  'E' : ['F'],
+  'F' : []
+}
+
+visited = list()
+queue = list()
+def bfs(visited, graph, node):
+    visited.append(node)
+    queue.append(node)
+    while queue:
+        s = queue.pop(0)
+        print(s, end=' ')
+        for ne in graph:
+            if ne not in visited:
+                visited.append(ne)
+                queue.append(ne)
+
+print(bfs(visited, graph, 'A'))
+    
